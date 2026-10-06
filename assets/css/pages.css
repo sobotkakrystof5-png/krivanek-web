@@ -1,0 +1,706 @@
+/* ==========================================================================
+   LAYOUTY STRÁNEK
+   Každá stránka má vlastní kompoziční logiku. Společné je jen měřítko.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DOMŮ — hero
+   Asymetrie: text drží levé dvě třetiny, obraz přetéká vpravo za mřížku.
+   -------------------------------------------------------------------------- */
+
+.hero { padding-block: var(--sect-base) var(--sect-tight); position: relative; }
+
+.hero__in {
+  display: grid;
+  gap: var(--s-7);
+  align-items: end;
+}
+.hero__h {
+  font-size: var(--t-4xl);
+  max-width: 15ch;
+}
+.hero__h em {
+  font-style: normal;
+  color: var(--c-accent);
+}
+.hero__p {
+  max-width: 34ch;
+  margin-top: var(--s-5);
+  font-size: var(--t-md);
+  line-height: var(--lh-lead);
+  color: var(--c-muted);
+}
+.hero__acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  margin-top: var(--s-6);
+}
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-7);
+  padding-top: var(--s-4);
+  border-top: var(--hair) solid var(--c-line);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+  color: var(--c-muted);
+}
+
+@media (min-width: 62em) {
+  .hero__in {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: var(--s-9);
+  }
+  /* Obraz přesahuje pravý okraj kontejneru. Záměrné narušení mřížky. */
+  .hero__art { margin-right: calc(-1 * var(--gutter)); }
+}
+@media (min-width: 90em) {
+  .hero__art { margin-right: calc(-1 * var(--s-8)); }
+}
+
+/* --------------------------------------------------------------------------
+   Číslovaný úvodní blok — index vlevo, text vpravo, hodně vzduchu
+   -------------------------------------------------------------------------- */
+
+.state__in {
+  display: grid;
+  gap: var(--s-5);
+}
+.state__t {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  line-height: 1.42;
+  letter-spacing: var(--ls-head);
+  max-width: 30ch;
+}
+.state__p { margin-top: var(--s-5); color: var(--c-muted); max-width: var(--w-text); }
+
+@media (min-width: 48em) {
+  .state__in { grid-template-columns: 4rem minmax(0, 1fr); gap: var(--s-6); }
+}
+
+/* --------------------------------------------------------------------------
+   Seznam oblastí — číslovaná osa, střídavě odsazená
+   Ne karty. Řádky s linkou, které se na hover posunou.
+   -------------------------------------------------------------------------- */
+
+.areas { margin: 0; padding: 0; list-style: none; }
+.areas > li { margin: 0; border-top: var(--hair) solid var(--c-line); }
+.areas > li:last-child { border-bottom: var(--hair) solid var(--c-line); }
+
+.area {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: var(--s-3) var(--s-4);
+  padding: var(--s-5) 0;
+  text-decoration: none;
+  color: var(--c-graphite);
+  transition: padding-left var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease);
+}
+.area:hover { color: var(--c-accent); padding-left: var(--s-4); }
+.area__h {
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  letter-spacing: var(--ls-head);
+}
+.area__p {
+  grid-column: 2;
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--t-sm);
+  color: var(--c-muted);
+}
+.area:hover .area__p { color: var(--c-muted); }
+
+/* Posun každého druhého řádku. Rozbíjí pravidelnost tabulky. */
+@media (min-width: 62em) {
+  .areas > li:nth-child(even) .area { padding-left: var(--s-7); }
+  .areas > li:nth-child(even) .area:hover { padding-left: calc(var(--s-7) + var(--s-4)); }
+}
+
+/* --------------------------------------------------------------------------
+   Nepravidelná mřížka výběru z galerie
+   -------------------------------------------------------------------------- */
+
+.peek {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.peek > li { margin: 0; }
+
+@media (min-width: 62em) {
+  .peek {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--s-5);
+    align-items: start;
+  }
+  .peek > li:nth-child(1) { grid-column: 1 / span 5; }
+  .peek > li:nth-child(2) { grid-column: 6 / span 4; margin-top: var(--s-8); }
+  .peek > li:nth-child(3) { grid-column: 10 / span 3; }
+  .peek > li:nth-child(4) { grid-column: 3 / span 4; margin-top: calc(-1 * var(--s-5)); }
+}
+
+/* --------------------------------------------------------------------------
+   Proces — pět kroků
+   Na mobilu svisle s linkou vlevo, na desktopu vodorovně po kótovací lince.
+   -------------------------------------------------------------------------- */
+
+.flow { margin: 0; padding: 0; list-style: none; }
+.flow > li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 var(--s-6) var(--s-6);
+  border-left: var(--hair) solid var(--c-line);
+}
+.flow > li:last-child { padding-bottom: 0; }
+.flow > li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--hair));
+  top: 0.55rem;
+  width: 9px;
+  height: var(--hair);
+  background: var(--c-line-strong);
+}
+.flow__h {
+  margin: var(--s-2) 0 var(--s-2);
+  font-family: var(--f-display);
+  font-size: var(--t-md);
+}
+.flow__p { margin: 0; font-size: var(--t-sm); color: var(--c-muted); }
+.flow__ask {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: var(--hair) dashed var(--c-line);
+  font-size: var(--t-sm);
+  color: var(--c-muted);
+}
+.flow__ask b { color: var(--c-graphite); font-weight: 500; }
+
+@media (min-width: 62em) {
+  .flow--row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--s-5);
+    border-top: var(--hair) solid var(--c-line);
+    padding-top: var(--s-5);
+  }
+  .flow--row > li {
+    padding: 0 var(--s-4) 0 0;
+    border-left: 0;
+  }
+  .flow--row > li::before { top: calc(-1 * var(--s-5) - var(--hair)); left: 0; width: var(--hair); height: 9px; }
+}
+
+/* --------------------------------------------------------------------------
+   KROOS blok na domovské stránce
+   -------------------------------------------------------------------------- */
+
+.dual {
+  display: grid;
+  gap: var(--s-6);
+  align-items: center;
+}
+@media (min-width: 62em) {
+  .dual { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--s-9); }
+  .dual--flip > *:first-child { order: 2; }
+}
+
+/* --------------------------------------------------------------------------
+   CO NAVRHUJI — střídavé bloky oblastí
+   -------------------------------------------------------------------------- */
+
+.alt { margin: 0; padding: 0; list-style: none; }
+.alt > li { margin: 0; padding-block: var(--sect-tight); border-top: var(--hair) solid var(--c-line); }
+.alt > li:first-child { border-top: 0; padding-top: 0; }
+
+.alt__in { display: grid; gap: var(--s-5); align-items: center; }
+.alt__num {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.alt__num .kota { flex: 1 1 auto; max-width: 5rem; }
+.alt__h { margin-bottom: var(--s-4); }
+.alt__p { color: var(--c-muted); max-width: 46ch; }
+.alt__acts { margin-top: var(--s-5); }
+
+@media (min-width: 62em) {
+  .alt__in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-8); }
+  /* Sudé bloky mají obraz vpravo. */
+  .alt > li:nth-child(even) .alt__art { order: 2; }
+  .alt > li:nth-child(even) .alt__txt { order: 1; }
+  .alt > li:nth-child(odd) .alt__art { order: 1; }
+  .alt > li:nth-child(odd) .alt__txt { order: 2; }
+}
+
+/* --------------------------------------------------------------------------
+   O ATELIÉRU — časová osa a portrét s citací
+   -------------------------------------------------------------------------- */
+
+.tl { margin: 0; padding: 0; list-style: none; }
+.tl > li {
+  display: grid;
+  gap: var(--s-2) var(--s-6);
+  margin: 0;
+  padding: var(--s-6) 0;
+  border-top: var(--hair) solid var(--c-line);
+}
+.tl > li:last-child { border-bottom: var(--hair) solid var(--c-line); }
+.tl__year {
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  letter-spacing: var(--ls-index);
+  color: var(--c-accent-2);
+  font-variant-numeric: tabular-nums;
+}
+.tl__h { margin-bottom: var(--s-3); }
+.tl__p { margin: 0; color: var(--c-muted); max-width: 54ch; }
+
+@media (min-width: 48em) {
+  .tl > li { grid-template-columns: 7rem minmax(0, 1fr); }
+}
+
+.quote { margin: 0; }
+.quote__t {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  line-height: 1.38;
+  letter-spacing: var(--ls-head);
+  max-width: 24ch;
+}
+.quote__by {
+  display: block;
+  margin-top: var(--s-5);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-style: normal;
+}
+
+/* Odbornost a oprávnění */
+.facts { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--s-5); }
+.facts > li { margin: 0; padding-top: var(--s-4); border-top: var(--hair) solid var(--c-line); }
+.facts__k {
+  display: block;
+  margin-bottom: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.facts__v { font-size: var(--t-sm); }
+@media (min-width: 48em) { .facts { grid-template-columns: repeat(3, 1fr); gap: var(--s-6); } }
+
+/* --------------------------------------------------------------------------
+   PODSTRÁNKY OBLASTÍ — sousední oblasti
+   -------------------------------------------------------------------------- */
+
+.near { display: grid; gap: var(--s-4); margin: 0; padding: 0; list-style: none; }
+.near > li { margin: 0; }
+.near__a {
+  display: block;
+  padding: var(--s-5);
+  border: var(--hair) solid var(--c-line);
+  text-decoration: none;
+  transition: border-color var(--dur-base) var(--ease),
+              background var(--dur-base) var(--ease);
+}
+.near__a:hover { border-color: var(--c-accent); background: var(--c-paper-deep); }
+.near__k {
+  display: block;
+  margin-bottom: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.near__h { font-family: var(--f-display); font-size: var(--t-md); }
+@media (min-width: 48em) { .near { grid-template-columns: repeat(3, 1fr); gap: var(--s-5); } }
+
+/* Číslovaný seznam kroků uvnitř textu */
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps > li {
+  position: relative;
+  margin: 0 0 var(--s-5);
+  padding-left: var(--s-7);
+  counter-increment: step;
+}
+.steps > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-index);
+  color: var(--c-accent-2);
+}
+.steps__h { display: block; margin-bottom: var(--s-1); font-weight: 600; }
+.steps__p { margin: 0; color: var(--c-muted); font-size: var(--t-sm); }
+
+/* --------------------------------------------------------------------------
+   KONTAKT
+   -------------------------------------------------------------------------- */
+
+.cont { display: grid; gap: var(--s-7); align-items: start; }
+@media (min-width: 62em) { .cont { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: var(--s-8); } }
+
+.cont__list { margin: 0; padding: 0; }
+.cont__list > div {
+  padding: var(--s-4) 0;
+  border-top: var(--hair) solid var(--c-line);
+}
+.cont__list > div:last-child { border-bottom: var(--hair) solid var(--c-line); }
+.cont__k {
+  display: block;
+  margin-bottom: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.cont__v { margin: 0; font-size: var(--t-md); }
+.cont__v a { text-decoration: none; border-bottom: var(--hair) solid var(--c-line-strong); }
+
+.map {
+  aspect-ratio: var(--ar-wide);
+  background: var(--c-paper-edge);
+  border: var(--hair) solid var(--c-line-strong);
+  display: grid;
+  overflow: hidden;
+}
+/* Dokud mapa není vložená, rámeček vypadá jako placeholder. */
+.map:not(:has(iframe)) {
+  border-style: dashed;
+  place-content: center;
+  text-align: center;
+  padding: var(--s-5);
+}
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+.map__note {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  max-width: 30ch;
+}
+
+/* --------------------------------------------------------------------------
+   Pruh s poznámkou (např. oprávnění, upozornění na návrhovou fázi)
+   -------------------------------------------------------------------------- */
+
+.note {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  background: var(--c-paper-deep);
+  border-left: 2px solid var(--c-accent);
+}
+.note__k {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.note p { margin: 0; font-size: var(--t-sm); color: var(--c-muted); max-width: 60ch; }
+
+/* ==========================================================================
+   DOPLNĚNO PODLE BRIEFU §4 — hero s celoplošným podkladem, citát,
+   mřížka karet oblastí, pruh log
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO — foto a text jako dvě oddělené zóny, spojené kótovou linkou (.kota--v).
+   Kóta je samostatná komponenta (viz components.css §3), ne závislá na
+   placeholderu — motiv přežije dosazení reálné fotky. Foto jede přes
+   standardní .ph/.ph__frame, stejně jako všechny ostatní fotky na webu.
+   -------------------------------------------------------------------------- */
+
+.herosplit__in {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-7);
+}
+
+.herosplit__photo { margin: 0; }
+
+.herosplit__panel { max-width: var(--w-text); }
+
+/* Eyebrow v hero jede jako kicker nad textem, ne vedle linky v řádku —
+   „Ateliér Křivánek · Mladá Boleslav“ se na mobilu jinak láme do linky. */
+.herosplit .eyebrow { display: block; }
+.herosplit .eyebrow::before { display: block; margin-bottom: var(--s-3); }
+
+.herosplit__h {
+  font-size: var(--t-3xl);
+  max-width: 15ch;
+}
+.herosplit__p {
+  max-width: 40ch;
+  margin-top: var(--s-5);
+  font-size: var(--t-md);
+  color: var(--c-muted);
+  line-height: var(--lh-lead);
+}
+.herosplit__acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-6);
+  margin-top: var(--s-7);
+}
+
+/* Tablet, ještě jeden sloupec: 3:4 na tak široké kartě je zbytečně vysoké
+   a odsouvá text daleko pod scroll. Širší poměr, dokud se nerozdělí na dva sloupce. */
+@media (min-width: 48em) and (max-width: 61.9375em) {
+  .herosplit__photo.ph--hero { --ph-ar: var(--ar-wide); }
+}
+
+@media (min-width: 62em) {
+  .herosplit__in {
+    grid-template-columns: minmax(0, 7fr) auto minmax(0, 6fr);
+    align-items: center;
+    gap: var(--s-8);
+  }
+  /* Foto na desktopu vyšší sloupec než mobilní karta — ar-portrait (4:5)
+     místo ar-hero (3:4), aby ve dvousloupcové sestavě nebylo přehnaně úzké. */
+  .herosplit__photo.ph--hero { --ph-ar: var(--ar-portrait); }
+  .herosplit__kota { align-self: stretch; }
+  .herosplit__h { font-size: var(--t-4xl); max-width: 13ch; }
+}
+
+/* --------------------------------------------------------------------------
+   CITÁT — tichá sekce, hodně vzduchu
+   -------------------------------------------------------------------------- */
+
+.pull { display: grid; gap: var(--s-7); align-items: center; }
+
+/* Citát rámuje kótovací linka — stejná značka jako .kota, jen zabudovaná.
+   Čte se jako výkresová kóta, ne jako dekorativní uvozovka. */
+.pull__q {
+  margin: 0;
+  position: relative;
+  padding-top: var(--s-6);
+}
+.pull__q::before,
+.pull__q::after {
+  content: "";
+  position: absolute;
+  background: var(--c-line-strong);
+}
+.pull__q::before {          /* vodorovná linka nad citátem */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--hair);
+}
+.pull__q::after {           /* levá krajní značka kóty */
+  top: -3px;
+  left: 0;
+  width: var(--hair);
+  height: 7px;
+}
+
+.pull__t {
+  font-family: var(--f-display);
+  /* Mezistupeň mezi --t-xl a --t-2xl. Citát má být větší než dřív,
+     ale hlavní citát je dlouhý a v plné velikosti H2 by se rozlil do deseti řádků. */
+  font-size: clamp(1.625rem, 1.22rem + 1.7vw, 2.375rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: var(--ls-tight);
+  max-width: 22ch;
+  text-wrap: pretty;
+}
+
+/* Doplňující věta pod citátem. Drží se zpátky, aby citát zůstal hlavní. */
+.pull__sub {
+  margin-top: var(--s-5);
+  max-width: 34ch;
+  font-size: var(--t-md);
+  line-height: var(--lh-lead);
+  color: var(--c-muted);
+}
+
+.pull__by {
+  display: block;
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: var(--hair) solid var(--c-line);
+  max-width: 14rem;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-style: normal;
+}
+
+@media (min-width: 62em) {
+  /* Citát dostává víc plochy než fotka — fotka je doprovod, ne protiváha. */
+  .pull { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: var(--s-9); }
+  .pull__t { max-width: 28ch; }
+}
+
+/* --------------------------------------------------------------------------
+   KARTY OBLASTÍ — vizuální rozcestník tvorby
+   Hover neškáluje. Obrázek se ztlumí a název podtrhne vlasová linka.
+   -------------------------------------------------------------------------- */
+
+.cards {
+  display: grid;
+  gap: var(--s-5) var(--s-4);
+  grid-template-columns: 1fr;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.cards > li { margin: 0; }
+
+.card { display: block; text-decoration: none; color: inherit; }
+.card__art { position: relative; overflow: hidden; }
+.card__art .ph__frame {
+  transition: background var(--dur-slow) var(--ease),
+              border-color var(--dur-slow) var(--ease);
+}
+.card:hover .ph__frame { background: var(--c-paper-deep); border-color: var(--c-accent); }
+.card:hover .ph__icon { color: var(--c-accent); opacity: 1; }
+
+.card__meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+.card__h {
+  font-family: var(--f-display);
+  font-size: var(--t-md);
+  letter-spacing: var(--ls-head);
+  position: relative;
+}
+.card__h::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: var(--hair);
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.card:hover .card__h::after { transform: scaleX(1); }
+.card__p {
+  margin: var(--s-3) 0 0;
+  font-size: var(--t-sm);
+  color: var(--c-muted);
+  max-width: 34ch;
+}
+
+@media (min-width: 40em)  { .cards { grid-template-columns: repeat(2, 1fr); gap: var(--s-6) var(--s-5); } }
+@media (min-width: 68em)  { .cards { grid-template-columns: repeat(3, 1fr); gap: var(--s-7) var(--s-5); } }
+/* Prostřední sloupec je posunutý dolů. Skutečná asymetrie, ne jen větší mezera. */
+@media (min-width: 68em) {
+  .cards > li:nth-child(3n+2) { margin-top: var(--s-7); }
+}
+
+/* --------------------------------------------------------------------------
+   PRUH LOG — pomalý, nenápadný posun
+   Stopu zdvojuje JS, aby smyčka navazovala bez ohledu na počet log.
+   -------------------------------------------------------------------------- */
+
+.logos {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--s-5);
+  border-block: var(--hair) solid var(--c-line);
+  /* Okraje se rozplývají, ať pruh nekončí useknutě. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.logos__track {
+  display: flex;
+  align-items: center;
+  gap: var(--s-7);
+  width: max-content;
+  margin: 0; padding: 0;
+  list-style: none;
+  animation: logos-slide 64s linear infinite;
+}
+.logos:hover .logos__track,
+.logos:focus-within .logos__track { animation-play-state: paused; }
+.logos__track > li { margin: 0; flex: 0 0 auto; }
+
+.logo {
+  display: grid;
+  place-content: center;
+  width: 9.5rem;
+  height: 3.25rem;
+  padding: var(--s-2);
+  border: var(--hair) dashed var(--c-line-strong);
+  background: var(--c-paper-deep);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+@keyframes logos-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - var(--s-7) / 2)); }
+}
+
+/* Bez animace se pruh zalomí do statické řady. */
+@media (prefers-reduced-motion: reduce) {
+  .logos { -webkit-mask-image: none; mask-image: none; }
+  .logos__track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    gap: var(--s-4);
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Soubor ke stažení (osvědčení, studie v PDF)
+   -------------------------------------------------------------------------- */
+
+.file {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+  border: var(--hair) solid var(--c-line-strong);
+  text-decoration: none;
+  transition: border-color var(--dur-base) var(--ease),
+              background var(--dur-base) var(--ease);
+}
+.file:hover { border-color: var(--c-accent); background: var(--c-paper-deep); }
+.file__ext {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  color: var(--c-accent);
+}
+.file__n { font-size: var(--t-sm); }
+.file__s { font-size: var(--t-xs); color: var(--c-muted); }
+
+/* Soubor, který zatím nemáme. Není to odkaz, protože by nevedl nikam. */
+.file--soon { cursor: default; border-style: dashed; }
+.file--soon:hover { border-color: var(--c-line-strong); background: transparent; }

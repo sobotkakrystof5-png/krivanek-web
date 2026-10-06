@@ -1,0 +1,590 @@
+/* ==========================================================================
+   KOMPONENTY — Ateliér Křivánek
+   Vizuální motiv: tenká technická linka (kóty, obrysy) + číslované indexy.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. EYEBROW — nadřádek s kótovací linkou
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-5);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.eyebrow::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: var(--hair);
+  background: var(--c-line-strong);
+}
+.sect--dark .eyebrow { color: var(--c-line); }
+.sect--dark .eyebrow::before { background: var(--c-muted); }
+
+/* --------------------------------------------------------------------------
+   2. INDEX — číslování fází a oblastí
+   -------------------------------------------------------------------------- */
+
+.idx {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  letter-spacing: var(--ls-index);
+  color: var(--c-accent-2);
+  font-variant-numeric: tabular-nums;
+}
+.idx--lg { font-size: var(--t-lg); }
+.idx__of { color: var(--c-muted); }
+
+/* --------------------------------------------------------------------------
+   3. KÓTA — svislá/vodorovná výkresová značka
+   Dekorace. Nikdy nenese informaci, proto aria-hidden v markupu.
+   -------------------------------------------------------------------------- */
+
+.kota {
+  display: block;
+  height: var(--hair);
+  background: var(--c-line-strong);
+  position: relative;
+}
+.kota::before,
+.kota::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: var(--hair);
+  height: 7px;
+  background: var(--c-line-strong);
+}
+.kota::before { left: 0; }
+.kota::after  { right: 0; }
+
+/* Svislá varianta — spojnice mezi zónami (např. hero foto/text). */
+.kota--v {
+  width: var(--hair);
+  height: 100%;
+}
+.kota--v::before,
+.kota--v::after {
+  top: auto;
+  left: -3px;
+  width: 7px;
+  height: var(--hair);
+}
+.kota--v::before { top: 0; }
+.kota--v::after  { bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   4. TLAČÍTKA
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-5);
+  border: var(--hair) solid var(--c-graphite);
+  border-radius: var(--r-none);
+  background: transparent;
+  color: var(--c-graphite);
+  font-family: var(--f-body);
+  font-size: var(--t-sm);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease),
+              color var(--dur-base) var(--ease),
+              border-color var(--dur-base) var(--ease);
+}
+.btn:hover {
+  background: var(--c-graphite);
+  color: var(--c-paper);
+  border-color: var(--c-graphite);
+}
+.btn--solid {
+  background: var(--c-graphite);
+  color: var(--c-paper);
+}
+.btn--solid:hover {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-paper);
+}
+
+/* Textový odkaz se šipkou. Šipka se na hover posune, nic se neškáluje. */
+.lnk {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+  color: var(--c-accent);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.lnk::after {
+  content: "→";
+  font-family: var(--f-mono);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.lnk:hover { color: var(--c-accent); }
+.lnk:hover::after { transform: translateX(0.28em); }
+.lnk .lnk__txt {
+  border-bottom: var(--hair) solid transparent;
+  transition: border-color var(--dur-base) var(--ease);
+}
+.lnk:hover .lnk__txt { border-bottom-color: var(--c-accent); }
+
+/* Tišší varianta — vedle .btn--solid nesmí soupeřit o pozornost. */
+.lnk--quiet { color: var(--c-muted); font-size: var(--t-xs); }
+.lnk--quiet:hover { color: var(--c-graphite); }
+.lnk--quiet:hover .lnk__txt { border-bottom-color: var(--c-graphite); }
+
+/* --------------------------------------------------------------------------
+   5. PLACEHOLDER FOTKY
+   Pevný aspect-ratio, aby dosazení reálné fotky nezměnilo layout.
+   Rohové značky jsou výkresové ořezové značky, ne dekorace pro dekoraci.
+   -------------------------------------------------------------------------- */
+
+.ph { margin: 0; }
+
+.ph__frame {
+  position: relative;
+  display: grid;
+  place-content: center;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  aspect-ratio: var(--ph-ar, var(--ar-landscape));
+  background: var(--c-paper-edge);
+  border: var(--hair) dashed var(--c-line-strong);
+  text-align: center;
+  overflow: hidden;
+}
+.ph__frame::before,
+.ph__frame::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  border: var(--hair) solid var(--c-line-strong);
+  pointer-events: none;
+}
+.ph__frame::before { top: 6px; left: 6px; border-right: 0; border-bottom: 0; }
+.ph__frame::after { bottom: 6px; right: 6px; border-left: 0; border-top: 0; }
+
+.ph__icon { width: 26px; height: 26px; margin-inline: auto; color: var(--c-muted); opacity: 0.7; }
+.ph__label {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  max-width: 24ch;
+}
+.ph__cap {
+  margin-top: var(--s-3);
+  font-size: var(--t-sm);
+  color: var(--c-muted);
+}
+
+.ph--hero      { --ph-ar: var(--ar-hero); }
+.ph--wide      { --ph-ar: var(--ar-wide); }
+.ph--landscape { --ph-ar: var(--ar-landscape); }
+.ph--square    { --ph-ar: var(--ar-square); }
+.ph--portrait  { --ph-ar: var(--ar-portrait); }
+.ph--band      { --ph-ar: var(--ar-band); }
+
+/* Rozklikávací varianta — galerie a podstránky oblastí. */
+.ph__btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+.ph__btn .ph__frame {
+  transition: border-color var(--dur-base) var(--ease),
+              background var(--dur-base) var(--ease);
+}
+.ph__btn:hover .ph__frame {
+  border-color: var(--c-accent);
+  background: var(--c-paper-deep);
+}
+.ph__btn:hover .ph__icon { opacity: 1; color: var(--c-accent); }
+
+/* --------------------------------------------------------------------------
+   6. HLAVIČKA A NAVIGACE
+   -------------------------------------------------------------------------- */
+
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-head);
+  border-bottom: var(--hair) solid var(--c-line);
+}
+/* Podklad s rozmazáním je na pseudoprvku, ne na .hdr samotné. backdrop-filter
+   na rodiči z něj dělá containing block pro position:fixed potomky, takže
+   mobilní menu (.mnav, inset od 4.5rem dolů) se měřilo podle hlavičky místo
+   podle okna a mělo na výšku jen pár desítek pixelů. */
+.hdr::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: color-mix(in srgb, var(--c-paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+}
+.hdr__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  min-height: 4.5rem;
+}
+
+.mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--c-graphite);
+  line-height: 1;
+}
+.mark:hover { color: var(--c-graphite); }
+.mark__name {
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  letter-spacing: var(--ls-head);
+}
+.mark__sub {
+  font-family: var(--f-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.nav { display: none; }
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.nav__list li { margin: 0; }
+.nav__a {
+  position: relative;
+  display: block;
+  padding: var(--s-2) 0;
+  font-size: var(--t-sm);
+  text-decoration: none;
+  color: var(--c-graphite);
+  letter-spacing: 0.01em;
+}
+/* Aktivní položku drží vlasová linka, ne barevná plocha. */
+.nav__a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: var(--hair);
+  background: var(--c-graphite);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.nav__a:hover { color: var(--c-accent); }
+.nav__a:hover::after { transform: scaleX(1); background: var(--c-accent); }
+.nav__a[aria-current] { color: var(--c-accent); }
+.nav__a[aria-current]::after { transform: scaleX(1); background: var(--c-accent); }
+
+/* Rozbalovací nabídka u Galerie — šest oblastí, každá vede na svou
+   podstránku (/galerie/slug/). Na podstránce má Galerie aria-current="true"
+   a odkaz oblasti aria-current="page". Myší se otevře najetím, klávesnicí tlačítkem
+   se šipkou (aria-expanded, řídí site.js). Skryté odkazy mají
+   visibility:hidden, takže je Tab přeskočí, dokud je nabídka zavřená. */
+.nav__dd {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav__ddbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--c-muted);
+  cursor: pointer;
+}
+.nav__ddbtn svg {
+  width: 14px; height: 14px;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.nav__ddbtn:hover { color: var(--c-accent); }
+.nav__sub {
+  position: absolute;
+  /* Horní hrana panelu sedí na spodní lince hlavičky. */
+  top: calc(100% + 1.25rem);
+  left: calc(-1 * var(--s-4));
+  min-width: 19rem;
+  margin: 0;
+  padding: var(--s-3) 0;
+  list-style: none;
+  background: var(--c-paper);
+  border: var(--hair) solid var(--c-line);
+  border-top: 0;
+  box-shadow: 0 18px 32px -24px rgb(0 0 0 / 0.35);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              visibility 0s linear var(--dur-fast);
+}
+/* Neviditelný most přes mezeru mezi položkou a panelem, ať se nabídka
+   při přejetí myší dolů nezavře. */
+.nav__sub::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 100%;
+  height: 1.25rem;
+}
+.nav__dd:hover .nav__sub,
+.nav__dd.is-open .nav__sub {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              visibility 0s linear 0s;
+}
+.nav__dd:hover .nav__ddbtn svg,
+.nav__dd.is-open .nav__ddbtn svg { transform: rotate(180deg); }
+.nav__sub li { margin: 0; }
+.nav__suba {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-4);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  color: var(--c-graphite);
+}
+.nav__suba:hover,
+.nav__suba:focus-visible { color: var(--c-accent); background: var(--c-paper-deep); }
+.nav__suba[aria-current="page"] { color: var(--c-accent); }
+.nav__subnum {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-accent-2);
+}
+
+.hdr__cta { display: none; }
+
+/* Přepínač mobilního menu */
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px; height: 44px;
+  padding: 0 10px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.burger__bar {
+  display: block;
+  height: var(--hair);
+  background: var(--c-graphite);
+  transition: transform var(--dur-base) var(--ease),
+              opacity var(--dur-fast) var(--ease);
+}
+.burger[aria-expanded="true"] .burger__bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] .burger__bar:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] .burger__bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mnav {
+  position: fixed;
+  inset: 4.5rem 0 0;
+  z-index: var(--z-menu);
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-6) var(--gutter) var(--s-8);
+  background: var(--c-paper);
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  /* Viditelnost se při zavírání přepne až po dojetí průhlednosti, při otevírání
+     okamžitě. Kdyby byla v přechodu, focus() na první odkaz by po otevření
+     neudělal nic, protože panel by se pořád počítal jako skrytý. */
+  transition: opacity var(--dur-base) var(--ease),
+              visibility 0s linear var(--dur-base);
+}
+.mnav[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--dur-base) var(--ease), visibility 0s linear 0s;
+}
+.mnav__list { margin: 0 0 var(--s-6); padding: 0; list-style: none; }
+.mnav__list li { margin: 0; border-bottom: var(--hair) solid var(--c-line); }
+.mnav__a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding: var(--s-4) 0;
+  font-family: var(--f-display);
+  font-size: var(--t-lg);
+  text-decoration: none;
+}
+.mnav__a[aria-current] { color: var(--c-accent); }
+/* Oblasti galerie v mobilním menu — vždy rozbalené, odsazené pod textem
+   položky Galerie (za číslem). */
+.mnav__sub {
+  margin: calc(-1 * var(--s-2)) 0 0;
+  padding: 0 0 var(--s-3) calc(var(--s-4) + 0.95rem);
+  list-style: none;
+}
+.mnav__list .mnav__sub li { border-bottom: 0; }
+.mnav__suba {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--t-base);
+  text-decoration: none;
+  color: var(--c-graphite);
+}
+.mnav__suba:hover,
+.mnav__suba[aria-current="page"] { color: var(--c-accent); }
+.mnav__num {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-muted);
+}
+
+@media (min-width: 62em) {
+  .nav, .hdr__cta { display: block; }
+  .burger, .mnav { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   7. PATIČKA
+   -------------------------------------------------------------------------- */
+
+.ftr {
+  background: var(--c-graphite);
+  color: var(--c-paper);
+  padding-block: var(--sect-base) var(--s-6);
+}
+.ftr a { color: var(--c-paper); text-decoration-color: var(--c-muted); }
+.ftr a:hover { color: var(--c-accent-soft); text-decoration-color: var(--c-accent-soft); }
+
+.ftr__grid {
+  display: grid;
+  gap: var(--s-7);
+  grid-template-columns: 1fr;
+}
+.ftr__claim {
+  max-width: 30ch;
+  margin-top: var(--s-4);
+  color: var(--c-line);
+  font-size: var(--t-sm);
+  line-height: var(--lh-lead);
+}
+.ftr__h {
+  margin: 0 0 var(--s-4);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-weight: 400;
+}
+.ftr__list { margin: 0; padding: 0; list-style: none; font-size: var(--t-sm); }
+.ftr__list li { margin-bottom: var(--s-3); }
+.ftr__list a { text-decoration: none; }
+.ftr__list a:hover { text-decoration: underline; }
+
+.ftr__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  justify-content: space-between;
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: var(--hair) solid var(--c-graphite-sub);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-muted);
+}
+
+@media (min-width: 48em) {
+  .ftr__grid { grid-template-columns: 1.4fr 1fr 1fr; gap: var(--s-6); }
+}
+
+/* --------------------------------------------------------------------------
+   8. HLAVIČKA STRÁNKY
+   -------------------------------------------------------------------------- */
+
+.phead { padding-block: var(--sect-base) var(--sect-tight); }
+.phead__h { max-width: 18ch; }
+.phead .lead { margin-top: var(--s-5); }
+
+/* --------------------------------------------------------------------------
+   9. UZAVÍRACÍ CTA PRUH
+   -------------------------------------------------------------------------- */
+
+.cta { padding-block: var(--sect-base); text-align: center; }
+.cta__h { max-width: 20ch; margin-inline: auto; }
+.cta__p { margin-top: var(--s-4); color: var(--c-line); }
+.cta__acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  justify-content: center;
+  margin-top: var(--s-6);
+}
+.cta .btn { border-color: var(--c-paper); color: var(--c-paper); }
+.cta .btn:hover { background: var(--c-paper); color: var(--c-graphite); }
+.cta .btn--solid { background: var(--c-paper); color: var(--c-graphite); }
+.cta .btn--solid:hover { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-paper); }
+
+/* --------------------------------------------------------------------------
+   10. ANIMACE PŘI SCROLLU
+   Jemné, jen posun a průhlednost, s krátkým odstupem. Žádné plošné efekty.
+   -------------------------------------------------------------------------- */
+
+.rise {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+.rise.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { opacity: 1; transform: none; }
+}
+
+/* Drobný štítek u kontaktu v patičce */
+.ftr__k {
+  font-family: var(--f-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
