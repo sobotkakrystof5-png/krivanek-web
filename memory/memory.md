@@ -49,6 +49,13 @@ Ať to příští session neopraví jako chybu.
 
 Nejnovější nahoře.
 
+### 2026-10-06 — Projekt nahrán na GitHub
+
+- **Co:** Ve složce projektu založen samostatný git repozitář (větev `main`) a pushnut do veřejného repa https://github.com/sobotkakrystof5-png/krivanek-web. `.gitignore` vynechává `.vscode/` a `.DS_Store`, všechno ostatní (včetně `CLAUDE.md`, `AGENTS.md`, `memory/`, briefu a `.claude/skills`) je v repu.
+- **Proč:** na pokyn uživatele. Název a viditelnost (public) zvolil sám.
+- **Dopad:** Dřív projekt neměl vlastní repo, git ho viděl jen jako nesledovanou složku v repu celého domovského adresáře (`~`, remote EstatIQ). Teď má vlastní `.git`, takže `git` příkazy ve složce míří na `krivanek-web`. Do domovského repa se tahle složka přidávat nemá. Repo je veřejné, interní brief a paměť jsou tedy vidět všem.
+- **Soubory:** `.gitignore` (nový)
+
 ### 2026-10-06 — Tlačítko v hlavičce: „Kontaktujte mě" místo „Ozvěte se"
 
 - **Co:** Text tlačítka vedoucího na `/kontakt/` v hlavičce i v mobilním menu změněn z „Ozvěte se" na „Kontaktujte mě".
