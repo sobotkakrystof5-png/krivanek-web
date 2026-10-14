@@ -5,9 +5,9 @@ Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `prav
 ## Aktuální stav
 
 - **Projekt:** web Ateliér Křivánek (Ing. Tomáš Křivánek, architekt; Mladá Boleslav / Bradlec)
-- **Fáze:** první úplná verze webu stojí — všech 19 stránek, styly, JS, SEO soubory. Čeká se na potvrzení palety klientem a na podklady (fotky, logo, IČO, PDF).
+- **Fáze:** druhá verze po připomínkách klienta (2026-10-14): techničtější vzhled (Archivo + rastr), Proces, Sesterské společnosti, tým. 21 stránek. Čeká se na podklady (fotky, logo, IČO, PDF, údaje Projekt 360, příjmení Terezy).
 - **Stack:** čisté HTML5 + CSS + Vanilla JS, žádný framework, žádný build step, žádný backend, žádný formulář; vícestránkový web (vlastní URL per stránka)
-- **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 19 stránek + `404.html`, 5 CSS souborů, 3 JS moduly, `sitemap.xml`, `robots.txt`. Reálné fotky nejsou, všechny sloty jsou označené placeholdery.
+- **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 21 stránek + `404.html`, 5 CSS souborů, 3 JS moduly, `sitemap.xml`, `robots.txt`. Reálné fotky nejsou, všechny sloty jsou označené placeholdery.
 
 ## Klíčová rozhodnutí
 
@@ -26,14 +26,24 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 - **2026-10-06** — Galerie má pro každou ze šesti oblastí vlastní podstránku `/galerie/<slug>/` (slugy stejné jako `/co-navrhuji/<slug>/`); `/galerie/` je jen rozcestník bez filtru a bez „Vše". Na pokyn uživatele, který vědomě zvolil tuhle variantu místo prolinkování na existující podstránky Co navrhuji. **Daň:** stejné fotky jsou na dvou místech (Co navrhuji + Galerie), při dosazování reálných fotek se musí měnit v obou.
 - **2026-09-25** — Hero na `/` je rozdělený na dvě zóny (foto | kótová linka `.kota--v` | text), ne celoplošný overlay s podloženou fotkou. Na pokyn uživatele po auditu hero sekce — overlay verze byla vyhodnocena jako šablonovitá a motiv (technická linka) by zmizel po dosazení reálné fotky. Nezvracet zpátky na overlay bez nového pokynu.
 
+- **2026-10-14** — Designový systém „techničtější, modernější“ na pokyn klienta: studená šedobílá `#F4F5F3`, technický rastr jen pod hero a hlavičkami stránek, Archivo (nadpisy rozšířené) + IBM Plex Mono. Nahrazuje teplý papír a Source Serif. Akcent modrá/zelená z loga beze změny.
+- **2026-10-14** — „Spolupráce“ je v navigaci „Proces“ na URL `/proces/`. Sesterské společnosti (KROOS, Projekt 360) mají vlastní sekci `/sesterske-spolecnosti/` s rozbalovací nabídkou v navigaci. KROOS je „sesterská“, ne „dceřiná“ společnost a na webu není odkaz na kroossro.cz.
+- **2026-10-14** — Na webu se nikde neuvádí „dříve / původním názvem Ateliér v Zelené“ (výslovný pokyn klienta).
+- **2026-10-14** — Web zůstává v první osobě (Tomáš). Tým (dcera Tereza, Lucie Křivánková) je představený na O ateliéru, ale domlouvá se dál s Tomášem.
+
 ## Otevřené otázky
 
 Čeká na uživatele/klienta. Po zodpovězení se maže, odpověď jde do Klíčových rozhodnutí nebo changelogu.
 
+- Příjmení Ing. arch. Terezy (dcera) — na `/o-atelieru/` je `[DOPLNIT: příjmení]`.
+- Projekt 360 s.r.o. — sídlo, IČO, jednatel, plátce DPH, případný web. Na stránce `[DOPLNIT]`, kontakt zatím převzatý z ateliéru (ověřit).
+- Fotky týmu (tři portréty 4:5) — nedodány.
+- Lucie Křivánková — jen „ČVUT fakulta architektura“, nevíme, zda studuje nebo dostudovala; web uvádí jen fakultu.
+
 - Reálné fotky — nedodány.
 - Cílová klíčová slova pro SEO — nedodán měřený seznam (Collabim apod.); keywords se nevymýšlí.
 - Kontaktní údaje — telefon, e-mail, přesná adresa ateliéru, IČO/DIČ. Nedodáno, v kódu jsou označené placeholdery `[DOPLNIT: …]`. Mapa na `/kontakt/` zůstává zakomentovaná, dokud nebude adresa.
-- Text o KROOS s.r.o. — kromě „interiéry a nábytek, dceřiná společnost" nemáme podklad.
+- Text o KROOS s.r.o. — máme: interiéry a nábytek, sesterská společnost, stejný kontakt a jednatel jako ateliér, plátce DPH. IČO nedodáno.
 - Milníky do časové osy na `/o-atelieru/` kromě 1991, 1997 a přejmenování — nedodány, nedomýšlí se.
 
 ## Záměrně nedokončeno
@@ -48,6 +58,15 @@ Ať to příští session neopraví jako chybu.
 ## Changelog
 
 Nejnovější nahoře.
+
+### 2026-10-14 — Redesign a obsah podle připomínek klienta
+
+- **Co:** (1) Vzhled: studená šedobílá místo teplého papíru, jemný technický rastr (pseudoprvek `::before` s maskou) pod `.herosplit` a `.phead`, písmo Archivo (nadpisy `font-stretch: 112%`, váha 500) + IBM Plex Mono místo Source Serif 4 + Plex Sans. (2) „Původním názvem Ateliér v Zelené“ odstraněno z patičky, Kontaktu a schema (`alternateName`). (3) `/spoluprace/` → `/proces/`, v navigaci „Proces“. (4) Místo položky KROOS „Sesterské společnosti“ s rozbalovací nabídkou (vzor `.nav__dd` jako Galerie): `/sesterske-spolecnosti/` (rozcestník, `.cards--two`), `/sesterske-spolecnosti/kroos/` (přesunuto z `/kroos/`), `/sesterske-spolecnosti/projekt-360/` (nová). KROOS bez odkazu na kroossro.cz, s jednatelem, kontaktem ateliéru a „plátce DPH“. „Dceřiná“ → „sesterská“ všude. (5) Tým na `/o-atelieru/` (`.team`, tři portréty), lead stránky přepsán (dřív tvrdil „žádné projektové týmy“), zmínka o týmu na Domů pod citátem. Na Domů nový blok sesterských společností (`.sister`), na Proces věta o realizaci přes Projekt 360. (6) Desktopová navigace až od 75em (dřív 62em) v CSS i `site.js`.
+- **Proč:** připomínky klienta předané uživatelem. Volby písma (Archivo + Plex Mono), pozadí (studená bílá + rastr jen v hero/hlavičkách) a názvu (KROOS, ne „KROSS“ z poznámek) potvrdil uživatel. Poznámku klienta „Firmy – budeme“ uživatel nařídil ignorovat; web dál mluví v první osobě.
+- **Dopad:** Změna designového systému (brief §2 má poznámku, platí `tokens.css`). Hlavička a patička se synchronizují v 21 stránkách. `subOrganization` ze schema na Domů odstraněno (sesterská firma není podorganizace a nemáme ověřená data). Sitemap: −2, +4 URL. Kontrasty přepočítány proti novému papíru, všechny nad AA (zelená na `--c-paper-deep` 4.56:1, nejtěsnější).
+- **Ověřeno:** 21 URL ze sitemap vrací 200, `/spoluprace/` a `/kroos/` 404, žádný rozbitý interní odkaz, jeden H1 na stránku. Headless Chrome: žádné vodorovné přetékání 320–1440 px, navigace se nezalamuje, obě rozbalovací nabídky (hover, tlačítko, Esc), mobilní menu s podpoložkami, lightbox na Projekt 360, fonty Archivo + Plex Mono načtené, konzole bez chyb.
+- **Co nefungovalo:** (1) Maska rastru nasazená přímo na sekci rozpouštěla i obsah; přesunuto na `::before`. (2) Se sedmi položkami a „Sesterské společnosti“ se desktopová navigace na 1024–1100 px lámala na dva řádky; breakpoint posunut na 75em, pod ním burger.
+- **Soubory:** `assets/css/{tokens,base,components,pages}.css`, `assets/js/site.js`, všechny stránky (font, hlavička, patička), `index.html`, `o-atelieru/`, `proces/` (dříve `spoluprace/`), `sesterske-spolecnosti/` (nové), `kontakt/`, `co-navrhuji/`, `co-navrhuji/interiery/`, `sitemap.xml`, `AGENTS.md`, `README.md`, brief
 
 ### 2026-10-06 — Projekt nahrán na GitHub
 

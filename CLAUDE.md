@@ -47,10 +47,10 @@ Před každou změnou kódu nebo novým promptem:
 ## 4. KONTEXT PROJEKTU (SHRNUTÍ)
 
 - **Klient:** Ateliér Křivánek (Ing. Tomáš Křivánek, architekt) — přejmenování z „Ateliér v Zelené“. Návrhy staveb, projektová a inženýrská činnost, interiéry. Mladá Boleslav / Bradlec, v oboru od 1991, ateliér od 1997.
-- **Obor/nabídka:** architektonické návrhy a studie, projekty ke stavebnímu povolení, prováděcí dokumentace, inženýrská činnost, energetické průkazy (MPO č. 799), interiéry; dceřiná společnost KROOS s.r.o. (interiéry a nábytek).
+- **Obor/nabídka:** architektonické návrhy a studie, projekty ke stavebnímu povolení, prováděcí dokumentace, inženýrská činnost, energetické průkazy (MPO č. 799), interiéry; sesterské společnosti KROOS s.r.o. (interiéry a nábytek) a Projekt 360 s.r.o. (realizace vlastních projektů).
 - **Stack:** čisté HTML/CSS/Vanilla JS, žádný build step, žádný backend, žádný formulář. Závazné rozhodnutí.
 - **Struktura:** vícestránkový web (multi-page, vlastní URL per stránka). Závazné rozhodnutí, ne k tichému přehodnocení. Routes viz brief sekce 4.
-- **Design:** pokora, jednoduchost, čistota, architektonický klid. Papírová bílá + grafitová + střídmý akcent. Vizuální motiv: tenká technická linka (kóty, řezy, obrysy) + číslované indexy fází. Referenční layout: skill craftsman-site-layout (přebírá se STRUKTURA a hierarchie, ne barvy/copy reference).
+- **Design:** pokora, jednoduchost, čistota, architektonický klid. Od 2026-10-14 techničtější: studená šedobílá + grafit + akcent modrá/zelená z loga, písmo Archivo + IBM Plex Mono. Vizuální motiv: tenká technická linka (kóty, řezy, obrysy, rastr) + číslované indexy fází. Referenční layout: skill craftsman-site-layout (přebírá se STRUKTURA a hierarchie, ne barvy/copy reference).
 - **Fotky:** projekt je v návrhové fázi — každý slot fotky je prázdný, zřetelně označený placeholder. Fotky jsou v každé sekci (ne jen v galerii), v galerii a na podstránkách oblastí jsou rozklikávací (lightbox). Reálné fotky se dosadí po schválení návrhu; placeholdery nenahrazuj bez podkladu.
 - **Nejvyšší priorita:** originalita, žádný šablonovitý AI vzhled (brief sekce 0), pokorná a důvěryhodná prezentace.
 

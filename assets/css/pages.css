@@ -71,6 +71,7 @@
 }
 .state__t {
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-xl);
   line-height: 1.42;
   letter-spacing: var(--ls-head);
@@ -104,6 +105,7 @@
 .area:hover { color: var(--c-accent); padding-left: var(--s-4); }
 .area__h {
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-lg);
   letter-spacing: var(--ls-head);
 }
@@ -172,6 +174,7 @@
 .flow__h {
   margin: var(--s-2) 0 var(--s-2);
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-md);
 }
 .flow__p { margin: 0; font-size: var(--t-sm); color: var(--c-muted); }
@@ -272,6 +275,7 @@
 .quote { margin: 0; }
 .quote__t {
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-xl);
   line-height: 1.38;
   letter-spacing: var(--ls-head);
@@ -327,7 +331,7 @@
   text-transform: uppercase;
   color: var(--c-muted);
 }
-.near__h { font-family: var(--f-display); font-size: var(--t-md); }
+.near__h { font-family: var(--f-display); font-stretch: var(--fs-display); font-size: var(--t-md); }
 @media (min-width: 48em) { .near { grid-template-columns: repeat(3, 1fr); gap: var(--s-5); } }
 
 /* Číslovaný seznam kroků uvnitř textu */
@@ -519,6 +523,7 @@
 
 .pull__t {
   font-family: var(--f-display);
+  font-stretch: 100%;  /* citát v běžné šířce, rozšířený řez by na 22ch roztáhl řádky */
   /* Mezistupeň mezi --t-xl a --t-2xl. Citát má být větší než dřív,
      ale hlavní citát je dlouhý a v plné velikosti H2 by se rozlil do deseti řádků. */
   font-size: clamp(1.625rem, 1.22rem + 1.7vw, 2.375rem);
@@ -589,6 +594,7 @@
 }
 .card__h {
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-md);
   letter-spacing: var(--ls-head);
   position: relative;
@@ -704,3 +710,57 @@
 /* Soubor, který zatím nemáme. Není to odkaz, protože by nevedl nikam. */
 .file--soon { cursor: default; border-style: dashed; }
 .file--soon:hover { border-color: var(--c-line-strong); background: transparent; }
+
+/* Rozcestník se dvěma kartami (Sesterské společnosti): na desktopu zůstávají
+   dva sloupce, třetí prázdný sloupec by vypadal jako chyba. */
+@media (min-width: 68em) {
+  .cards--two { grid-template-columns: repeat(2, 1fr); }
+  .cards--two > li:nth-child(3n+2) { margin-top: 0; }
+  .cards--two > li:nth-child(2) { margin-top: var(--s-7); }
+}
+
+/* --------------------------------------------------------------------------
+   TÝM (O ateliéru) — tři portréty vedle sebe, jméno a role pod fotkou
+   -------------------------------------------------------------------------- */
+
+.team {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-7) var(--s-5);
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.team > li { margin: 0; }
+.team__h {
+  margin-top: var(--s-4);
+  font-size: var(--t-md);
+}
+.team__r {
+  margin-top: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+@media (min-width: 40em) { .team { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 62em) {
+  .team { grid-template-columns: repeat(3, 1fr); }
+  .team > li:nth-child(2) { margin-top: var(--s-7); }
+}
+
+/* --------------------------------------------------------------------------
+   SESTERSKÉ SPOLEČNOSTI (Domů) — dvě položky s indexem, oddělené linkou
+   -------------------------------------------------------------------------- */
+
+.sister { margin: 0; padding: 0; list-style: none; }
+.sister > li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-4);
+  margin: 0;
+  padding-block: var(--s-5);
+  border-top: var(--hair) solid var(--c-line-strong);
+}
+.sister__h { font-size: var(--t-md); }
+.sister__p { margin: var(--s-2) 0 var(--s-3); color: var(--c-muted); }

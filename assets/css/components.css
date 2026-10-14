@@ -262,6 +262,8 @@
 .mark:hover { color: var(--c-graphite); }
 .mark__name {
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
+  font-weight: 600;
   font-size: var(--t-lg);
   letter-spacing: var(--ls-head);
 }
@@ -448,6 +450,7 @@
   gap: var(--s-4);
   padding: var(--s-4) 0;
   font-family: var(--f-display);
+  font-stretch: var(--fs-display);
   font-size: var(--t-lg);
   text-decoration: none;
 }
@@ -476,7 +479,9 @@
   color: var(--c-muted);
 }
 
-@media (min-width: 62em) {
+/* Desktopová navigace až od 75em (1200 px). Se sedmi položkami a dvěma
+   rozbalovacími nabídkami se pod touhle šířkou lámala na dva řádky. */
+@media (min-width: 75em) {
   .nav, .hdr__cta { display: block; }
   .burger, .mnav { display: none; }
 }
@@ -541,6 +546,36 @@
    -------------------------------------------------------------------------- */
 
 .phead { padding-block: var(--sect-base) var(--sect-tight); }
+
+/* Technický rastr (milimetrový papír) pod hlavičkou podstránky a hero na Domů.
+   Jemná síť po --grid-size, sytější čára po --grid-major. Maska ho dole
+   rozpouští do čistého papíru, aby nevznikal tvrdý okraj sekce. */
+.phead,
+.herosplit {
+  position: relative;
+  isolation: isolate;
+}
+.phead::before,
+.herosplit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right,  var(--grid-line-maj) var(--hair), transparent var(--hair)),
+    linear-gradient(to bottom, var(--grid-line-maj) var(--hair), transparent var(--hair)),
+    linear-gradient(to right,  var(--grid-line) var(--hair), transparent var(--hair)),
+    linear-gradient(to bottom, var(--grid-line) var(--hair), transparent var(--hair));
+  background-size:
+    var(--grid-major) var(--grid-major),
+    var(--grid-major) var(--grid-major),
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size);
+  background-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+          mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
 .phead__h { max-width: 18ch; }
 .phead .lead { margin-top: var(--s-5); }
 

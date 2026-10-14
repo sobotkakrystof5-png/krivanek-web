@@ -26,7 +26,8 @@ body {
 h1, h2, h3, h4 {
   margin: 0;
   font-family: var(--f-display);
-  font-weight: 400;
+  font-stretch: var(--fs-display);
+  font-weight: 500;
   line-height: var(--lh-head);
   letter-spacing: var(--ls-head);
   text-wrap: balance;

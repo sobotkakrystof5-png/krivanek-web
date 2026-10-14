@@ -37,10 +37,12 @@ Pak otevři `http://localhost:8080`.
 /co-navrhuji/komercni-a-sportovni-stavby/
 /co-navrhuji/interiery/
 /co-navrhuji/projekty-a-studie/
-/spoluprace/                                 proces, cena, zajištění kontaktů
+/proces/                                     proces, cena, zajištění kontaktů
 /galerie/                                    rozcestník šesti oblastí
 /galerie/<oblast>/                           fotky jedné oblasti + lightbox (6 stránek, slugy jako Co navrhuji)
-/kroos/                                      dceřiná společnost
+/sesterske-spolecnosti/                      rozcestník: KROOS, Projekt 360
+/sesterske-spolecnosti/kroos/
+/sesterske-spolecnosti/projekt-360/
 /kontakt/                                    adresa, telefony, mapa
 404.html, sitemap.xml, robots.txt
 ```
@@ -62,7 +64,7 @@ V komponentách se sahá jen přes `var(--…)`. Barva natvrdo je chyba.
 | Soubor | Co dělá | Kde se načítá |
 |---|---|---|
 | `assets/js/site.js` | Mobilní menu (focus trap, Esc) a animace při scrollu. | Všude |
-| `assets/js/lightbox.js` | Sdílený lightbox. Klávesnice, šipky, Esc, focus trap. | Podstránky galerie, oblasti, O ateliéru, Spolupráce, KROOS |
+| `assets/js/lightbox.js` | Sdílený lightbox. Klávesnice, šipky, Esc, focus trap. | Podstránky galerie, oblasti, O ateliéru, KROOS, Projekt 360 |
 | `assets/js/logos.js` | Zdvojí stopu pruhu log, aby posun navazoval. | Domů |
 
 ---
@@ -75,7 +77,7 @@ pro vyhledávače i pro robustnost. Absolutní cesty (`/o-atelieru/` místo
 `../o-atelieru/`) znamenají, že blok hlavičky i patičky je ve všech souborech
 znak po znaku stejný.
 
-**Když měníš hlavičku nebo patičku, změň ji ve všech 19 stránkách plus `404.html`.**
+**Když měníš hlavičku nebo patičku, změň ji ve všech 21 stránkách plus `404.html`.**
 Kontrola, že se nerozešly:
 
 ```bash

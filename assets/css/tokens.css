@@ -7,35 +7,44 @@
 
 :root {
   /* --- Barvy ---------------------------------------------------------------
-     Papír a grafit z briefu §2 zůstávají. Akcent přepnut na dvoubarevnou
-     modrou/zelenou podle log klienta (2026-09-23, na pokyn uživatele) —
-     nahrazuje jednobarevnou šalvěj. Modrá nese interaktivní prvky (odkazy,
-     aktivní nav, tlačítka, výběr), zelená zůstala jen u číslovaných indexů
-     (.idx) — signaturní motiv webu, tichá vazba na dřívější „V Zelené“.
-     Obě barvy odvozené přímo z dodaného loga, zelená ztmavena pro čitelnost
-     textu (originál #5BAF55 měl na papíru jen 2.52:1).
-     Ověřené kontrasty proti --c-paper:
-       grafit 15.78:1 · tlumená 5.96:1 · akcent (modrá) 9.52:1 · akcent-2 (zelená) 5.06:1
-     Ověřené kontrasty proti --c-graphite (pro *-soft varianty, text na tmavém):
+     2026-10-14 na pokyn klienta („techničtější, modernější“): teplý papír
+     nahrazen studenou šedobílou, linky do chladnějších šedí. Grafit a
+     dvoubarevný akcent z loga (modrá + zelená, 2026-09-23) beze změny.
+     Modrá nese interaktivní prvky (odkazy, aktivní nav, tlačítka, výběr),
+     zelená jen číslované indexy (.idx).
+     Ověřené kontrasty proti --c-paper (#F4F5F3):
+       grafit 15.61:1 · tlumená 6.29:1 · akcent (modrá) 9.41:1 · akcent-2 (zelená) 5.00:1
+     Proti --c-paper-deep (#E9EBE8):
+       tlumená 5.74:1 · modrá 8.58:1 · zelená 4.56:1
+     Proti --c-graphite (pro *-soft varianty, text na tmavém):
        accent-soft 4.76:1 */
-  --c-paper:        #F7F6F2;  /* dominantní pozadí, teplý papír */
-  --c-paper-deep:   #EFEDE6;  /* střídavé sekce, zapuštěné bloky */
-  --c-paper-edge:   #E7E4DC;  /* výplň placeholderů */
+  --c-paper:        #F4F5F3;  /* dominantní pozadí, studená bílá */
+  --c-paper-deep:   #E9EBE8;  /* střídavé sekce, zapuštěné bloky */
+  --c-paper-edge:   #E1E3E0;  /* výplň placeholderů */
   --c-graphite:     #1C1C1A;  /* text, inverzní pozadí */
-  --c-graphite-sub: #2C2C29;  /* tlumenější grafit na inverzi */
-  --c-muted:        #5E5F5A;  /* sekundární text */
+  --c-graphite-sub: #2A2B29;  /* tlumenější grafit na inverzi */
+  --c-muted:        #585B58;  /* sekundární text */
   --c-accent:       #183F7C;  /* modrá z loga — odkazy, aktivní stav, tlačítka */
   --c-accent-soft:  #5087DD;  /* světlejší modrá — dekorace a text na tmavém, ne na papíru */
   --c-accent-2:     #3C7637;  /* zelená z loga, ztmavená — jen číslované indexy (.idx) */
   --c-accent-2-soft:#5BAF55;  /* originální sytá zelená z loga — čistě dekorace, ne text */
-  --c-line:         #E3E1DB;  /* vlasová linka, hlavní vizuální motiv */
-  --c-line-strong:  #C6C3B8;  /* linka, která má být vidět */
+  --c-line:         #DDE0DC;  /* vlasová linka, hlavní vizuální motiv */
+  --c-line-strong:  #BEC2BD;  /* linka, která má být vidět */
+
+  /* Technický rastr (milimetrový papír) pod hero a hlavičkami stránek.
+     Jen dekorace, text na něm musí být čitelný i bez něj. */
+  --grid-size:      24px;
+  --grid-major:     120px;
+  --grid-line:      rgba(28, 28, 26, 0.045);
+  --grid-line-maj:  rgba(28, 28, 26, 0.075);
 
   /* --- Písmo ---------------------------------------------------------------
-     Source Serif 4 nadpisy, IBM Plex Sans text, IBM Plex Mono kóty a indexy. */
-  --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --f-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+     2026-10-14: Archivo (osa šířky) na nadpisy i text, nadpisy v rozšířeném
+     řezu; IBM Plex Mono zůstává na kóty a indexy. */
+  --f-display: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-body:    "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fs-display: 112%;  /* font-stretch nadpisů (SemiExpanded) */
 
   /* Plynulý typografický stupnicový systém. Poměr ~1.25 na mobilu, ~1.33 na desktopu. */
   --t-xs:   0.75rem;
@@ -53,8 +62,8 @@
   --lh-body:  1.68;
   --lh-lead:  1.55;
 
-  --ls-tight: -0.022em;  /* velké nadpisy */
-  --ls-head:  -0.012em;
+  --ls-tight: -0.018em;  /* velké nadpisy */
+  --ls-head:  -0.008em;
   --ls-wide:   0.14em;   /* eyebrow, verzálky */
   --ls-index:  0.08em;   /* číslované indexy */
 

@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/base.css">
@@ -30,7 +30,6 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Ateliér Křivánek",
-    "alternateName": "Ateliér v Zelené",
     "description": "Architektonický ateliér Ing. Tomáše Křivánka. Návrhy staveb, projektová a inženýrská činnost, interiéry. Bradlec u Mladé Boleslavi.",
     "url": "https://www.atelierkrivanek.cz/",
     "telephone": "+420603465564",
@@ -45,17 +44,6 @@
       "postalCode": "293 06",
       "addressRegion": "Středočeský kraj",
       "addressCountry": "CZ"
-    },
-    "subOrganization": {
-      "@type": "Organization",
-      "name": "KROOS s.r.o.",
-      "url": "https://www.kroossro.cz",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Jilemnického 1122",
-        "addressLocality": "Mladá Boleslav",
-        "addressCountry": "CZ"
-      }
     }
   }
   </script>
@@ -74,7 +62,7 @@
             <li><a class="nav__a" href="/" aria-current="page">Domů</a></li>
             <li><a class="nav__a" href="/o-atelieru/">O ateliéru</a></li>
             <li><a class="nav__a" href="/co-navrhuji/">Co navrhuji</a></li>
-            <li><a class="nav__a" href="/spoluprace/">Spolupráce</a></li>
+            <li><a class="nav__a" href="/proces/">Proces</a></li>
             <li class="nav__dd" data-dd>
               <a class="nav__a" href="/galerie/">Galerie</a>
               <button class="nav__ddbtn" type="button" data-dd-btn aria-expanded="false" aria-controls="nav-galerie" aria-label="Oblasti v galerii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -87,7 +75,14 @@
                 <li><a class="nav__suba" href="/galerie/projekty-a-studie/"><span class="nav__subnum" aria-hidden="true">06</span>Projekty a studie</a></li>
               </ul>
             </li>
-            <li><a class="nav__a" href="/kroos/">KROOS</a></li>
+            <li class="nav__dd" data-dd>
+              <a class="nav__a" href="/sesterske-spolecnosti/">Sesterské společnosti</a>
+              <button class="nav__ddbtn" type="button" data-dd-btn aria-expanded="false" aria-controls="nav-spolecnosti" aria-label="Sesterské společnosti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              <ul class="nav__sub" id="nav-spolecnosti">
+                <li><a class="nav__suba" href="/sesterske-spolecnosti/kroos/"><span class="nav__subnum" aria-hidden="true">01</span>KROOS s.r.o.</a></li>
+                <li><a class="nav__suba" href="/sesterske-spolecnosti/projekt-360/"><span class="nav__subnum" aria-hidden="true">02</span>Projekt 360 s.r.o.</a></li>
+              </ul>
+            </li>
             <li><a class="nav__a" href="/kontakt/">Kontakt</a></li>
         </ul>
       </nav>
@@ -110,7 +105,7 @@
         <li><a class="mnav__a" href="/" aria-current="page"><span class="mnav__num" aria-hidden="true">01</span>Domů</a></li>
         <li><a class="mnav__a" href="/o-atelieru/"><span class="mnav__num" aria-hidden="true">02</span>O ateliéru</a></li>
         <li><a class="mnav__a" href="/co-navrhuji/"><span class="mnav__num" aria-hidden="true">03</span>Co navrhuji</a></li>
-        <li><a class="mnav__a" href="/spoluprace/"><span class="mnav__num" aria-hidden="true">04</span>Spolupráce</a></li>
+        <li><a class="mnav__a" href="/proces/"><span class="mnav__num" aria-hidden="true">04</span>Proces</a></li>
         <li><a class="mnav__a" href="/galerie/"><span class="mnav__num" aria-hidden="true">05</span>Galerie</a>
           <ul class="mnav__sub" aria-label="Oblasti v galerii">
             <li><a class="mnav__suba" href="/galerie/rodinne-domy/">Rodinné domy</a></li>
@@ -121,7 +116,12 @@
             <li><a class="mnav__suba" href="/galerie/projekty-a-studie/">Projekty a studie</a></li>
           </ul>
         </li>
-        <li><a class="mnav__a" href="/kroos/"><span class="mnav__num" aria-hidden="true">06</span>KROOS</a></li>
+        <li><a class="mnav__a" href="/sesterske-spolecnosti/"><span class="mnav__num" aria-hidden="true">06</span>Sesterské společnosti</a>
+          <ul class="mnav__sub" aria-label="Sesterské společnosti">
+            <li><a class="mnav__suba" href="/sesterske-spolecnosti/kroos/">KROOS s.r.o.</a></li>
+            <li><a class="mnav__suba" href="/sesterske-spolecnosti/projekt-360/">Projekt 360 s.r.o.</a></li>
+          </ul>
+        </li>
         <li><a class="mnav__a" href="/kontakt/"><span class="mnav__num" aria-hidden="true">07</span>Kontakt</a></li>
       </ul>
       <a class="btn btn--solid" href="/kontakt/">Kontaktujte mě</a>
@@ -156,6 +156,7 @@
 
     <section class="sect sect--airy">
       <div class="rise wrap pull">
+        <div>
         <blockquote class="pull__q">
           <p class="pull__t">Při návrhu staveb věřím v individuální přístup, založený
             na dialogu a souznění s investorem, pečlivé analýze jeho potřeb, přání
@@ -163,6 +164,12 @@
             inspirace&hellip;</p>
           <cite class="pull__by">Ing. Tomáš Křivánek, architekt</cite>
         </blockquote>
+        <p class="pull__sub">Na návrzích se mnou pracuje dcera Tereza a Lucie
+          Křivánková. Zkušenost se tu potkává s čerstvým pohledem.</p>
+        <p style="margin-top: var(--s-4)">
+          <a class="lnk" href="/o-atelieru/"><span class="lnk__txt">Kdo jsme</span></a>
+        </p>
+        </div>
         <div>
           <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét architekta nebo detail stavby</span></div><figcaption class="ph__cap">Na výšku, 4:5.</figcaption></figure>
         </div>
@@ -249,7 +256,7 @@
               Samozřejmostí je vyřízení formalit celého povolovacího procesu
               a spolupráce v průběhu výstavby až po kolaudaci.</p>
             <p style="margin-top: var(--s-5)">
-              <a class="lnk" href="/spoluprace/"><span class="lnk__txt">Podrobně o spolupráci</span></a>
+              <a class="lnk" href="/proces/"><span class="lnk__txt">Celý proces krok po kroku</span></a>
             </p>
           </div>
           <div>
@@ -290,14 +297,28 @@
     <section class="sect sect--deep">
       <div class="rise wrap dual">
         <div>
-          <p class="eyebrow">Dceřiná společnost</p>
-          <h2>KROOS s.r.o.</h2>
-          <p class="lead" style="margin-top: var(--s-4)">Návrhy a realizace interiérů
-            a jejich vybavení, od návrhu až po montáž. Ve druhé řadě projekty
-            většího rozsahu.</p>
-          <p style="margin-top: var(--s-5)">
-            <a class="lnk" href="/kroos/"><span class="lnk__txt">O společnosti KROOS</span></a>
-          </p>
+          <p class="eyebrow">Sesterské společnosti</p>
+          <h2>Od výkresu ke stavbě</h2>
+          <p class="lead" style="margin-top: var(--s-4)">Návrhem to končit nemusí.
+            Vlastní projekty umíme postavit i zařídit.</p>
+          <ul class="sister" style="margin-top: var(--s-6)">
+            <li>
+              <span class="idx" aria-hidden="true">01</span>
+              <div>
+                <h3 class="sister__h">Projekt 360 s.r.o.</h3>
+                <p class="sister__p">Realizace staveb podle projektů z ateliéru.</p>
+                <a class="lnk" href="/sesterske-spolecnosti/projekt-360/"><span class="lnk__txt">O společnosti Projekt 360</span></a>
+              </div>
+            </li>
+            <li>
+              <span class="idx" aria-hidden="true">02</span>
+              <div>
+                <h3 class="sister__h">KROOS s.r.o.</h3>
+                <p class="sister__p">Návrhy a realizace interiérů a jejich vybavení, od návrhu až po montáž.</p>
+                <a class="lnk" href="/sesterske-spolecnosti/kroos/"><span class="lnk__txt">O společnosti KROOS</span></a>
+              </div>
+            </li>
+          </ul>
         </div>
         <div>
           <figure class="ph ph--wide"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: interiér realizovaný společností KROOS</span></div></figure>
@@ -333,9 +354,9 @@
             <li><a href="/">Domů</a></li>
             <li><a href="/o-atelieru/">O ateliéru</a></li>
             <li><a href="/co-navrhuji/">Co navrhuji</a></li>
-            <li><a href="/spoluprace/">Spolupráce</a></li>
+            <li><a href="/proces/">Proces</a></li>
             <li><a href="/galerie/">Galerie</a></li>
-            <li><a href="/kroos/">KROOS</a></li>
+            <li><a href="/sesterske-spolecnosti/">Sesterské společnosti</a></li>
             <li><a href="/kontakt/">Kontakt</a></li>
           </ul>
         </div>
@@ -353,9 +374,8 @@
 
       <div class="ftr__bar">
         <span>&copy; 2026 Ateliér Křivánek</span>
-        <span>Původním názvem Ateliér v Zelené</span>
         <span>Ing. Tomáš Křivánek, IČO [DOPLNIT]</span>
-        <span>Interiéry a nábytek: <a href="/kroos/">KROOS s.r.o.</a></span>
+        <span>Sesterské společnosti: <a href="/sesterske-spolecnosti/kroos/">KROOS</a> &middot; <a href="/sesterske-spolecnosti/projekt-360/">Projekt 360</a></span>
       </div>
     </div>
   </footer>

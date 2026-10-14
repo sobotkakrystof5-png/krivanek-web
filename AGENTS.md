@@ -46,10 +46,12 @@ Otevři `http://localhost:8080`. Žádný `npm install`, žádný `npm run build
 /co-navrhuji/komercni-a-sportovni-stavby/
 /co-navrhuji/interiery/
 /co-navrhuji/projekty-a-studie/
-/spoluprace/                                 proces + jak se počítá cena + zajištění kontaktů
+/proces/                                     proces + jak se počítá cena + zajištění kontaktů (dříve /spoluprace/)
 /galerie/                                    rozcestník šesti oblastí
 /galerie/rodinne-domy/ … /galerie/projekty-a-studie/   fotky jedné oblasti + lightbox (slugy jako Co navrhuji)
-/kroos/                                      KROOS s.r.o.
+/sesterske-spolecnosti/                      rozcestník sesterských společností
+/sesterske-spolecnosti/kroos/                KROOS s.r.o.
+/sesterske-spolecnosti/projekt-360/          Projekt 360 s.r.o.
 /kontakt/                                    adresa + mapa (bez formuláře)
 /assets/css/                                 tokens, base, components, pages, gallery
 /assets/js/                                  site, lightbox, logos
@@ -57,7 +59,7 @@ Otevři `http://localhost:8080`. Žádný `npm install`, žádný `npm run build
 404.html  sitemap.xml  robots.txt  README.md
 ```
 
-Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctivě synchronizované kopie v HTML**, ne JS include — navigace i kontakty tak zůstávají v HTML i bez JavaScriptu. Všechny cesty jsou absolutní (`/o-atelieru/`), takže blok hlavičky i patičky je ve všech souborech znak po znaku stejný. Když je měníš, měň je ve všech 19 stránkách plus `404.html`. Detail v `README.md`.
+Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctivě synchronizované kopie v HTML**, ne JS include — navigace i kontakty tak zůstávají v HTML i bez JavaScriptu. Všechny cesty jsou absolutní (`/o-atelieru/`), takže blok hlavičky i patičky je ve všech souborech znak po znaku stejný. Když je měníš, měň je ve všech 21 stránkách plus `404.html`. Detail v `README.md`.
 
 ## Styl kódu
 

@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/base.css">
@@ -40,7 +40,7 @@
             <li><a class="nav__a" href="/">Domů</a></li>
             <li><a class="nav__a" href="/o-atelieru/" aria-current="page">O ateliéru</a></li>
             <li><a class="nav__a" href="/co-navrhuji/">Co navrhuji</a></li>
-            <li><a class="nav__a" href="/spoluprace/">Spolupráce</a></li>
+            <li><a class="nav__a" href="/proces/">Proces</a></li>
             <li class="nav__dd" data-dd>
               <a class="nav__a" href="/galerie/">Galerie</a>
               <button class="nav__ddbtn" type="button" data-dd-btn aria-expanded="false" aria-controls="nav-galerie" aria-label="Oblasti v galerii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -53,7 +53,14 @@
                 <li><a class="nav__suba" href="/galerie/projekty-a-studie/"><span class="nav__subnum" aria-hidden="true">06</span>Projekty a studie</a></li>
               </ul>
             </li>
-            <li><a class="nav__a" href="/kroos/">KROOS</a></li>
+            <li class="nav__dd" data-dd>
+              <a class="nav__a" href="/sesterske-spolecnosti/">Sesterské společnosti</a>
+              <button class="nav__ddbtn" type="button" data-dd-btn aria-expanded="false" aria-controls="nav-spolecnosti" aria-label="Sesterské společnosti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              <ul class="nav__sub" id="nav-spolecnosti">
+                <li><a class="nav__suba" href="/sesterske-spolecnosti/kroos/"><span class="nav__subnum" aria-hidden="true">01</span>KROOS s.r.o.</a></li>
+                <li><a class="nav__suba" href="/sesterske-spolecnosti/projekt-360/"><span class="nav__subnum" aria-hidden="true">02</span>Projekt 360 s.r.o.</a></li>
+              </ul>
+            </li>
             <li><a class="nav__a" href="/kontakt/">Kontakt</a></li>
         </ul>
       </nav>
@@ -76,7 +83,7 @@
         <li><a class="mnav__a" href="/"><span class="mnav__num" aria-hidden="true">01</span>Domů</a></li>
         <li><a class="mnav__a" href="/o-atelieru/" aria-current="page"><span class="mnav__num" aria-hidden="true">02</span>O ateliéru</a></li>
         <li><a class="mnav__a" href="/co-navrhuji/"><span class="mnav__num" aria-hidden="true">03</span>Co navrhuji</a></li>
-        <li><a class="mnav__a" href="/spoluprace/"><span class="mnav__num" aria-hidden="true">04</span>Spolupráce</a></li>
+        <li><a class="mnav__a" href="/proces/"><span class="mnav__num" aria-hidden="true">04</span>Proces</a></li>
         <li><a class="mnav__a" href="/galerie/"><span class="mnav__num" aria-hidden="true">05</span>Galerie</a>
           <ul class="mnav__sub" aria-label="Oblasti v galerii">
             <li><a class="mnav__suba" href="/galerie/rodinne-domy/">Rodinné domy</a></li>
@@ -87,7 +94,12 @@
             <li><a class="mnav__suba" href="/galerie/projekty-a-studie/">Projekty a studie</a></li>
           </ul>
         </li>
-        <li><a class="mnav__a" href="/kroos/"><span class="mnav__num" aria-hidden="true">06</span>KROOS</a></li>
+        <li><a class="mnav__a" href="/sesterske-spolecnosti/"><span class="mnav__num" aria-hidden="true">06</span>Sesterské společnosti</a>
+          <ul class="mnav__sub" aria-label="Sesterské společnosti">
+            <li><a class="mnav__suba" href="/sesterske-spolecnosti/kroos/">KROOS s.r.o.</a></li>
+            <li><a class="mnav__suba" href="/sesterske-spolecnosti/projekt-360/">Projekt 360 s.r.o.</a></li>
+          </ul>
+        </li>
         <li><a class="mnav__a" href="/kontakt/"><span class="mnav__num" aria-hidden="true">07</span>Kontakt</a></li>
       </ul>
       <a class="btn btn--solid" href="/kontakt/">Kontaktujte mě</a>
@@ -99,9 +111,9 @@
       <div class="rise wrap">
         <p class="eyebrow">O ateliéru</p>
         <h1 class="phead__h">Architekt, který začíná u místa a u rozhovoru.</h1>
-        <p class="lead">Ateliér Křivánek vede Ing. Tomáš Křivánek. Žádné střídající
-          se projektové týmy. S kým se domluvíte na začátku, ten vám dům kreslí
-          i zvedá telefon.</p>
+        <p class="lead">Ateliér Křivánek vede Ing. Tomáš Křivánek. Na návrzích s ním
+          pracuje malý rodinný tým. Domlouváte se ale pořád s ním, od první
+          schůzky až po kolaudaci.</p>
       </div>
     </section>
 
@@ -109,6 +121,34 @@
       <div class="rise wrap dual">
         <div><figure class="ph ph--portrait"><button class="ph__btn" type="button" data-lb data-lb-caption="Ing. Tomáš Křivánek" data-lb-ratio="4 / 5"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét Ing. Tomáše Křivánka</span></div><span class="vh">Zvětšit náhled: Ing. Tomáš Křivánek</span></button></figure></div>
         <div><figure class="ph ph--landscape"><button class="ph__btn" type="button" data-lb data-lb-caption="V ateliéru" data-lb-ratio="4 / 3"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: pracovní záběr, ateliér nebo stavba</span></div><span class="vh">Zvětšit náhled: V ateliéru</span></button></figure></div>
+      </div>
+    </section>
+
+    <section class="sect sect--deep">
+      <div class="rise wrap">
+        <p class="eyebrow">Tým</p>
+        <h2>Kdo na návrzích pracuje</h2>
+        <p class="lead" style="margin-top: var(--s-4); max-width: var(--w-text)">Na návrzích
+          nedělám sám. Spolupracuji s dcerou Terezou a s Lucií Křivánkovou.
+          Já do toho dávám zkušenost a nadhled z let v oboru, ony neotřelý
+          pohled mladé generace architektů.</p>
+        <ul class="team" style="margin-top: var(--s-7)">
+          <li class="rise" data-rise-step="0">
+            <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét Ing. Tomáše Křivánka</span></div></figure>
+            <h3 class="team__h">Ing. Tomáš Křivánek</h3>
+            <p class="team__r">Architekt, vede ateliér</p>
+          </li>
+          <li class="rise" data-rise-step="1">
+            <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét Ing. arch. Terezy</span></div></figure>
+            <h3 class="team__h">Ing. arch. Tereza [DOPLNIT: příjmení]</h3>
+            <p class="team__r">Spolupráce na návrzích</p>
+          </li>
+          <li class="rise" data-rise-step="2">
+            <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét Lucie Křivánkové</span></div></figure>
+            <h3 class="team__h">Lucie Křivánková</h3>
+            <p class="team__r">Fakulta architektury ČVUT</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -188,9 +228,9 @@
             <li><a href="/">Domů</a></li>
             <li><a href="/o-atelieru/">O ateliéru</a></li>
             <li><a href="/co-navrhuji/">Co navrhuji</a></li>
-            <li><a href="/spoluprace/">Spolupráce</a></li>
+            <li><a href="/proces/">Proces</a></li>
             <li><a href="/galerie/">Galerie</a></li>
-            <li><a href="/kroos/">KROOS</a></li>
+            <li><a href="/sesterske-spolecnosti/">Sesterské společnosti</a></li>
             <li><a href="/kontakt/">Kontakt</a></li>
           </ul>
         </div>
@@ -208,9 +248,8 @@
 
       <div class="ftr__bar">
         <span>&copy; 2026 Ateliér Křivánek</span>
-        <span>Původním názvem Ateliér v Zelené</span>
         <span>Ing. Tomáš Křivánek, IČO [DOPLNIT]</span>
-        <span>Interiéry a nábytek: <a href="/kroos/">KROOS s.r.o.</a></span>
+        <span>Sesterské společnosti: <a href="/sesterske-spolecnosti/kroos/">KROOS</a> &middot; <a href="/sesterske-spolecnosti/projekt-360/">Projekt 360</a></span>
       </div>
     </div>
   </footer>

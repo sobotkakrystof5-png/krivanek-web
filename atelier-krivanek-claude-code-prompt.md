@@ -53,7 +53,11 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
 - Od konzultace po kolaudaci (do sekce Spolupráce, doslova jako základ textu): „V ateliéru provádím návrhy staveb od počátečních konzultací, studií až po realizační dokumentaci, v čase vyhovujícím oběma stranám. Samozřejmostí je vyřízení všech nezbytných formalit celého povolovacího procesu a spolupráce v průběhu výstavby až po kolaudaci.“
 - Nabídka činností: architektonické návrhy a studie; projekty ke stavebnímu povolení či ohlášení stavby; prováděcí dokumentace, zaměření stávajícího stavu, inženýrská činnost; průkazy energetické náročnosti budov (oprávnění MPO č. 799); návrhy interiérů; návrh a dodání kancelářského nábytku přes dceřinou společnost KROOS s.r.o.
 - Historie a kvalifikace: 1989 ČVUT Praha, fakulta stavební; 1991 začátek podnikání; 1997 založení ateliéru a postgraduál na Ústavu soudního inženýrství Brno; oprávnění MPO č. 799; osvědčení o autorizaci a oprávnění (existuje PDF ke stažení — počítej se souborovým odkazem).
-- Dceřiná společnost KROOS s.r.o.: „Zabývá se návrhy a realizací interiérů a jejich vybavení od návrhu až po montáž. V druhé řadě provádí projekty většího rozsahu.“ Sídlo: Jilemnického 1122, Mladá Boleslav. Web: www.kroossro.cz.
+- Sesterská společnost KROOS s.r.o. (do 2026-10-14 uváděná jako dceřiná): „Zabývá se návrhy a realizací interiérů a jejich vybavení od návrhu až po montáž. V druhé řadě provádí projekty většího rozsahu.“ Sídlo: Jilemnického 1122, Mladá Boleslav. Web: www.kroossro.cz.
+- KROOS (2026-10-14): stejný kontakt a stejný jednatel (Ing. Tomáš Křivánek) jako ateliér, plátce DPH. Odkaz na www.kroossro.cz se na web nedává.
+- Sesterská společnost Projekt 360 s.r.o. (2026-10-14): realizace vlastních projektů ateliéru. Další údaje zatím nedodány.
+- Tým (2026-10-14): spolupracuje dcera Ing. arch. Tereza (příjmení nedodáno) a Lucie Křivánková (Fakulta architektury ČVUT). „Nabízíme zkušenost, nadhled a neotřelé pohledy mladých.“
+- Označení „dříve Ateliér v Zelené“ se na webu neuvádí (2026-10-14).
 - Zajištění kontaktů: pan Křivánek dokáže klientovi v případě potřeby zajistit kontakty (na řemeslníky, dodavatele, navazující profese). Zmiň to střízlivě v sekci Spolupráce jako součást služby, ne jako marketingový slib.
 
 **Oblasti návrhu / realizací** (kategorie, do kterých se dělí tvorba — každá dostane vlastní podstránku s několika fotkami; viz struktura níže). Názvy referencí jsou reálné, používej je jako popisky u placeholderů:
@@ -71,6 +75,8 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
 ---
 
 ## 2. LOGO A DESIGNOVÝ SYSTÉM
+
+> **Aktualizace 2026-10-14 (připomínky klienta):** web má být „techničtější, modernější“. Teplý papír nahradila studená šedobílá (`#F4F5F3`) s jemným technickým rastrem pod hero a hlavičkami stránek. Písmo: **Archivo** (nadpisy v rozšířeném řezu, text v normální šířce) + **IBM Plex Mono** na kóty a indexy. Akcent zůstává modrá + zelená z loga (2026-09-23). Návrhy níž v §2 jsou historické, platí `assets/css/tokens.css`.
 
 ### Logo
 Klient zatím NEDODAL logo. Do hlavičky a patičky použij **textový wordmark** „Ateliér Křivánek“ vysázený v nadpisovém fontu se záměrně laděným trackingem, případně s tenkou linkou (motiv). Připrav strukturu tak, aby se textový wordmark dal později snadno nahradit obrázkovým logem (SVG/PNG) bez zásahu do layoutu. Logo si nevymýšlej ani negeneruj.
@@ -119,7 +125,7 @@ Web postav tak, aby byl připravený na pillar-cluster model: `/co-navrhuji/` fu
 
 Vícestránkový web. Každá stránka drží společnou hlavičku/patičku, „eyebrow + H1“ hlavičku stránky a — na konverzních stránkách — decentní závěrečný CTA pruh vedoucí na kontakt. Aktivní položka menu je v navigaci zvýrazněná.
 
-**Navigace (hlavička, stejná všude):** Domů · O ateliéru · Co navrhuji · Spolupráce · Galerie · KROOS · Kontakt
+**Navigace (hlavička, stejná všude):** Domů · O ateliéru · Co navrhuji · Proces · Galerie ▾ · Sesterské společnosti ▾ (KROOS, Projekt 360) · Kontakt
 Wordmark „Ateliér Křivánek“ vlevo, nav uprostřed/vpravo, vpravo jedno decentní CTA „Kontakt“ (odkaz na /kontakt). Bez dropdownů, bez jazykového přepínače.
 
 **Routes:**
@@ -133,9 +139,9 @@ Wordmark „Ateliér Křivánek“ vlevo, nav uprostřed/vpravo, vpravo jedno de
 /co-navrhuji/komercni-a-sportovni-stavby
 /co-navrhuji/interiery
 /co-navrhuji/projekty-a-studie
-/spoluprace               Spolupráce (proces + jak se počítá cena + zajištění kontaktů)
+/proces                   Proces (dříve Spolupráce; proces + jak se počítá cena + zajištění kontaktů)
 /galerie                  Galerie (dense grid, lightbox)
-/kroos                    KROOS s.r.o.
+/sesterske-spolecnosti    Sesterské společnosti (rozcestník) + /kroos a /projekt-360
 /kontakt                  Kontakt (adresa + mapa, BEZ formuláře)
 ```
 
@@ -146,7 +152,7 @@ Pořadí sekcí:
 3. **Co navrhuji** — mřížka 6 karet (oblasti), každá karta = placeholder fotky + název oblasti + jednořádkový popisek, celá karta odkazuje na příslušnou podstránku. Toto je vizuální rozcestník tvorby.
 4. **Od konzultace po kolaudaci** — krátký číslovaný náhled procesu (01 konzultace → 02 návrh → 03 úprava → 04 odsouhlasení → … kolaudace), 1 odstavec + odkaz na /spoluprace. Aspoň jeden placeholder fotky.
 5. **Spolupracuji s** — pruh log firem, který se **automaticky střídá/posouvá** (auto-scroll marquee nebo jemný fade carousel). Placeholder loga (6–10 slotů) — s kým ateliér spolupracuje / pro koho pracoval (např. Panattoni, Accolade, VW, GSP, JaP, Aufeer, Spinning…). Loga jsou zatím šedé placeholdery s názvem. Střídání jemné a pomalé, ať to není rušivé.
-6. **KROOS s.r.o.** — krátký teaser dceřiné společnosti (1 placeholder fotky interiéru + 2 věty + odkaz na /kroos).
+6. **Sesterské společnosti** — Projekt 360 a KROOS, ke každé věta a odkaz (1 placeholder fotky).
 7. **Závěrečný CTA pruh** — tichá otázka („Máte pozemek nebo dům, který potřebuje návrh?“) + odkaz na /kontakt.
 8. Patička.
 
@@ -170,7 +176,7 @@ Pořadí sekcí:
 3. Decentní odkaz zpět na /co-navrhuji a na /kontakt.
 4. Patička.
 
-### 4) Spolupráce (`/spoluprace`) — proces, cena, zajištění kontaktů
+### 4) Proces (`/proces`, dříve Spolupráce) — proces, cena, zajištění kontaktů
 1. Hlavička stránky: eyebrow „Spolupráce“ + H1 („Od konzultace po kolaudaci“) + úvodní odstavec (text „Od konzultace po kolaudaci“ ze sekce 1).
 2. **Číslovaná osa procesu** (hlavní obsah, motiv indexů): 01 Konzultace → 02 Návrh → 03 Konzultace / úprava návrhu → 04 Odsouhlasení → … a dál dokumentace, povolení, spolupráce při výstavbě, kolaudace. Každý krok = index + název + 1–2 věty.
 3. **Jak se počítá cena** — textová sekce, ŽÁDNÁ čísla ani ceník. Sdělení: cena závisí na rozsahu projektu a odvíjí se od jednotlivých fází (konzultace, návrh, úprava návrhu, odsouhlasení, dokumentace). Napiš to střídmě a srozumitelně, ať klient chápe, že přesnou cenu dostane po první konzultaci podle rozsahu.
@@ -186,10 +192,12 @@ Pořadí sekcí:
 4. **Každá fotka rozklikávací → lightbox** (zvětšení, popisek, šipky vlevo/vpravo, zavření Esc/klik mimo, ovládání z klávesnice). Přístupné (focus trap, `aria`).
 5. Patička.
 
-### 6) KROOS s.r.o. (`/kroos`) — dceřiná společnost
-1. Hlavička stránky: eyebrow „Dceřiná společnost“ + H1 „KROOS s.r.o.“.
+### 6) Sesterské společnosti (`/sesterske-spolecnosti`, `/sesterske-spolecnosti/kroos`, `/sesterske-spolecnosti/projekt-360`)
+Rozcestník se dvěma kartami, v navigaci rozbalovací nabídka. Podstránka KROOS:
+1. Hlavička stránky: eyebrow „Sesterská společnost“ + H1 „KROOS s.r.o.“.
 2. Text (přepsaný z podkladu): návrhy a realizace interiérů a jejich vybavení od návrhu po montáž; ve druhé řadě projekty většího rozsahu. 1–2 placeholdery fotek interiéru.
-3. Kontakt/odkaz: sídlo Jilemnického 1122, Mladá Boleslav; odkaz na www.kroossro.cz.
+3. Kontakt: jednatel Ing. Tomáš Křivánek, stejný telefon a e-mail jako ateliér, sídlo Jilemnického 1122, Mladá Boleslav, plátce DPH. Bez odkazu na www.kroossro.cz.
+Podstránka Projekt 360: realizace vlastních projektů, sídlo/IČO/jednatel/DPH jako [DOPLNIT].
 4. Patička.
 
 ### 7) Kontakt (`/kontakt`) — adresa + mapa, BEZ formuláře
