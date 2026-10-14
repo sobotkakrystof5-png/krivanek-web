@@ -59,6 +59,14 @@ Ať to příští session neopraví jako chybu.
 
 Nejnovější nahoře.
 
+### 2026-10-14 — Push a nasazení na Vercel
+
+- **Co:** Commit `1b722a1` (redesign podle připomínek klienta) pushnut do `main` na GitHub. Vercel projekt `krivanek-web` je napojený na repo a nasadil ho automaticky na https://krivanek-web.vercel.app.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Každý push do `main` se rovnou nasadí do produkce na Vercelu. Doména atelierkrivanek.cz zatím napojená není (canonical a sitemap na ni už míří).
+- **Ověřeno:** nové URL vrací na produkci 200, `/spoluprace/` a `/kroos/` 404, na živém webu je nové CSS i navigace.
+- **Soubory:** žádné změny kódu
+
 ### 2026-10-14 — Redesign a obsah podle připomínek klienta
 
 - **Co:** (1) Vzhled: studená šedobílá místo teplého papíru, jemný technický rastr (pseudoprvek `::before` s maskou) pod `.herosplit` a `.phead`, písmo Archivo (nadpisy `font-stretch: 112%`, váha 500) + IBM Plex Mono místo Source Serif 4 + Plex Sans. (2) „Původním názvem Ateliér v Zelené“ odstraněno z patičky, Kontaktu a schema (`alternateName`). (3) `/spoluprace/` → `/proces/`, v navigaci „Proces“. (4) Místo položky KROOS „Sesterské společnosti“ s rozbalovací nabídkou (vzor `.nav__dd` jako Galerie): `/sesterske-spolecnosti/` (rozcestník, `.cards--two`), `/sesterske-spolecnosti/kroos/` (přesunuto z `/kroos/`), `/sesterske-spolecnosti/projekt-360/` (nová). KROOS bez odkazu na kroossro.cz, s jednatelem, kontaktem ateliéru a „plátce DPH“. „Dceřiná“ → „sesterská“ všude. (5) Tým na `/o-atelieru/` (`.team`, tři portréty), lead stránky přepsán (dřív tvrdil „žádné projektové týmy“), zmínka o týmu na Domů pod citátem. Na Domů nový blok sesterských společností (`.sister`), na Proces věta o realizaci přes Projekt 360. (6) Desktopová navigace až od 75em (dřív 62em) v CSS i `site.js`.
