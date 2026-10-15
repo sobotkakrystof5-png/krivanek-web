@@ -5,7 +5,7 @@ Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `prav
 ## Aktuální stav
 
 - **Projekt:** web Ateliér Křivánek (Ing. Tomáš Křivánek, architekt; Mladá Boleslav / Bradlec)
-- **Fáze:** druhá verze po připomínkách klienta (2026-10-14): techničtější vzhled (Archivo + rastr), Proces, Sesterské společnosti, tým. 21 stránek. Čeká se na podklady (fotky, logo, IČO, PDF, údaje Projekt 360, příjmení Terezy).
+- **Fáze:** druhá verze po připomínkách klienta (2026-10-14): techničtější vzhled (Archivo + rastr), Proces, Sesterské společnosti, tým. 21 stránek. Čeká se na podklady (fotky, logo, IČO, PDF, údaje Projekt 360).
 - **Stack:** čisté HTML5 + CSS + Vanilla JS, žádný framework, žádný build step, žádný backend, žádný formulář; vícestránkový web (vlastní URL per stránka)
 - **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 21 stránek + `404.html`, 5 CSS souborů, 3 JS moduly, `sitemap.xml`, `robots.txt`. Reálné fotky nejsou, všechny sloty jsou označené placeholdery.
 
@@ -29,15 +29,14 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 - **2026-10-14** — Designový systém „techničtější, modernější“ na pokyn klienta: studená šedobílá `#F4F5F3`, technický rastr jen pod hero a hlavičkami stránek, Archivo (nadpisy rozšířené) + IBM Plex Mono. Nahrazuje teplý papír a Source Serif. Akcent modrá/zelená z loga beze změny.
 - **2026-10-14** — „Spolupráce“ je v navigaci „Proces“ na URL `/proces/`. Sesterské společnosti (KROOS, Projekt 360) mají vlastní sekci `/sesterske-spolecnosti/` s rozbalovací nabídkou v navigaci. KROOS je „sesterská“, ne „dceřiná“ společnost a na webu není odkaz na kroossro.cz.
 - **2026-10-14** — Na webu se nikde neuvádí „dříve / původním názvem Ateliér v Zelené“ (výslovný pokyn klienta).
-- **2026-10-14** — Web zůstává v první osobě (Tomáš). Tým (dcera Tereza, Lucie Křivánková) je představený na O ateliéru, ale domlouvá se dál s Tomášem.
+- **2026-10-14** — Web zůstává v první osobě (Tomáš). Tým (dcera Ing. arch. Lucie Křivánková; žádná Tereza, opraveno 2026-10-15) je představený na O ateliéru, ale domlouvá se dál s Tomášem.
 
 ## Otevřené otázky
 
 Čeká na uživatele/klienta. Po zodpovězení se maže, odpověď jde do Klíčových rozhodnutí nebo changelogu.
 
-- Příjmení Ing. arch. Terezy (dcera) — na `/o-atelieru/` je `[DOPLNIT: příjmení]`.
 - Projekt 360 s.r.o. — sídlo, IČO, jednatel, plátce DPH, případný web. Na stránce `[DOPLNIT]`, kontakt zatím převzatý z ateliéru (ověřit).
-- Fotky týmu (tři portréty 4:5) — nedodány.
+- Fotky týmu (dva portréty 4:5: Tomáš, Lucie) — nedodány.
 - Lucie Křivánková — jen „ČVUT fakulta architektura“, nevíme, zda studuje nebo dostudovala; web uvádí jen fakultu.
 
 - Reálné fotky — nedodány.
@@ -58,6 +57,12 @@ Ať to příští session neopraví jako chybu.
 ## Changelog
 
 Nejnovější nahoře.
+
+### 2026-10-15 — Oprava týmu: žádná Tereza
+
+- **Co:** Na pokyn uživatele odstraněna Tereza. Na návrzích pracuje jen dcera Ing. arch. Lucie Křivánková. Upraven text na Domů (`pull__sub`) a na O ateliéru (úvod týmu, karty týmu 3 → 2, desktopová mřížka `.team` 2 sloupce).
+- **Dopad:** Zrušena otevřená otázka na příjmení Terezy. Role u Lucie zůstává „Fakulta architektury ČVUT", ale „Ing. arch." naznačuje dokončené studium, ověřit u klienta.
+- **Soubory:** `index.html`, `o-atelieru/index.html`, `assets/css/pages.css`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
 
 ### 2026-10-14 — Push a nasazení na Vercel
 

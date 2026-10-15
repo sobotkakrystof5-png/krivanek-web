@@ -745,7 +745,7 @@
 }
 @media (min-width: 40em) { .team { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 62em) {
-  .team { grid-template-columns: repeat(3, 1fr); }
+  .team { grid-template-columns: repeat(2, minmax(0, 24rem)); }
   .team > li:nth-child(2) { margin-top: var(--s-7); }
 }
 

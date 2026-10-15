@@ -56,7 +56,7 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
 - Sesterská společnost KROOS s.r.o. (do 2026-10-14 uváděná jako dceřiná): „Zabývá se návrhy a realizací interiérů a jejich vybavení od návrhu až po montáž. V druhé řadě provádí projekty většího rozsahu.“ Sídlo: Jilemnického 1122, Mladá Boleslav. Web: www.kroossro.cz.
 - KROOS (2026-10-14): stejný kontakt a stejný jednatel (Ing. Tomáš Křivánek) jako ateliér, plátce DPH. Odkaz na www.kroossro.cz se na web nedává.
 - Sesterská společnost Projekt 360 s.r.o. (2026-10-14): realizace vlastních projektů ateliéru. Další údaje zatím nedodány.
-- Tým (2026-10-14): spolupracuje dcera Ing. arch. Tereza (příjmení nedodáno) a Lucie Křivánková (Fakulta architektury ČVUT). „Nabízíme zkušenost, nadhled a neotřelé pohledy mladých.“
+- Tým (2026-10-14): spolupracuje dcera Ing. arch. Lucie Křivánková (Fakulta architektury ČVUT; žádná Tereza). „Nabízíme zkušenost, nadhled a neotřelé pohledy mladých.“
 - Označení „dříve Ateliér v Zelené“ se na webu neuvádí (2026-10-14).
 - Zajištění kontaktů: pan Křivánek dokáže klientovi v případě potřeby zajistit kontakty (na řemeslníky, dodavatele, navazující profese). Zmiň to střízlivě v sekci Spolupráce jako součást služby, ne jako marketingový slib.
 
