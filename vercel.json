@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/co-navrhuji/projekty-a-studie/:path*",
+      "destination": "/co-navrhuji/",
+      "permanent": true
+    },
+    {
+      "source": "/galerie/projekty-a-studie/:path*",
+      "destination": "/galerie/",
+      "permanent": true
+    },
+    {
+      "source": "/kroos",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kroos/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sesterske-spolecnosti",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sesterske-spolecnosti/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

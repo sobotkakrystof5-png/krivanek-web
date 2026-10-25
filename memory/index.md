@@ -4,7 +4,7 @@ Přečti jako první, každou session, před jakoukoli prací. Tenhle soubor sá
 
 ## 1. Stav projektu (jedna věta)
 
-**Fáze:** první úplná verze webu stojí (13 stránek, styly, JS, SEO). Čeká se na potvrzení palety a na podklady od klienta.
+**Fáze:** druhá verze webu je hotová. Aktuální strukturu tvoří 16 stránek v pěti oblastech; fotografie jsou doplněné a čeká se na portrét, logo a identifikační údaje. Detail v `memory/memory.md`.
 
 Detail vždy v `memory/memory.md` → „Aktuální stav".
 
@@ -30,14 +30,13 @@ Konflikt se nikdy neřeší potichu — vždy se označí a čeká se na potvrze
 ```
 /                                index.html (Domů) — hotovo
 /o-atelieru/                     hotovo
-/co-navrhuji/                    rozcestník + 6 podstránek — hotovo
-/spoluprace/                     hotovo
-/galerie/                        filtr + lightbox — hotovo
-/kroos/                          hotovo
+/co-navrhuji/                    rozcestník + 5 podstránek — hotovo
+/proces/                         hotovo
+/galerie/                        rozcestník + 5 podstránek — hotovo
 /kontakt/                        adresa + mapa (bez formuláře) — hotovo
-/assets/                         css (5 souborů), js (4 moduly), img (zatím prázdné)
-404.html, sitemap.xml, robots.txt, README.md
-.claude/skills/                  lokální skills — viz AGENTS.md
+/assets/                         css (5 souborů), js (4 moduly), img (70 WebP)
+404.html, sitemap.xml, robots.txt, vercel.json, README.md
+.agents/skills/                  lokální skills — viz AGENTS.md
 memory/                          index.md, pravidla.md, memory.md
 atelier-krivanek-claude-code-prompt.md  plný brief (kopie `prompt.md`)
 AGENTS.md, CLAUDE.md

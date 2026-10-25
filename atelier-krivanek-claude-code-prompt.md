@@ -25,7 +25,7 @@ Toto je nejdůležitější pokyn celého zadání a musí ovlivnit každé rozh
 - Piš CSS, jako by ho člověk vyladil pixel po pixelu — konzistentně, ale ne strojově uniformně.
 
 **Vizuální motiv pro tento web (architektonický podpis):**
-Tenká technická linka — kontura, kótovací čára, řez, obrys půdorysu. Jemný „výkresový“ jazyk: vlasové linky (1 px), decentní kótovací značky na krajích sekcí, číslované indexy fází (01, 02, 03…) jako u technického výkresu. Motiv smí být přítomný jako tenká linka pod nadpisy, jako oddělovač sekcí, jako rámeček placeholderu. Nikdy ne křiklavě. Číslovaný index (01/06) je zároveň hlavní opakovaný prvek — použij ho u fází spolupráce, u oblastí návrhu a u historie ateliéru.
+Tenká technická linka — kontura, kótovací čára, řez, obrys půdorysu. Jemný „výkresový“ jazyk: vlasové linky (1 px), decentní kótovací značky na krajích sekcí, číslované indexy fází (01, 02, 03…) jako u technického výkresu. Motiv smí být přítomný jako tenká linka pod nadpisy, jako oddělovač sekcí, jako rámeček placeholderu. Nikdy ne křiklavě. Číslovaný index je hlavní opakovaný prvek; u oblastí návrhu používá podobu 01/05.
 
 Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se nebo navrhne originálnější řešení místo nejběžnějšího.
 
@@ -51,11 +51,8 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
   „Při návrhu staveb věřím v individuální přístup, založený na dialogu a souznění s investorem, pečlivé analýze jeho potřeb, přání a očekávání, ale i poznání místa budoucí stavby, které je vždy zdrojem inspirace…“ — Tomáš Křivánek
 - Osobní motto (do sekce O ateliéru, k portrétu): „…pokora a nadhled, postoje důležité v osobním i profesním životě… Obojí čerpám na vrcholcích hor.“ a „Horolezci mají krásné úsloví: Kde je vůle, tam je cesta.“
 - Od konzultace po kolaudaci (do sekce Spolupráce, doslova jako základ textu): „V ateliéru provádím návrhy staveb od počátečních konzultací, studií až po realizační dokumentaci, v čase vyhovujícím oběma stranám. Samozřejmostí je vyřízení všech nezbytných formalit celého povolovacího procesu a spolupráce v průběhu výstavby až po kolaudaci.“
-- Nabídka činností: architektonické návrhy a studie; projekty ke stavebnímu povolení či ohlášení stavby; prováděcí dokumentace, zaměření stávajícího stavu, inženýrská činnost; průkazy energetické náročnosti budov (oprávnění MPO č. 799); návrhy interiérů; návrh a dodání kancelářského nábytku přes dceřinou společnost KROOS s.r.o.
+- Nabídka činností: architektonické návrhy a studie; projekty ke stavebnímu povolení či ohlášení stavby; prováděcí dokumentace, zaměření stávajícího stavu, inženýrská činnost; průkazy energetické náročnosti budov (oprávnění MPO č. 799); návrhy interiérů
 - Historie a kvalifikace: 1989 ČVUT Praha, fakulta stavební; 1991 začátek podnikání; 1997 založení ateliéru a postgraduál na Ústavu soudního inženýrství Brno; oprávnění MPO č. 799; osvědčení o autorizaci a oprávnění (existuje PDF ke stažení — počítej se souborovým odkazem).
-- Sesterská společnost KROOS s.r.o. (do 2026-10-14 uváděná jako dceřiná): „Zabývá se návrhy a realizací interiérů a jejich vybavení od návrhu až po montáž. V druhé řadě provádí projekty většího rozsahu.“ Sídlo: Jilemnického 1122, Mladá Boleslav. Web: www.kroossro.cz.
-- KROOS (2026-10-14): stejný kontakt a stejný jednatel (Ing. Tomáš Křivánek) jako ateliér, plátce DPH. Odkaz na www.kroossro.cz se na web nedává.
-- Sesterská společnost Projekt 360 s.r.o. (2026-10-14): realizace vlastních projektů ateliéru. Další údaje zatím nedodány.
 - Tým (2026-10-14): spolupracuje dcera Ing. arch. Lucie Křivánková (Fakulta architektury ČVUT; žádná Tereza). „Nabízíme zkušenost, nadhled a neotřelé pohledy mladých.“
 - Označení „dříve Ateliér v Zelené“ se na webu neuvádí (2026-10-14).
 - Zajištění kontaktů: pan Křivánek dokáže klientovi v případě potřeby zajistit kontakty (na řemeslníky, dodavatele, navazující profese). Zmiň to střízlivě v sekci Spolupráce jako součást služby, ne jako marketingový slib.
@@ -66,7 +63,6 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
 - **Průmyslové a administrativní stavby** — JaP Jacina (hala a školicí středisko Mnichovo Hradiště), GSP Benátky nad Jizerou, Aufeer Design, LAWI, UNO Industry park Bezděčín, Tasso, Accolade, Panattoni, myčka Mladá Boleslav.
 - **Komerční a sportovní stavby** — Spinning centrum Mladá Boleslav, Bike park Štěpánka, Syrrah Natura, Hafling Ranč Rokytá.
 - **Interiéry** — Dragon Internet, Aufeer Design, školicí středisko VW, JaP, autosalon Citroën, prodejna Verso, rodinné domy, byt, dentální centrum.
-- **Projekty a studie** — dům U Bondy centra v Mladé Boleslavi, studie rodinných domů (existuje PDF se studiemi ke stažení).
 
 **Cíl webu:** působit důvěryhodně, klidně a profesionálně; přehledně ukázat, čemu se ateliér věnuje, a přivést zájemce ke kontaktu (telefon / e-mail). Web je vizitka a portfolio, ne prodejní stroj.
 
@@ -125,7 +121,7 @@ Web postav tak, aby byl připravený na pillar-cluster model: `/co-navrhuji/` fu
 
 Vícestránkový web. Každá stránka drží společnou hlavičku/patičku, „eyebrow + H1“ hlavičku stránky a — na konverzních stránkách — decentní závěrečný CTA pruh vedoucí na kontakt. Aktivní položka menu je v navigaci zvýrazněná.
 
-**Navigace (hlavička, stejná všude):** Domů · O ateliéru · Co navrhuji · Proces · Galerie ▾ · Sesterské společnosti ▾ (KROOS, Projekt 360) · Kontakt
+**Navigace (hlavička, stejná všude):** Domů · O ateliéru · Co navrhuji · Proces · Galerie ▾ · Kontakt
 Wordmark „Ateliér Křivánek“ vlevo, nav uprostřed/vpravo, vpravo jedno decentní CTA „Kontakt“ (odkaz na /kontakt). Bez dropdownů, bez jazykového přepínače.
 
 **Routes:**
@@ -138,41 +134,36 @@ Wordmark „Ateliér Křivánek“ vlevo, nav uprostřed/vpravo, vpravo jedno de
 /co-navrhuji/prumyslove-a-administrativni-stavby
 /co-navrhuji/komercni-a-sportovni-stavby
 /co-navrhuji/interiery
-/co-navrhuji/projekty-a-studie
 /proces                   Proces (dříve Spolupráce; proces + jak se počítá cena + zajištění kontaktů)
 /galerie                  Galerie (dense grid, lightbox)
-/sesterske-spolecnosti    Sesterské společnosti (rozcestník) + /kroos a /projekt-360
 /kontakt                  Kontakt (adresa + mapa, BEZ formuláře)
 ```
 
 ### 1) Domů (`/`) — rozcestník, klidný a vzdušný
 Pořadí sekcí:
-1. **Hero** — celoplošné pozadí (placeholder na architektonickou fotku, tlumavé), eyebrow „Ateliér Křivánek · Mladá Boleslav“, H1 „Návrhy staveb od první konzultace po kolaudaci.“, jeden odstavec (přepsaný hlavní citát o individuálním přístupu), jedno primární CTA „Napište mi“ (→ /kontakt) a jeden decentní sekundární odkaz „Prohlédnout tvorbu“ (→ /co-navrhuji). Kompozice mírně asymetrická, ne vycentrovaný blok uprostřed.
-2. **Citát** — samostatná tichá sekce s hlavním citátem Tomáše Křivánka (velký, střídmý blockquote + podpis). Hodně vzduchu. Jeden placeholder fotky (portrét nebo detail stavby) vedle.
-3. **Co navrhuji** — mřížka 6 karet (oblasti), každá karta = placeholder fotky + název oblasti + jednořádkový popisek, celá karta odkazuje na příslušnou podstránku. Toto je vizuální rozcestník tvorby.
-4. **Od konzultace po kolaudaci** — krátký číslovaný náhled procesu (01 konzultace → 02 návrh → 03 úprava → 04 odsouhlasení → … kolaudace), 1 odstavec + odkaz na /spoluprace. Aspoň jeden placeholder fotky.
-5. **Spolupracuji s** — pruh log firem, který se **automaticky střídá/posouvá** (auto-scroll marquee nebo jemný fade carousel). Placeholder loga (6–10 slotů) — s kým ateliér spolupracuje / pro koho pracoval (např. Panattoni, Accolade, VW, GSP, JaP, Aufeer, Spinning…). Loga jsou zatím šedé placeholdery s názvem. Střídání jemné a pomalé, ať to není rušivé.
-6. **Sesterské společnosti** — Projekt 360 a KROOS, ke každé věta a odkaz (1 placeholder fotky).
-7. **Závěrečný CTA pruh** — tichá otázka („Máte pozemek nebo dům, který potřebuje návrh?“) + odkaz na /kontakt.
-8. Patička.
+1. **Hero** — celoplošná fotografie, přes kterou se každých pět sekund plynule vystřídá pět symbolických architektonických snímků z Galerie: rodinný dům, rekonstrukce, školicí středisko, sportovní stavba a interiér. Text zůstává pevný: eyebrow „Ateliér Křivánek · Mladá Boleslav“, H1 „Od nápadu ke kolaudaci.“, podpis „Ing. Tomáš Křivánek, architekt“, odstavec a CTA „Napište mi“ + „Prohlédnout tvorbu“. Střídání lze ručně ovládat a pozastavit; automatické přehrávání respektuje `prefers-reduced-motion`.
+2. **Citát** — samostatná tichá sekce s hlavním citátem Tomáše Křivánka, podpisem a velkým portrétem ve sloupci přibližně stejné šířky jako text. Celkem se jeho podoba ukáže nejvýše dvakrát, pouze na Domů.
+3. **Co navrhuji** — mřížka 5 karet s dodanými fotografiemi projektů, názvem oblasti a krátkým popiskem. Karty vedou na příslušné podstránky.
+4. **Spolupracuji s** — pomalu se posouvající pruh vektorových log Panattoni, Accolade, Volkswagen, GSP Benátky, JaP Jacina, AUFEER Design, LAWI, Spinning MB a UNO Bezděčín. Tasso je z pruhu vynecháno podle upřesnění uživatele.
+5. **Závěrečný CTA pruh** — tichá otázka („Máte pozemek nebo dům, který potřebuje návrh?“) + odkaz na /kontakt.
+6. Patička.
 
 ### 2) O ateliéru (`/o-atelieru`) — představovací stránka + příběh
 1. Hlavička stránky: eyebrow „O ateliéru“ + H1 (např. „Architekt, který začíná u místa a u rozhovoru.“).
-2. Úvodní odstavec + 1–2 placeholdery fotek (portrét Tomáše Křivánka + pracovní záběr / stavba).
+2. Úvodní odstavec představí Tomáše a stručně zmíní spolupráci s dcerou, Ing. arch. Lucií Křivánkovou. Bez fotografií týmu.
 3. **Číslovaná časová osa** (motiv indexů): 1989 ČVUT Praha, fakulta stavební · 1991 začátek podnikání · 1997 založení ateliéru + postgraduál Ústav soudního inženýrství Brno. Každý milník = rok jako index + krátký text.
-4. **Kvalifikace a oprávnění**: autorizace, oprávnění MPO č. 799, odkaz na PDF osvědčení ke stažení (placeholder na soubor).
-5. **Portrét + citát**: velká fotka (placeholder) + motto o pokoře a horách + podpis „Ing. Tomáš Křivánek, architekt“.
-6. Patička. (Bez CTA pruhu, nebo velmi decentní.)
+4. **Osobní motto**: text o pokoře a horách s podpisem „Ing. Tomáš Křivánek, architekt“. Bez další fotografie, portrét je na Domů.
+5. Patička. (Bez CTA pruhu, nebo velmi decentní.)
 
 ### 3) Co navrhuji (`/co-navrhuji`) — rozcestník oblastí
 1. Hlavička stránky: eyebrow „Tvorba“ + H1 („Co navrhuji“) + krátký odstavec, jak k práci přistupuji.
-2. **Střídavé bloky oblastí** × 6 (obraz na jedné straně, na druhé index „01/06“ + název oblasti + odstavec + odkaz „Prohlédnout →“ na podstránku). Střídej stranu obrázku pro rytmus. Šest oblastí = viz sekce 1.
+2. **Střídavé bloky oblastí** × 5 (obraz na jedné straně, na druhé index „01/05“ + název oblasti + odstavec + odkaz „Prohlédnout →“ na podstránku). Střídej stranu obrázku pro rytmus. Pět oblastí = viz sekce 1.
 3. Decentní závěrečný CTA pruh → /kontakt.
 4. Patička.
 
-### 3b) Podstránka oblasti (`/co-navrhuji/{oblast}`) — 6× stejný vzor
+### 3b) Podstránka oblasti (`/co-navrhuji/{oblast}`) — 5× stejný vzor
 1. Hlavička stránky: eyebrow „Oblast“ + H1 (název oblasti) + krátký odstavec.
-2. **Mřížka fotek** dané oblasti — několik placeholderů (doporučeně 4–8), každý s popiskem konkrétní realizace (viz reálné názvy v sekci 1). **Každá fotka je rozklikávací → otevře se v lightboxu** (zvětšení + popisek, šipky pro průchod). Lightbox stejný jako v Galerii.
+2. **Mřížka fotek** dané oblasti. Galerie a odpovídající podstránka Co navrhuji používají stejný seznam snímků. Každá fotka se rozklikne v lightboxu (zvětšení, popisek a šipky pro průchod).
 3. Decentní odkaz zpět na /co-navrhuji a na /kontakt.
 4. Patička.
 
@@ -185,22 +176,14 @@ Pořadí sekcí:
 6. Závěrečný CTA pruh → /kontakt.
 7. Patička.
 
-### 5) Galerie (`/galerie`) — samostatná sekce, prázdné placeholdery
-1. Hlavička stránky: eyebrow „Galerie“ + H1.
-2. **Filtr — pilulky kategorií**: „Vše“ + pilulka za každou oblast (rodinné domy, rekonstrukce, průmysl, komerční, interiéry, studie). Filtrování client-side.
-3. **Hustá jednotná mřížka** fotek (zatím prázdné placeholdery, každý otagovaný kategorií pro filtr). Bez popisků v mřížce — popisek až v lightboxu.
-4. **Každá fotka rozklikávací → lightbox** (zvětšení, popisek, šipky vlevo/vpravo, zavření Esc/klik mimo, ovládání z klávesnice). Přístupné (focus trap, `aria`).
+### 5) Galerie (`/galerie`) — rozcestník a podstránky oblastí
+1. Rozcestník s H1 a pěti kartami, každá vede na vlastní podstránku oblasti.
+2. Každá oblast má URL `/galerie/{oblast}/`; slugy odpovídají podstránkám `/co-navrhuji/{oblast}/`.
+3. Podstránky obsahují mřížku fotek daného oboru. Fotky se rozklikávají ve sdíleném lightboxu (zvětšení, popisek, šipky, zavření Esc nebo kliknutím mimo, ovládání klávesnicí).
+4. Bez filtru a bez formuláře. Fotografie a počty oblastí jsou vedené v sekci 6.
 5. Patička.
 
-### 6) Sesterské společnosti (`/sesterske-spolecnosti`, `/sesterske-spolecnosti/kroos`, `/sesterske-spolecnosti/projekt-360`)
-Rozcestník se dvěma kartami, v navigaci rozbalovací nabídka. Podstránka KROOS:
-1. Hlavička stránky: eyebrow „Sesterská společnost“ + H1 „KROOS s.r.o.“.
-2. Text (přepsaný z podkladu): návrhy a realizace interiérů a jejich vybavení od návrhu po montáž; ve druhé řadě projekty většího rozsahu. 1–2 placeholdery fotek interiéru.
-3. Kontakt: jednatel Ing. Tomáš Křivánek, stejný telefon a e-mail jako ateliér, sídlo Jilemnického 1122, Mladá Boleslav, plátce DPH. Bez odkazu na www.kroossro.cz.
-Podstránka Projekt 360: realizace vlastních projektů, sídlo/IČO/jednatel/DPH jako [DOPLNIT].
-4. Patička.
-
-### 7) Kontakt (`/kontakt`) — adresa + mapa, BEZ formuláře
+### 6) Kontakt (`/kontakt`) — adresa + mapa, BEZ formuláře
 1. Hlavička stránky: eyebrow „Kontakt“ + H1.
 2. **Dvě zóny vedle sebe** (na mobilu pod sebou):
    - **Kontaktní údaje** jako seznam řádků: Ateliér Křivánek (Ateliér v Zelené) · Zelená 133, Bradlec, 293 06 Kosmonosy, okres Mladá Boleslav · mobil 603 465 564 · tel. 326 332 011 · tomas@atelierkrivanek.cz. Telefon jako `tel:` odkaz, e-mail jako `mailto:`.
@@ -216,24 +199,15 @@ Web **nemá žádný formulář** (ani kontaktní, ani jiný). Je to výslovné 
 
 ---
 
-## 6. PRAVIDLA PRO PLACEHOLDERY FOTEK
+## 6. FOTOGRAFIE A ZBÝVAJÍCÍ PLACEHOLDERY
 
-- Klient zatím fotky nedodal — projekt je v návrhové fázi. **Žádné stock ani externí obrázky jako výplň.**
-- Každý placeholder = zřetelně odlišený rámeček (jemný přerušovaný okraj, papírové/šedé pozadí, ikona fotoaparátu, popisek co sem patří).
-- Placeholdery mají nastavený finální `aspect-ratio`, ať se layout po vložení reálných fotek nemění.
-- **Fotky nejsou jen v galerii** — v každé sekci webu má být aspoň jeden, ideálně jeden až dva placeholdery, ať web nepůsobí prázdně.
-- Orientační počty a umístění:
-  - Hero: 1 (celoplošné pozadí)
-  - Citát na Domů: 1
-  - Karty oblastí na Domů: 6 (po jedné na kartu)
-  - Proces na Domů: 1
-  - Loga „Spolupracuji s“: 6–10 (střídavý pruh)
-  - KROOS teaser na Domů: 1
-  - O ateliéru: 3–4 (portrét, pracovní záběr, portrét u citátu)
-  - Podstránka každé oblasti: 4–8 (rozklikávací)
-  - Spolupráce: 1
-  - Galerie: 12–24 (prázdné placeholdery, rozklikávací)
-  - KROOS: 1–2
+- Dne 25. 10. 2026 uživatel dodal do složky „novy web“ 70 různých fotografií. Dvě přesné kopie nebyly použity. Fotky jsou převedené do WebP a vložené do Galerie i na odpovídající podstránky Co navrhuji.
+- Aktuální počty: rodinné domy 32, rekonstrukce a bytové domy 12, průmyslové a administrativní stavby 7, komerční a sportovní stavby 10, interiéry 9.
+- Bez vhodných podkladů zůstává portrét vedle citátu na Domů. Portréty nejsou rozeseté po dalších stránkách; hero používá dodané fotografie staveb z Galerie.
+- **Žádné stock ani externí obrázky jako výplň.** Každý volný slot bez podkladu zůstává zřetelně označený rámečkem, ikonou a popiskem. Má pevný `aspect-ratio`, aby pozdější dosazení nezměnilo layout.
+- Fotky patří také do souvisejících sekcí mimo galerii, pokud pro ně existuje odpovídající podklad. Galerie a podstránky oblastí používají společný lightbox.
+- Obrázky v galerii jsou v `assets/img/galerie/` ve WebP, načítají se pomocí `loading="lazy"` a popisky `alt` vycházejí ze zdrojových názvů nebo z toho, co je na fotce zřetelně vidět.
+- Zbývající prezentační fotografie jsou omezené na jeden portrétní slot vedle citátu na Domů. Hero opakovaně používá pět existujících fotografií z oborových galerií. O ateliéru a Proces jsou bez dalších prezentačních fotografií.
 
 ---
 
@@ -274,7 +248,7 @@ Jemné, příjemné, klidné — v duchu pokory. Ne plošné „všechno se vysu
 2. Nastav designové tokeny (barvy, fonty, spacing) — vyjdi ze skeleton tokenů referenčního layout skillu, dosaď reálnou paletu a typografii ze sekce 2.
 3. Postav základní layout (hlavička s navigací + zvýrazněním aktivní stránky, patička).
 4. Postav znovupoužitelné komponenty (eyebrow+H1 hlavička stránky, karty oblastí, střídavý blok oblasti, číslovaná osa, pruh log, lightbox, CTA pruh, placeholder fotky).
-5. Implementuj stránky v logickém pořadí: Domů → O ateliéru → Co navrhuji + 6 podstránek → Spolupráce → Galerie → KROOS → Kontakt.
+5. Implementuj stránky v logickém pořadí: Domů → O ateliéru → Co navrhuji + 5 podstránek → Proces → Galerie → Kontakt.
 6. Přidej animace/mikrointerakce záměrně (sekce 7).
 7. Implementuj lightbox (galerie i podstránky oblastí sdílí jeden).
 8. Vlož mapu (iframe) do kontaktu.

@@ -2,12 +2,36 @@
 
 Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `pravidla.md`.
 
+### 2026-10-25 — Vektorová loga v pohyblivém pruhu
+- **Co:** Textové zástupce v pruhu „Spolupracuji s“ na Domů nahradilo devět místních SVG log Panattoni, Accolade, Volkswagen, GSP, JaP Jacina, AUFEER, LAWI, Spinning MB a UNO. Loga LAWI, Spinning MB a UNO byla převedena z oficiálních PNG na vektorové cesty, značka GSP z oficiální favicony. Tasso bylo z pruhu odstraněno podle upřesnění uživatele.
+- **Proč:** na pokyn uživatele doplnit do posuvné řady vektorová loga.
+- **Dopad:** úprava domovské stránky, stylů pruhu a briefů; všechna loga se načítají lokálně. Po kontrole náhledu se přešlo na stejně široké responzivní pozice pro každé logo, aby jejich rozteč zůstala pravidelná i při různě širokých značkách. Ostatní textové reference v briefu zůstávají.
+- **Soubory:** `index.html`, `assets/css/pages.css`, `assets/img/logos/`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Odstranění sesterských společností z webu
+- **Co:** Z webu byly odebrány stránky a zmínky o KROOS a Projektu 360, včetně položek navigace, domovské sekce a odkazů v popisu interiérů a procesu. Sitemapu jsme aktualizovali a původní adresy trvale přesměrovali na úvodní stránku.
+- **Proč:** na pokyn uživatele, který tyto informace na webu nechce.
+- **Dopad:** Web má 16 stránek. Sesterské společnosti se v jeho obsahu neuvádějí.
+- **Soubory:** `sesterske-spolecnosti/`, `index.html`, `co-navrhuji/interiery/index.html`, `proces/index.html`, `assets/css/pages.css`, `sitemap.xml`, `vercel.json`, `AGENTS.md`, `README.md`, `CLAUDE.md`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/index.md`, `memory/memory.md`
+
+### 2026-10-25 — Odstranění sekce Z realizací z KROOS
+- **Co:** Ze stránky KROOS odstraněna celá sekce „Z realizací“ včetně placeholderu vybavení interiéru.
+- **Proč:** na upřesněný pokyn uživatele.
+- **Dopad:** Ostatní obsah stránky sesterské společnosti zůstává.
+- **Soubory:** `sesterske-spolecnosti/kroos/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Odebrání placeholderu detailu montáže
+- **Co:** Ze sekce „Z realizací“ na stránce KROOS odstraněna prázdná karta „Detail montáže“.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Placeholder „Vybavení interiéru“ a ostatní obsah sesterských společností zůstávají beze změny.
+- **Soubory:** `sesterske-spolecnosti/kroos/index.html`, `memory/memory.md`
+
 ## Aktuální stav
 
 - **Projekt:** web Ateliér Křivánek (Ing. Tomáš Křivánek, architekt; Mladá Boleslav / Bradlec)
-- **Fáze:** druhá verze po připomínkách klienta (2026-10-14): techničtější vzhled (Archivo + rastr), Proces, Sesterské společnosti, tým. 21 stránek. Čeká se na podklady (fotky, logo, IČO, PDF, údaje Projekt 360).
+- **Fáze:** druhá verze po připomínkách klienta (2026-10-14) s následným zjednodušením prezentačních sekcí. 16 stránek. 70 fotek je doplněno do pěti oblastí Galerie a odpovídajících podstránek Co navrhuji; stejné oborové obálky jsou na Domů. Hero nyní střídá pět snímků z Galerie po pěti sekundách. Další podklady (portrét vedle citátu, logo, IČO) stále chybí.
 - **Stack:** čisté HTML5 + CSS + Vanilla JS, žádný framework, žádný build step, žádný backend, žádný formulář; vícestránkový web (vlastní URL per stránka)
-- **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 21 stránek + `404.html`, 5 CSS souborů, 3 JS moduly, `sitemap.xml`, `robots.txt`. Reálné fotky nejsou, všechny sloty jsou označené placeholdery.
+- **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 16 stránek + `404.html`, 5 CSS souborů, 4 JS moduly, `sitemap.xml`, `robots.txt`. Galerie a oborové stránky obsahují 70 optimalizovaných WebP fotek v pěti oblastech; samostatný portrétní slot vedle citátu zůstává placeholderem.
 
 ## Klíčová rozhodnutí
 
@@ -18,7 +42,7 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 - **(datum neznámý, migrováno 2026-09-22)** — Ceník bez čísel — cena se odvíjí od rozsahu a fází (konzultace → návrh → úprava → odsouhlasení → kolaudace).
 - **(datum neznámý, migrováno 2026-09-22)** — Značka přejmenována na „Ateliér Křivánek" (z „Ateliér v Zelené").
 - **2026-09-22** — Zdrojem zadání je brief, který uživatel vložil do `prompt.md` a který je zkopírovaný do `atelier-krivanek-claude-code-prompt.md`. Vizuální motiv: tenká technická linka (kóty, řezy, obrysy) + číslované indexy.
-- **2026-09-22** — Šest oblastí tvorby jsou **kategorie realizací**, ne služby: rodinné domy, rekonstrukce a revitalizace, průmyslové a administrativní stavby, komerční a sportovní stavby, interiéry, projekty a studie.
+- **2026-09-22** — Šest oblastí tvorby byly **kategorie realizací**, ne služby: rodinné domy, rekonstrukce a revitalizace, průmyslové a administrativní stavby, komerční a sportovní stavby, interiéry, projekty a studie. Rozhodnutí z 2026-10-25 tuto kategorii odebírá.
 - **2026-09-22** — Hlavička a patička jsou synchronizované kopie v HTML, ne JS include. Cesty jsou absolutní, web se proto musí servírovat z kořene (ne `file://`).
 - **2026-09-22** — Akcent z briefu `#6E7D5B` měl na papírové bílé kontrast 4.09:1 a neprojde WCAG AA pro běžný text. Použitý je ztmavený `#5C6948` (5.44:1), hue zůstává. Světlejší tón žije dál jako `--c-accent-soft` pro dekoraci a pro text na tmavém pozadí.
 - **2026-09-22** — Zaveden pětidokumentový paměťový systém (`memory/index.md`, `memory/pravidla.md`, `memory/memory.md` + propojení s `CLAUDE.md`/`AGENTS.md`). Živý stav se od teď vede tady, ne v `CLAUDE.md` §5.
@@ -28,21 +52,21 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 
 - **2026-10-14** — Designový systém „techničtější, modernější“ na pokyn klienta: studená šedobílá `#F4F5F3`, technický rastr jen pod hero a hlavičkami stránek, Archivo (nadpisy rozšířené) + IBM Plex Mono. Nahrazuje teplý papír a Source Serif. Akcent modrá/zelená z loga beze změny.
 - **2026-10-14** — „Spolupráce“ je v navigaci „Proces“ na URL `/proces/`. Sesterské společnosti (KROOS, Projekt 360) mají vlastní sekci `/sesterske-spolecnosti/` s rozbalovací nabídkou v navigaci. KROOS je „sesterská“, ne „dceřiná“ společnost a na webu není odkaz na kroossro.cz.
+- **2026-10-25** — Na pokyn uživatele se sesterské společnosti KROOS a Projekt 360 na webu neuvádějí. Jejich stránky a odkazy byly odstraněny; původní URL trvale přesměrovávají na úvodní stránku.
 - **2026-10-14** — Na webu se nikde neuvádí „dříve / původním názvem Ateliér v Zelené“ (výslovný pokyn klienta).
 - **2026-10-14** — Web zůstává v první osobě (Tomáš). Tým (dcera Ing. arch. Lucie Křivánková; žádná Tereza, opraveno 2026-10-15) je představený na O ateliéru, ale domlouvá se dál s Tomášem.
+- **2026-10-25** — Tomáš Křivánek se na webu objeví nejvýše na dvou fotografiích: v hero a vedle citátu na Domů. Další portrétní sloty se nepřidávají; ostatní fotografie ukazují stavby a práci ateliéru.
+- **2026-10-25** — Na nový přímý pokyn uživatele je hero Domů celoplošné a střídá po pěti sekundách pět existujících fotografií z Galerie (rodinný dům, rekonstrukce, školicí středisko, sportovní stavba a interiér). Nadpis „Od nápadu ke kolaudaci.“ a podpis Ing. Tomáše Křivánka zůstávají pevné; jediný portrétní slot je vedle citátu. Tím se nahrazuje dřívější rozhodnutí mít portrét v hero.
 
 ## Otevřené otázky
 
 Čeká na uživatele/klienta. Po zodpovězení se maže, odpověď jde do Klíčových rozhodnutí nebo changelogu.
 
-- Projekt 360 s.r.o. — sídlo, IČO, jednatel, plátce DPH, případný web. Na stránce `[DOPLNIT]`, kontakt zatím převzatý z ateliéru (ověřit).
-- Fotky týmu (dva portréty 4:5: Tomáš, Lucie) — nedodány.
+- Portrétní fotografie Tomáše vedle citátu na Domů — podklad zatím nedodán.
 - Lucie Křivánková — jen „ČVUT fakulta architektura“, nevíme, zda studuje nebo dostudovala; web uvádí jen fakultu.
 
-- Reálné fotky — nedodány.
 - Cílová klíčová slova pro SEO — nedodán měřený seznam (Collabim apod.); keywords se nevymýšlí.
 - Kontaktní údaje — telefon, e-mail, přesná adresa ateliéru, IČO/DIČ. Nedodáno, v kódu jsou označené placeholdery `[DOPLNIT: …]`. Mapa na `/kontakt/` zůstává zakomentovaná, dokud nebude adresa.
-- Text o KROOS s.r.o. — máme: interiéry a nábytek, sesterská společnost, stejný kontakt a jednatel jako ateliér, plátce DPH. IČO nedodáno.
 - Milníky do časové osy na `/o-atelieru/` kromě 1991, 1997 a přejmenování — nedodány, nedomýšlí se.
 
 ## Záměrně nedokončeno
@@ -51,12 +75,136 @@ Ať to příští session neopraví jako chybu.
 
 - **Kontaktní formulář.** Záměrně žádný — kontakt jen `tel:`, `mailto:` a mapa. Výslovné přání klienta.
 - **Ceník s čísly.** Záměrně bez čísel — cena se odvíjí od rozsahu a fází.
-- **Reálné fotky.** Záměrně placeholdery — dosadí se po schválení návrhu a dodání podkladů.
+- **Portrétní fotografie a další nedodané podklady.** Jediné portrétní místo na Domů, vedle citátu, zůstává placeholderem do dodání fotky. Fotografie se nepřidávají do každé sekce jen kvůli zaplnění prostoru.
 - **Konkrétní keyword-optimalizace title/H1/meta.** Čeká na měřený seznam klíčových slov od klienta.
 
 ## Changelog
 
 Nejnovější nahoře.
+
+### 2026-10-25 — Zdůraznění ceny podle rozsahu projektu
+
+- **Co:** Nadpis cenové části na stránce `/proces/` nově výslovně říká, že se cena odvíjí od rozsahu projektu; přehled fází zůstává jako vysvětlení.
+- **Proč:** na upřesnění uživatele.
+- **Dopad:** Změnil se pouze nadpis cenového bloku.
+- **Soubory:** `proces/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Výslovné nabídnutí kontaktů na navazující profese
+
+- **Co:** Text v bloku „Navazující spolupráce“ nyní přímo říká, že Tomáš na požádání sežene kontakt na řemeslníky, dodavatele i specialisty.
+- **Proč:** upřesnění uživatele, že tato nabídka má být v sekci jasně vyslovená.
+- **Dopad:** Jen zřetelnější formulace stávající informace na stránce `/proces/`.
+- **Soubory:** `proces/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Propojení ceny a navazující spolupráce
+
+- **Co:** Oddělené sekce „Jak se počítá“ a „Zajištění kontaktů“ na stránce Proces byly sjednoceny do jednoho bloku. Model ceny nově ukazuje pět navazujících fází a vedle něj pokračování projektu přes kontakty na profese a sesterskou společnost Projekt 360.
+- **Proč:** na pokyn uživatele, který chtěl obsah pevněji propojit a udržet pozornost.
+- **Dopad:** Změna se týká pouze stránky `/proces/`; nezměnily se ceny ani rozsah nabízených služeb.
+- **Soubory:** `proces/index.html`, `assets/css/pages.css`, `memory/memory.md`
+
+### 2026-10-25 — Sjednocení velikosti fotografií v Galerii
+
+- **Co:** Náhledy fotografií na pěti podstránkách Galerie mají jednotný poměr stran 4:3 a řadí se do pravidelné mřížky. Kliknutím se dál otevře celý snímek v lightboxu.
+- **Proč:** na pokyn uživatele, aby fotografie byly stejně velké a přehledně zarovnané.
+- **Dopad:** Oříznutí se týká jen náhledů v Galerii; původní snímky a jejich poměry v lightboxu i fotografie na stránkách „Co navrhuji“ zůstávají beze změny.
+- **Soubory:** `assets/css/gallery.css`, `galerie/*/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Výraznější podpis architekta v hero
+
+- **Co:** Podpis „Ing. Tomáš Křivánek, architekt“ dostal větší velikost písma a výraznější řez Archivo místo drobného monospaced stylu.
+- **Proč:** na přímý pokyn uživatele, aby byl podpis v hero více vidět.
+- **Soubory:** `assets/css/pages.css`, `memory/memory.md`
+
+### 2026-10-25 — Postupné odhalení sedmi kroků procesu
+
+- **Co:** Jednotlivé kroky na stránce `/proces/` se při příchodu do záběru jemně odhalují podle pořadí s krátkým odstupem; prodloužil se limit odstupu, aby se odlišil i poslední ze sedmi kroků.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Používá se existující animace `.rise`; nastavení `prefers-reduced-motion` zůstává respektováno.
+- **Soubory:** `proces/index.html`, `assets/js/site.js`, `memory/memory.md`
+
+### 2026-10-25 — Celoplošné fotohero s automatickým střídáním
+
+- **Co:** Hero na Domů nově přes celou šířku a výšku úvodní plochy prolíná pět již dodaných fotografií z Galerie: `rd-bradlec.webp`, `img-4814.webp`, `skolici-stredisko-jap-mn-hradiste.webp`, `spinning-3.webp` a `interier-rd2.webp`. Snímky se mění po pěti sekundách; zůstává viditelný titulek „Od nápadu ke kolaudaci.“, podpis Ing. Tomáše Křivánka, text a odkazy na kontakt a tvorbu. Přibyly přímé volby snímku a pozastavení; automatické střídání se vypíná při `prefers-reduced-motion` nebo při skrytí panelu.
+- **Proč:** na přímý pokyn uživatele, který chtěl výrazně upravit hero na střídající se architektonické fotografie z Galerie.
+- **Dopad:** původní portrétní slot v hero zanikl; portrét zůstává pouze vedle citátu. Žádné nové obrazové soubory nebyly přidány.
+- **Soubory:** `index.html`, `assets/css/pages.css`, `assets/css/components.css`, `assets/css/tokens.css`, `assets/js/hero-slider.js`, `AGENTS.md`, `CLAUDE.md`, `README.md`, briefy, `memory/memory.md`
+
+### 2026-10-25 — Postupné odhalení milníků časové osy
+
+- **Co:** Tři milníky na stránce `/o-atelieru/` se při příchodu do záběru jemně odhalují postupně s krátkým odstupem.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Používá se existující animace `.rise`; systémové nastavení omezení pohybu zůstává respektováno.
+- **Soubory:** `o-atelieru/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Pruh spoluprací přesunut pod úvodní citát
+
+- **Co:** Blok „Spolupracuji s“ a jeho pruh log byl přesunut z místa za procesem bezprostředně pod úvodní citát na Domů.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Seznam spolupracujících společností i jeho animace zůstaly beze změny; změnilo se pouze pořadí sekcí na Domů.
+- **Soubory:** `index.html`, `memory/memory.md`
+
+### 2026-10-25 — Náhled procesu odstraněn z Domů
+
+- **Co:** Z Domů byl odstraněn blok „Jak to u mě probíhá“ včetně stručného popisu, odkazu a pěti kroků. Samostatná stránka `/proces/` zůstává dostupná.
+- **Proč:** na pokyn uživatele podle přiloženého snímku.
+- **Dopad:** Domů už neobsahuje samostatný náhled průběhu spolupráce; struktura úvodní stránky i brief byly upraveny. Nadpis a podrobnosti procesu zůstávají na `/proces/`.
+- **Soubory:** `index.html`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Jemné mikrointerakce a přechody lightboxu
+
+- **Co:** Fotografie v rozcestníkových kartách a galerii reagují na hover i klávesnicový focus mírným ztlumením a posunem výřezu. Tlačítka mají lehkou odezvu při stisku; lightbox se měkce otevírá a zavírá a při přepínání snímků naznačí směr pohybu.
+- **Proč:** na pokyn uživatele pro zpříjemnění rozhraní.
+- **Dopad:** Odezvy jsou omezené na interaktivní prvky. Globální pravidla `prefers-reduced-motion` zkracují přechody a animace; časování zavření lightboxu se při tomto nastavení přeskočí.
+- **Soubory:** `assets/css/components.css`, `assets/css/pages.css`, `assets/css/gallery.css`, `assets/js/lightbox.js`
+
+### 2026-10-25 — Zvětšení portrétu vedle citátu
+
+- **Co:** Na desktopu byly sloupce textu a portrétu u citátu na Domů nastaveny na stejnou šířku.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Větší prostor dostane portrétní placeholder vedle citátu; samostatný textový citát na O ateliéru zůstává jednosloupcový.
+- **Soubory:** `assets/css/pages.css`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Portrét přesunut vedle citátu na Domů
+
+- **Co:** Druhé místo s fotografií Tomáše bylo přesunuto z O ateliéru vedle hlavního citátu na Domů. Portréty tak zůstávají pouze v hero a u citátu, celkem nejvýše dvakrát. Osobní motto na O ateliéru je nyní textové.
+- **Proč:** na přímý pokyn uživatele podle přiloženého snímku.
+- **Dopad:** Domů obsahuje dvě portrétní místa, bez dalších fotografií u procesu a sesterských společností. Skutečná fotografie nebyla dodána, proto vedle citátu zůstává označený placeholder.
+- **Soubory:** `index.html`, `o-atelieru/index.html`, `AGENTS.md`, `CLAUDE.md`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Zjednodušení portrétních a prezentačních fotografií
+
+- **Co:** Portrét Ing. Tomáše Křivánka je umístěný pouze do hero na Domů a jednou do osobní sekce na O ateliéru. Z Domů odstraněny doprovodné fotografie u citátu, procesu a sesterských společností i prázdná šestá karta. Na O ateliéru odstraněny opakované týmové a pracovní foto sloty; spolupráce s Lucií zůstala v úvodním textu.
+- **Proč:** na pokyn uživatele, který chce Křivánka ukázat nejvýše jednou nebo dvakrát a omezit nadbytečné placeholdery.
+- **Dopad:** Domovská stránka zůstává vizuálně zaměřená na nabídku a projekty, stránka O ateliéru na zkušenosti a osobní motto. Veškerá portfoliová fotografie v pěti oblastech zůstala beze změny. Skutečné portrétní fotky zatím nebyly dodány.
+- **Soubory:** `index.html`, `o-atelieru/index.html`, `assets/css/pages.css`, `AGENTS.md`, `CLAUDE.md`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Odstranění sekce kvalifikací z O ateliéru
+
+- **Co:** Ze stránky O ateliéru odstraněn celý blok „Čím to mohu doložit“ včetně vzdělání, energetických průkazů, autorizace a placeholderu PDF. Stejný blok byl odebrán z požadavků v briefu a z README.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Časová osa historie zůstává; ostatní obsah stránky se nemění.
+- **Soubory:** `o-atelieru/index.html`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `README.md`, `memory/memory.md`
+
+### 2026-10-25 — Odstranění placeholderové sekce Z realizací
+
+- **Co:** Ze stránky Projekt 360 odstraněna sekce „Z realizací“ se dvěma prázdnými kartami rozestavěné a dokončené stavby.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Změna se týká jen stránky Projekt 360; ostatní části stránky zůstaly.
+- **Soubory:** `sesterske-spolecnosti/projekt-360/index.html`, `memory/memory.md`
+
+### 2026-10-25 — Odstranění oblasti Projekty a studie
+
+- **Co:** Na pokyn uživatele odebrána oblast „Projekty a studie“ z webu. Smazány její dvě podstránky, karta na Domů a v rozcestnících; odstraněny odkazy z desktopové i mobilní navigace, aktualizovány počty, sitemap, briefy a dokumentace. Staré URL se přesměrovávají na příslušné přehledy.
+- **Dopad:** Web má pět oblastí a 19 stránek plus `404.html`. Fotografie a stránky zbývajících oblastí zůstaly beze změny.
+- **Soubory:** `index.html`, `co-navrhuji/`, `galerie/`, `sitemap.xml`, `vercel.json`, `AGENTS.md`, `README.md`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-10-25 — Fotografie doplněny do pěti oblastí
+
+- **Co:** Ze složky „novy web“ doplněno 70 různých fotografií do rodinných domů (32), rekonstrukcí a bytových domů (12), průmyslových a administrativních staveb (7), komerčních a sportovních staveb (10) a interiérů (9). Dvě přesné kopie byly vynechány. Obrázky jsou převedené do WebP a Galerie i podstránky Co navrhuji používají stejné soubory.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** `/`, `/galerie/` i `/co-navrhuji/` zobrazují obálkové fotky pěti oblastí a Galerie uvádí aktuální počty snímků. Oblast „Projekty a studie“ zůstala s placeholdery, protože pro ni ve zdrojové složce nebyly podklady.
+- **Soubory:** `assets/img/galerie/`, `index.html`, `galerie/`, `co-navrhuji/`, `assets/css/components.css`, `atelier-krivanek-claude-code-prompt.md`, `AGENTS.md`, `README.md`, `memory/memory.md`
 
 ### 2026-10-15 — Oprava týmu: žádná Tereza
 

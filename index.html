@@ -72,15 +72,6 @@
                 <li><a class="nav__suba" href="/galerie/prumyslove-a-administrativni-stavby/"><span class="nav__subnum" aria-hidden="true">03</span>Průmyslové a administrativní stavby</a></li>
                 <li><a class="nav__suba" href="/galerie/komercni-a-sportovni-stavby/"><span class="nav__subnum" aria-hidden="true">04</span>Komerční a sportovní stavby</a></li>
                 <li><a class="nav__suba" href="/galerie/interiery/"><span class="nav__subnum" aria-hidden="true">05</span>Interiéry</a></li>
-                <li><a class="nav__suba" href="/galerie/projekty-a-studie/"><span class="nav__subnum" aria-hidden="true">06</span>Projekty a studie</a></li>
-              </ul>
-            </li>
-            <li class="nav__dd" data-dd>
-              <a class="nav__a" href="/sesterske-spolecnosti/">Sesterské společnosti</a>
-              <button class="nav__ddbtn" type="button" data-dd-btn aria-expanded="false" aria-controls="nav-spolecnosti" aria-label="Sesterské společnosti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-              <ul class="nav__sub" id="nav-spolecnosti">
-                <li><a class="nav__suba" href="/sesterske-spolecnosti/kroos/"><span class="nav__subnum" aria-hidden="true">01</span>KROOS s.r.o.</a></li>
-                <li><a class="nav__suba" href="/sesterske-spolecnosti/projekt-360/"><span class="nav__subnum" aria-hidden="true">02</span>Projekt 360 s.r.o.</a></li>
               </ul>
             </li>
             <li><a class="nav__a" href="/kontakt/">Kontakt</a></li>
@@ -113,43 +104,49 @@
             <li><a class="mnav__suba" href="/galerie/prumyslove-a-administrativni-stavby/">Průmyslové a administrativní stavby</a></li>
             <li><a class="mnav__suba" href="/galerie/komercni-a-sportovni-stavby/">Komerční a sportovní stavby</a></li>
             <li><a class="mnav__suba" href="/galerie/interiery/">Interiéry</a></li>
-            <li><a class="mnav__suba" href="/galerie/projekty-a-studie/">Projekty a studie</a></li>
           </ul>
         </li>
-        <li><a class="mnav__a" href="/sesterske-spolecnosti/"><span class="mnav__num" aria-hidden="true">06</span>Sesterské společnosti</a>
-          <ul class="mnav__sub" aria-label="Sesterské společnosti">
-            <li><a class="mnav__suba" href="/sesterske-spolecnosti/kroos/">KROOS s.r.o.</a></li>
-            <li><a class="mnav__suba" href="/sesterske-spolecnosti/projekt-360/">Projekt 360 s.r.o.</a></li>
-          </ul>
-        </li>
-        <li><a class="mnav__a" href="/kontakt/"><span class="mnav__num" aria-hidden="true">07</span>Kontakt</a></li>
+        <li><a class="mnav__a" href="/kontakt/"><span class="mnav__num" aria-hidden="true">06</span>Kontakt</a></li>
       </ul>
       <a class="btn btn--solid" href="/kontakt/">Kontaktujte mě</a>
     </div>
   </header>
 
   <main id="obsah">
-    <section class="herosplit sect sect--tight">
-      <div class="wrap wrap--full herosplit__in">
-        <figure class="ph ph--hero herosplit__photo">
-          <div class="ph__frame">
-            <svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg>
-            <span class="ph__label">Zde bude hlavní fotka: architektonický snímek realizované stavby</span>
-          </div>
-        </figure>
+    <section class="home-hero" data-home-carousel>
+      <div class="home-hero__slides" aria-hidden="true">
+        <img class="home-hero__slide is-active" data-home-slide src="/assets/img/galerie/rodinne-domy/rd-bradlec.webp" alt="" decoding="async" fetchpriority="high">
+        <img class="home-hero__slide" data-home-slide src="/assets/img/galerie/rekonstrukce/img-4814.webp" alt="" loading="lazy" decoding="async">
+        <img class="home-hero__slide" data-home-slide src="/assets/img/galerie/prumyslove-a-administrativni-stavby/skolici-stredisko-jap-mn-hradiste.webp" alt="" loading="lazy" decoding="async">
+        <img class="home-hero__slide" data-home-slide src="/assets/img/galerie/komercni-a-sportovni-stavby/spinning-3.webp" alt="" loading="lazy" decoding="async">
+        <img class="home-hero__slide" data-home-slide src="/assets/img/galerie/interiery/interier-rd2.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="home-hero__veil" aria-hidden="true"></div>
 
-        <span class="kota kota--v herosplit__kota" aria-hidden="true"></span>
-
-        <div class="herosplit__panel">
-          <p class="eyebrow">Ateliér Křivánek &middot; Mladá Boleslav</p>
-          <h1 class="herosplit__h">Od nápadu po kolaudaci.</h1>
-          <p class="herosplit__p">Každý návrh stavby začíná osobní konzultací a poznáním místa.
+      <div class="wrap wrap--full home-hero__in">
+        <div class="home-hero__content">
+          <p class="eyebrow home-hero__eyebrow">Ateliér Křivánek &middot; Mladá Boleslav</p>
+          <h1 class="home-hero__h">Od nápadu ke kolaudaci.</h1>
+          <p class="home-hero__byline">Ing. Tomáš Křivánek, architekt</p>
+          <p class="home-hero__p">Každý návrh stavby začíná osobní konzultací a poznáním místa.
             Z toho, co se na pozemku dozvím a co mi řeknete vy, vzniká dům,
             který na tom místě dává smysl.</p>
-          <div class="herosplit__acts">
+          <div class="home-hero__acts">
             <a class="btn btn--solid" href="/kontakt/">Napište mi</a>
             <a class="lnk lnk--quiet" href="/co-navrhuji/"><span class="lnk__txt">Prohlédnout tvorbu</span></a>
           </div>
+        </div>
+
+        <div class="home-hero__controls" data-hero-controls role="group" aria-label="Ovládání fotografií" hidden>
+          <button class="home-hero__select" type="button" data-hero-select="0" aria-label="Zobrazit rodinný dům v Bradlci" aria-current="true">01</button>
+          <button class="home-hero__select" type="button" data-hero-select="1" aria-label="Zobrazit rekonstrukci" aria-current="false">02</button>
+          <button class="home-hero__select" type="button" data-hero-select="2" aria-label="Zobrazit školicí středisko JaP" aria-current="false">03</button>
+          <button class="home-hero__select" type="button" data-hero-select="3" aria-label="Zobrazit sportovní stavbu" aria-current="false">04</button>
+          <button class="home-hero__select" type="button" data-hero-select="4" aria-label="Zobrazit interiér domu" aria-current="false">05</button>
+          <button class="home-hero__toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pozastavit střídání fotografií">
+            <svg class="home-hero__pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg>
+            <svg class="home-hero__play" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -164,14 +161,31 @@
             inspirace&hellip;</p>
           <cite class="pull__by">Ing. Tomáš Křivánek, architekt</cite>
         </blockquote>
-        <p class="pull__sub">Na návrzích se mnou pracuje dcera, Ing. arch. Lucie
-          Křivánková. Zkušenost se tu potkává s čerstvým pohledem.</p>
         <p style="margin-top: var(--s-4)">
           <a class="lnk" href="/o-atelieru/"><span class="lnk__txt">Kdo jsme</span></a>
         </p>
         </div>
         <div>
-          <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: portrét architekta nebo detail stavby</span></div><figcaption class="ph__cap">Na výšku, 4:5.</figcaption></figure>
+          <figure class="ph ph--portrait"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude portrét Ing. Tomáše Křivánka</span></div></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sect sect--tight">
+      <div class="rise wrap wrap--full">
+        <p class="eyebrow">Spolupracuji s</p>
+        <div class="logos" style="margin-top: var(--s-5)">
+          <ul class="logos__track" data-logos>
+            <li><img class="logos__image" src="/assets/img/logos/panattoni.svg" alt="Panattoni" width="193" height="22"></li>
+            <li><img class="logos__image" src="/assets/img/logos/accolade.svg" alt="Accolade" width="250" height="58"></li>
+            <li><img class="logos__image" src="/assets/img/logos/volkswagen.svg" alt="Volkswagen" width="1024" height="1024"></li>
+            <li class="logos__item--gsp"><img src="/assets/img/logos/gsp.svg" alt="" aria-hidden="true" width="48" height="48"><span class="logos__name">GSP Benátky</span></li>
+            <li><img class="logos__image" src="/assets/img/logos/jap-jacina.svg" alt="JaP Jacina" width="554" height="152"></li>
+            <li><img class="logos__image" src="/assets/img/logos/aufeer-design.svg" alt="AUFEER Design" width="184" height="47"></li>
+            <li><img class="logos__image" src="/assets/img/logos/lawi.svg" alt="LAWI" width="2369" height="595"></li>
+            <li><img class="logos__image" src="/assets/img/logos/spinning-mb.svg" alt="Spinning MB" width="438" height="35"></li>
+            <li class="logos__item--inverse"><img class="logos__image" src="/assets/img/logos/uno-group.svg" alt="UNO Group, Bezděčín" width="1024" height="123"></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -183,7 +197,7 @@
         <ul class="cards" style="margin-top: var(--s-7)">
             <li class="rise" data-rise-step="0">
               <a class="card" href="/co-navrhuji/rodinne-domy/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: rodinné domy</span></div></figure></div>
+                <div class="card__art"><figure class="ph ph--landscape"><img class="ph__img" src="/assets/img/galerie/rodinne-domy/rd-bradlec2.webp" alt="" loading="lazy" decoding="async"></figure></div>
                 <div class="card__meta">
                   <span class="idx" aria-hidden="true">01</span>
                   <span class="card__h">Rodinné domy</span>
@@ -193,7 +207,7 @@
             </li>
             <li class="rise" data-rise-step="1">
               <a class="card" href="/co-navrhuji/rekonstrukce/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: rekonstrukce a revitalizace</span></div></figure></div>
+                <div class="card__art"><figure class="ph ph--landscape"><img class="ph__img" src="/assets/img/galerie/rekonstrukce/img-4814.webp" alt="" loading="lazy" decoding="async"></figure></div>
                 <div class="card__meta">
                   <span class="idx" aria-hidden="true">02</span>
                   <span class="card__h">Rekonstrukce a revitalizace</span>
@@ -203,7 +217,7 @@
             </li>
             <li class="rise" data-rise-step="2">
               <a class="card" href="/co-navrhuji/prumyslove-a-administrativni-stavby/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: průmyslové a administrativní stavby</span></div></figure></div>
+                <div class="card__art"><figure class="ph ph--landscape"><img class="ph__img" src="/assets/img/galerie/prumyslove-a-administrativni-stavby/img-6679.webp" alt="" loading="lazy" decoding="async"></figure></div>
                 <div class="card__meta">
                   <span class="idx" aria-hidden="true">03</span>
                   <span class="card__h">Průmyslové a administrativní stavby</span>
@@ -213,7 +227,7 @@
             </li>
             <li class="rise" data-rise-step="3">
               <a class="card" href="/co-navrhuji/komercni-a-sportovni-stavby/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: komerční a sportovní stavby</span></div></figure></div>
+                <div class="card__art"><figure class="ph ph--landscape"><img class="ph__img" src="/assets/img/galerie/komercni-a-sportovni-stavby/spinning-3.webp" alt="" loading="lazy" decoding="async"></figure></div>
                 <div class="card__meta">
                   <span class="idx" aria-hidden="true">04</span>
                   <span class="card__h">Komerční a sportovní stavby</span>
@@ -223,7 +237,7 @@
             </li>
             <li class="rise" data-rise-step="0">
               <a class="card" href="/co-navrhuji/interiery/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: interiéry</span></div></figure></div>
+                <div class="card__art"><figure class="ph ph--landscape"><img class="ph__img" src="/assets/img/galerie/interiery/syrrah-natura1.webp" alt="" loading="lazy" decoding="async"></figure></div>
                 <div class="card__meta">
                   <span class="idx" aria-hidden="true">05</span>
                   <span class="card__h">Interiéry</span>
@@ -231,98 +245,7 @@
                 <p class="card__p">Kanceláře, školicí středisko VW, autosalon, ordinace i byty.</p>
               </a>
             </li>
-            <li class="rise" data-rise-step="1">
-              <a class="card" href="/co-navrhuji/projekty-a-studie/">
-                <div class="card__art"><figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: projekty a studie</span></div></figure></div>
-                <div class="card__meta">
-                  <span class="idx" aria-hidden="true">06</span>
-                  <span class="card__h">Projekty a studie</span>
-                </div>
-                <p class="card__p">Dům U Bondy centra a studie rodinných domů.</p>
-              </a>
-            </li>
         </ul>
-      </div>
-    </section>
-
-    <section class="sect">
-      <div class="rise wrap">
-        <p class="eyebrow">Od konzultace po kolaudaci</p>
-        <h2>Jak to u mě probíhá</h2>
-        <div class="dual" style="margin-top: var(--s-6)">
-          <div>
-            <p class="lead">Návrhy staveb dělám od počátečních konzultací a studií
-              až po realizační dokumentaci, v čase, který vyhovuje oběma stranám.
-              Samozřejmostí je vyřízení formalit celého povolovacího procesu
-              a spolupráce v průběhu výstavby až po kolaudaci.</p>
-            <p style="margin-top: var(--s-5)">
-              <a class="lnk" href="/proces/"><span class="lnk__txt">Celý proces krok po kroku</span></a>
-            </p>
-          </div>
-          <div>
-            <figure class="ph ph--landscape"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: pracovní záběr, výkres nebo rozestavěná stavba</span></div></figure>
-          </div>
-        </div>
-
-        <ol class="flow flow--row" style="margin-top: var(--s-8)">
-            <li><span class="idx" aria-hidden="true">01</span><h3 class="flow__h">Konzultace</h3><p class="flow__p">Sejdeme se nad místem a nad tím, co potřebujete.</p></li>
-            <li><span class="idx" aria-hidden="true">02</span><h3 class="flow__h">Návrh</h3><p class="flow__p">Studie: osazení na pozemek, dispozice, hmota.</p></li>
-            <li><span class="idx" aria-hidden="true">03</span><h3 class="flow__h">Úprava</h3><p class="flow__p">Návrh se mění podle připomínek, dokud nesedí.</p></li>
-            <li><span class="idx" aria-hidden="true">04</span><h3 class="flow__h">Odsouhlasení</h3><p class="flow__p">Domluvíme finální podobu a rozsah dokumentace.</p></li>
-            <li><span class="idx" aria-hidden="true">05</span><h3 class="flow__h">Kolaudace</h3><p class="flow__p">Povolení, spolupráce při výstavbě a předání do užívání.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="sect sect--tight">
-      <div class="rise wrap wrap--full">
-        <p class="eyebrow">Spolupracuji s</p>
-        <div class="logos" style="margin-top: var(--s-5)">
-          <ul class="logos__track" data-logos>
-            <li><span class="logo">Panattoni</span></li>
-            <li><span class="logo">Accolade</span></li>
-            <li><span class="logo">Volkswagen</span></li>
-            <li><span class="logo">GSP Benátky</span></li>
-            <li><span class="logo">JaP Jacina</span></li>
-            <li><span class="logo">Aufeer Design</span></li>
-            <li><span class="logo">LAWI</span></li>
-            <li><span class="logo">Spinning centrum</span></li>
-            <li><span class="logo">Tasso</span></li>
-            <li><span class="logo">UNO Bezděčín</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="sect sect--deep">
-      <div class="rise wrap dual">
-        <div>
-          <p class="eyebrow">Sesterské společnosti</p>
-          <h2>Od výkresu ke stavbě</h2>
-          <p class="lead" style="margin-top: var(--s-4)">Návrhem to končit nemusí.
-            Vlastní projekty umíme postavit i zařídit.</p>
-          <ul class="sister" style="margin-top: var(--s-6)">
-            <li>
-              <span class="idx" aria-hidden="true">01</span>
-              <div>
-                <h3 class="sister__h">Projekt 360 s.r.o.</h3>
-                <p class="sister__p">Realizace staveb podle projektů z ateliéru.</p>
-                <a class="lnk" href="/sesterske-spolecnosti/projekt-360/"><span class="lnk__txt">O společnosti Projekt 360</span></a>
-              </div>
-            </li>
-            <li>
-              <span class="idx" aria-hidden="true">02</span>
-              <div>
-                <h3 class="sister__h">KROOS s.r.o.</h3>
-                <p class="sister__p">Návrhy a realizace interiérů a jejich vybavení, od návrhu až po montáž.</p>
-                <a class="lnk" href="/sesterske-spolecnosti/kroos/"><span class="lnk__txt">O společnosti KROOS</span></a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <figure class="ph ph--wide"><div class="ph__frame"><svg class="ph__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="14"/><circle cx="12" cy="12.5" r="3.6"/><path d="M8 5.5l1.4-2h5.2L16 5.5"/></svg><span class="ph__label">Zde bude fotka: interiér realizovaný společností KROOS</span></div></figure>
-        </div>
       </div>
     </section>
 
@@ -356,7 +279,6 @@
             <li><a href="/co-navrhuji/">Co navrhuji</a></li>
             <li><a href="/proces/">Proces</a></li>
             <li><a href="/galerie/">Galerie</a></li>
-            <li><a href="/sesterske-spolecnosti/">Sesterské společnosti</a></li>
             <li><a href="/kontakt/">Kontakt</a></li>
           </ul>
         </div>
@@ -375,12 +297,12 @@
       <div class="ftr__bar">
         <span>&copy; 2026 Ateliér Křivánek</span>
         <span>Ing. Tomáš Křivánek, IČO [DOPLNIT]</span>
-        <span>Sesterské společnosti: <a href="/sesterske-spolecnosti/kroos/">KROOS</a> &middot; <a href="/sesterske-spolecnosti/projekt-360/">Projekt 360</a></span>
       </div>
     </div>
   </footer>
 
   <script src="/assets/js/site.js" defer></script>
   <script src="/assets/js/logos.js" defer></script>
+  <script src="/assets/js/hero-slider.js" defer></script>
 </body>
 </html>

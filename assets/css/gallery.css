@@ -37,6 +37,10 @@
   list-style: none;
 }
 .shots > li { margin: 0; }
+
+/* Stejně vysoké výřezy na podstránkách Galerie. */
+.shots--gallery .ph { --ph-ar: var(--ar-landscape); }
+
 @media (min-width: 62em) {
   .shots { grid-template-columns: repeat(4, 1fr); gap: var(--s-5); }
 }
@@ -49,8 +53,12 @@
   z-index: var(--z-box);
   display: grid;
   place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease);
 }
 .lb[hidden] { display: none; }
+.lb.is-open { opacity: 1; pointer-events: auto; }
 
 .lb__backdrop {
   position: absolute;
@@ -67,7 +75,10 @@
   gap: var(--s-3);
   width: min(96vw, var(--w-full));
   padding: var(--s-5) var(--s-3);
+  transform: translateY(7px);
+  transition: transform var(--dur-base) var(--ease-out);
 }
+.lb.is-open .lb__panel { transform: none; }
 
 .lb__fig { margin: 0; min-width: 0; }
 
@@ -77,10 +88,31 @@
   aspect-ratio: var(--lb-ar, 4 / 3);
   max-height: 72vh;
   margin-inline: auto;
+  overflow: hidden;
   background: var(--c-graphite-sub);
   border: var(--hair) solid var(--c-muted);
 }
 .lb__img { width: 100%; height: 100%; object-fit: contain; }
+
+.lb__img,
+.lb__ph { animation: lb-image-in var(--dur-base) var(--ease-out) both; }
+.lb__stage[data-direction="next"] .lb__img,
+.lb__stage[data-direction="next"] .lb__ph { animation-name: lb-image-next; }
+.lb__stage[data-direction="prev"] .lb__img,
+.lb__stage[data-direction="prev"] .lb__ph { animation-name: lb-image-prev; }
+
+@keyframes lb-image-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes lb-image-next {
+  from { opacity: 0.6; transform: translateX(7px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes lb-image-prev {
+  from { opacity: 0.6; transform: translateX(-7px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
 .lb__ph {
   display: grid;
@@ -121,10 +153,13 @@
   font-size: var(--t-md);
   cursor: pointer;
   transition: border-color var(--dur-fast) var(--ease),
-              color var(--dur-fast) var(--ease);
+              color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease-out);
 }
 .lb__x:hover,
 .lb__nav:hover { border-color: var(--c-paper); color: var(--c-accent-soft); }
+.lb__x:active,
+.lb__nav:active { transform: translateY(1px); }
 .lb__nav[hidden] { visibility: hidden; display: inline-flex; }
 
 .lb__x {

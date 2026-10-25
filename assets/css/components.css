@@ -101,8 +101,10 @@
   cursor: pointer;
   transition: background var(--dur-base) var(--ease),
               color var(--dur-base) var(--ease),
-              border-color var(--dur-base) var(--ease);
+              border-color var(--dur-base) var(--ease),
+              transform var(--dur-fast) var(--ease-out);
 }
+.btn:active { transform: translateY(1px); }
 .btn:hover {
   background: var(--c-graphite);
   color: var(--c-paper);
@@ -192,6 +194,13 @@
   color: var(--c-muted);
 }
 
+.ph__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ph-ar, var(--ar-landscape));
+  object-fit: cover;
+}
+
 .ph--hero      { --ph-ar: var(--ar-hero); }
 .ph--wide      { --ph-ar: var(--ar-wide); }
 .ph--landscape { --ph-ar: var(--ar-landscape); }
@@ -220,6 +229,20 @@
   background: var(--c-paper-deep);
 }
 .ph__btn:hover .ph__icon { opacity: 1; color: var(--c-accent); }
+
+/* Fotografie reagují jen na skutečně aktivní karty a ovládací prvky. */
+.card__art .ph__img,
+.ph__btn .ph__img {
+  transition: filter var(--dur-base) var(--ease),
+              object-position var(--dur-slow) var(--ease-out);
+}
+.card:hover .ph__img,
+.card:focus-visible .ph__img,
+.ph__btn:hover .ph__img,
+.ph__btn:focus-visible .ph__img {
+  filter: brightness(0.94);
+  object-position: 52% 50%;
+}
 
 /* --------------------------------------------------------------------------
    6. HLAVIČKA A NAVIGACE
@@ -309,7 +332,7 @@
 .nav__a[aria-current] { color: var(--c-accent); }
 .nav__a[aria-current]::after { transform: scaleX(1); background: var(--c-accent); }
 
-/* Rozbalovací nabídka u Galerie — šest oblastí, každá vede na svou
+/* Rozbalovací nabídka u Galerie — pět oblastí, každá vede na svou
    podstránku (/galerie/slug/). Na podstránce má Galerie aria-current="true"
    a odkaz oblasti aria-current="page". Myší se otevře najetím, klávesnicí tlačítkem
    se šipkou (aria-expanded, řídí site.js). Skryté odkazy mají
@@ -547,16 +570,14 @@
 
 .phead { padding-block: var(--sect-base) var(--sect-tight); }
 
-/* Technický rastr (milimetrový papír) pod hlavičkou podstránky a hero na Domů.
+/* Technický rastr (milimetrový papír) pod hlavičkami podstránek.
    Jemná síť po --grid-size, sytější čára po --grid-major. Maska ho dole
    rozpouští do čistého papíru, aby nevznikal tvrdý okraj sekce. */
-.phead,
-.herosplit {
+.phead {
   position: relative;
   isolation: isolate;
 }
-.phead::before,
-.herosplit::before {
+.phead::before {
   content: "";
   position: absolute;
   inset: 0;

@@ -203,7 +203,114 @@
 }
 
 /* --------------------------------------------------------------------------
-   KROOS blok na domovské stránce
+   PROCES — cena a návazná spolupráce jako jeden celek
+   -------------------------------------------------------------------------- */
+
+.scope__intro {
+  max-width: 50rem;
+  margin-bottom: var(--s-7);
+}
+.scope__intro .eyebrow { margin-bottom: var(--s-4); }
+.scope__intro h2 { max-width: 22ch; }
+.scope__intro .lead { margin-top: var(--s-4); max-width: 52ch; }
+
+.scope__grid {
+  display: grid;
+  gap: var(--s-7);
+  padding-top: var(--s-6);
+  border-top: var(--hair) solid var(--c-line-strong);
+}
+.scope__kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-3);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+}
+.scope__h {
+  max-width: 25ch;
+  margin-bottom: var(--s-3);
+  font-size: var(--t-xl);
+}
+.scope__p {
+  max-width: 52ch;
+  color: var(--c-muted);
+}
+.scope__stages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4) var(--s-5);
+  margin: var(--s-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.scope__stages > li {
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  min-width: 0;
+  margin: 0;
+  padding-top: var(--s-3);
+  border-top: var(--hair) solid var(--c-line-strong);
+  font-size: var(--t-sm);
+}
+.scope__stage-num {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--ls-index);
+  color: var(--c-accent-2);
+  font-variant-numeric: tabular-nums;
+}
+.scope__note {
+  max-width: 48ch;
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: var(--hair) dashed var(--c-line-strong);
+  font-size: var(--t-sm);
+}
+.scope__support {
+  padding-top: var(--s-6);
+  border-top: var(--hair) solid var(--c-line-strong);
+}
+.scope__p--last { margin-top: var(--s-4); }
+.scope__link { margin-top: var(--s-4); margin-bottom: 0; }
+
+@media (min-width: 62em) {
+  .scope__grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+    gap: var(--s-8);
+  }
+  .scope__stages {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    border-top: var(--hair) solid var(--c-line-strong);
+  }
+  .scope__stages > li {
+    position: relative;
+    padding: var(--s-3) var(--s-3) 0 0;
+    border-top: 0;
+  }
+  .scope__stages > li::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--hair));
+    left: 0;
+    width: var(--hair);
+    height: 7px;
+    background: var(--c-line-strong);
+  }
+  .scope__support {
+    padding: 0 0 0 var(--s-8);
+    border-top: 0;
+    border-left: var(--hair) solid var(--c-line-strong);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Dvou sloupcové rozložení obsahu na stránce Proces
    -------------------------------------------------------------------------- */
 
 .dual {
@@ -430,63 +537,142 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   HERO — foto a text jako dvě oddělené zóny, spojené kótovou linkou (.kota--v).
-   Kóta je samostatná komponenta (viz components.css §3), ne závislá na
-   placeholderu — motiv přežije dosazení reálné fotky. Foto jede přes
-   standardní .ph/.ph__frame, stejně jako všechny ostatní fotky na webu.
+   HERO — celoplošné fotografie z galerie s pevným textem a ovládáním.
    -------------------------------------------------------------------------- */
 
-.herosplit__in {
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: max(39rem, calc(100vh - 4.5rem));
+  min-height: max(39rem, calc(100svh - 4.5rem));
+  background: var(--c-graphite);
+  color: var(--c-paper);
+}
+.home-hero__slides,
+.home-hero__veil { position: absolute; inset: 0; }
+.home-hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--dur-hero) var(--ease);
+}
+.home-hero__slide.is-active { opacity: 1; }
+.home-hero__veil {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, var(--c-hero-overlay) 0%, var(--c-hero-overlay-mid) 49%, var(--c-hero-overlay-edge) 100%),
+    linear-gradient(0deg, var(--c-hero-overlay-base) 0%, transparent 72%);
+}
+.home-hero__in {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-7);
+  grid-template-columns: minmax(0, 1fr);
+  align-content: end;
+  gap: var(--s-6);
+  min-height: inherit;
+  padding-block: clamp(3rem, 8vh, 6rem) clamp(2rem, 5vh, 3.5rem);
 }
-
-.herosplit__photo { margin: 0; }
-
-.herosplit__panel { max-width: var(--w-text); }
-
-/* Eyebrow v hero jede jako kicker nad textem, ne vedle linky v řádku —
-   „Ateliér Křivánek · Mladá Boleslav“ se na mobilu jinak láme do linky. */
-.herosplit .eyebrow { display: block; }
-.herosplit .eyebrow::before { display: block; margin-bottom: var(--s-3); }
-
-.herosplit__h {
-  font-size: var(--t-3xl);
-  max-width: 15ch;
+.home-hero__content { max-width: 53rem; align-self: end; }
+.home-hero__eyebrow { display: block; color: var(--c-paper); }
+.home-hero__eyebrow::before {
+  display: block;
+  margin-bottom: var(--s-3);
+  background: var(--c-paper);
 }
-.herosplit__p {
-  max-width: 40ch;
+.home-hero__h { max-width: 12ch; font-size: var(--t-hero); }
+.home-hero__byline {
+  margin-top: var(--s-4);
+  font-family: var(--f-display);
+  font-stretch: var(--fs-display);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  letter-spacing: var(--ls-head);
+  color: var(--c-paper);
+}
+.home-hero__p {
+  max-width: 43ch;
   margin-top: var(--s-5);
   font-size: var(--t-md);
-  color: var(--c-muted);
   line-height: var(--lh-lead);
+  color: var(--c-paper-soft);
 }
-.herosplit__acts {
+.home-hero__acts {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--s-6);
-  margin-top: var(--s-7);
+  gap: var(--s-5) var(--s-6);
+  margin-top: var(--s-6);
 }
-
-/* Tablet, ještě jeden sloupec: 3:4 na tak široké kartě je zbytečně vysoké
-   a odsouvá text daleko pod scroll. Širší poměr, dokud se nerozdělí na dva sloupce. */
-@media (min-width: 48em) and (max-width: 61.9375em) {
-  .herosplit__photo.ph--hero { --ph-ar: var(--ar-wide); }
+.home-hero .btn--solid {
+  border-color: var(--c-paper);
+  background: var(--c-paper);
+  color: var(--c-graphite);
 }
+.home-hero .btn--solid:hover {
+  border-color: var(--c-paper);
+  background: var(--c-paper-deep);
+  color: var(--c-graphite);
+}
+.home-hero .lnk--quiet,
+.home-hero .lnk--quiet:hover { color: var(--c-paper); }
+.home-hero .lnk--quiet:hover .lnk__txt { border-bottom-color: var(--c-paper); }
+.home-hero :focus-visible { outline-color: var(--c-paper); }
+.home-hero__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--s-1);
+}
+.home-hero__select,
+.home-hero__toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: var(--hair) solid var(--c-hero-control-border);
+  background: var(--c-hero-control);
+  color: var(--c-paper);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+}
+.home-hero__select:hover,
+.home-hero__toggle:hover { background: var(--c-hero-control-hover); }
+.home-hero__select[aria-current="true"] {
+  background: var(--c-paper);
+  color: var(--c-graphite);
+}
+.home-hero__toggle { margin-left: var(--s-1); }
+.home-hero__toggle svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+.home-hero__play { display: none; }
+.home-hero__toggle[aria-pressed="true"] .home-hero__pause { display: none; }
+.home-hero__toggle[aria-pressed="true"] .home-hero__play { display: block; }
+.home-hero [hidden] { display: none !important; }
 
-@media (min-width: 62em) {
-  .herosplit__in {
-    grid-template-columns: minmax(0, 7fr) auto minmax(0, 6fr);
-    align-items: center;
-    gap: var(--s-8);
+@media (min-width: 48em) {
+  .home-hero__in {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: var(--s-7);
   }
-  /* Foto na desktopu vyšší sloupec než mobilní karta — ar-portrait (4:5)
-     místo ar-hero (3:4), aby ve dvousloupcové sestavě nebylo přehnaně úzké. */
-  .herosplit__photo.ph--hero { --ph-ar: var(--ar-portrait); }
-  .herosplit__kota { align-self: stretch; }
-  .herosplit__h { font-size: var(--t-4xl); max-width: 13ch; }
+  .home-hero__controls { justify-content: flex-end; }
 }
 
 /* --------------------------------------------------------------------------
@@ -558,8 +744,9 @@
 }
 
 @media (min-width: 62em) {
-  /* Citát dostává víc plochy než fotka — fotka je doprovod, ne protiváha. */
-  .pull { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: var(--s-9); }
+  /* Citát a portrét mají srovnatelnou plochu. */
+  .pull { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-9); }
+  .pull--single { grid-template-columns: minmax(0, 1fr); }
   .pull__t { max-width: 28ch; }
 }
 
@@ -609,7 +796,8 @@
   transform-origin: left;
   transition: transform var(--dur-base) var(--ease-out);
 }
-.card:hover .card__h::after { transform: scaleX(1); }
+.card:hover .card__h::after,
+.card:focus-visible .card__h::after { transform: scaleX(1); }
 .card__p {
   margin: var(--s-3) 0 0;
   font-size: var(--t-sm);
@@ -649,21 +837,43 @@
 }
 .logos:hover .logos__track,
 .logos:focus-within .logos__track { animation-play-state: paused; }
-.logos__track > li { margin: 0; flex: 0 0 auto; }
-
-.logo {
-  display: grid;
-  place-content: center;
-  width: 9.5rem;
-  height: 3.25rem;
-  padding: var(--s-2);
-  border: var(--hair) dashed var(--c-line-strong);
-  background: var(--c-paper-deep);
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: 0.06em;
+.logos__track > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(8rem, 14vw, 12rem);
+  min-height: 3.25rem;
+  margin: 0;
+  flex: 0 0 clamp(8rem, 14vw, 12rem);
+}
+.logos__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100% - var(--s-4));
+  max-height: 3.25rem;
+  object-fit: contain;
+}
+.logos__item--gsp { gap: var(--s-2); }
+.logos__item--gsp img {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+}
+.logos__name {
   color: var(--c-muted);
-  text-align: center;
+  font-family: var(--f-display);
+  font-size: var(--t-xs);
+  font-weight: 600;
+}
+.logos__item--inverse {
+  padding-inline: var(--s-3);
+  background: var(--c-graphite);
+}
+.logos__item--inverse .logos__image {
+  max-width: 100%;
+  max-height: 2rem;
 }
 
 @keyframes logos-slide {
@@ -680,6 +890,10 @@
     flex-wrap: wrap;
     gap: var(--s-4);
     justify-content: center;
+  }
+  .logos__track > li {
+    width: clamp(8rem, 12vw, 11rem);
+    flex-basis: clamp(8rem, 12vw, 11rem);
   }
 }
 
@@ -711,56 +925,3 @@
 .file--soon { cursor: default; border-style: dashed; }
 .file--soon:hover { border-color: var(--c-line-strong); background: transparent; }
 
-/* Rozcestník se dvěma kartami (Sesterské společnosti): na desktopu zůstávají
-   dva sloupce, třetí prázdný sloupec by vypadal jako chyba. */
-@media (min-width: 68em) {
-  .cards--two { grid-template-columns: repeat(2, 1fr); }
-  .cards--two > li:nth-child(3n+2) { margin-top: 0; }
-  .cards--two > li:nth-child(2) { margin-top: var(--s-7); }
-}
-
-/* --------------------------------------------------------------------------
-   TÝM (O ateliéru) — tři portréty vedle sebe, jméno a role pod fotkou
-   -------------------------------------------------------------------------- */
-
-.team {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-7) var(--s-5);
-  margin: 0; padding: 0;
-  list-style: none;
-}
-.team > li { margin: 0; }
-.team__h {
-  margin-top: var(--s-4);
-  font-size: var(--t-md);
-}
-.team__r {
-  margin-top: var(--s-2);
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--c-muted);
-}
-@media (min-width: 40em) { .team { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 62em) {
-  .team { grid-template-columns: repeat(2, minmax(0, 24rem)); }
-  .team > li:nth-child(2) { margin-top: var(--s-7); }
-}
-
-/* --------------------------------------------------------------------------
-   SESTERSKÉ SPOLEČNOSTI (Domů) — dvě položky s indexem, oddělené linkou
-   -------------------------------------------------------------------------- */
-
-.sister { margin: 0; padding: 0; list-style: none; }
-.sister > li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--s-4);
-  margin: 0;
-  padding-block: var(--s-5);
-  border-top: var(--hair) solid var(--c-line-strong);
-}
-.sister__h { font-size: var(--t-md); }
-.sister__p { margin: var(--s-2) 0 var(--s-3); color: var(--c-muted); }

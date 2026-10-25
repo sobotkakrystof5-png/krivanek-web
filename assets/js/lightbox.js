@@ -13,6 +13,7 @@
 
   var current = -1;
   var lastFocus = null;
+  var closeTimer = null;
   var visible = triggers.slice();
 
   /* --- Sestavení dialogu (jen jednou, na konci body) --------------------- */
@@ -50,7 +51,7 @@
 
   /* --- Vykreslení jedné položky ----------------------------------------- */
 
-  var render = function (i) {
+  var render = function (i, direction) {
     var trg = visible[i];
     if (!trg) { return; }
     current = i;
@@ -61,6 +62,7 @@
 
     stage.innerHTML = '';
     stage.style.setProperty('--lb-ar', ratio);
+    stage.setAttribute('data-direction', direction || 'initial');
 
     if (src) {
       var img = document.createElement('img');
@@ -86,7 +88,7 @@
 
   var step = function (d) {
     if (visible.length < 2) { return; }
-    render((current + d + visible.length) % visible.length);
+    render((current + d + visible.length) % visible.length, d > 0 ? 'next' : 'prev');
   };
 
   /* --- Otevření a zavření ------------------------------------------------ */
@@ -96,21 +98,36 @@
     var i = visible.indexOf(trg);
     if (i < 0) { return; }
 
+    if (closeTimer !== null) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+
     // Spouštěč si pamatujeme přímo. document.activeElement by selhal tam,
     // kde kliknutí prvek nezaostří, a focus by se po zavření vrátil do prázdna.
     lastFocus = trg;
     box.hidden = false;
     document.body.style.overflow = 'hidden';
-    render(i);
+    render(i, 'initial');
+    // Vynutí počáteční stav opacity, aby se dialog mohl jemně objevit.
+    void box.offsetWidth;
+    box.classList.add('is-open');
     // Zavírací tlačítko je první bezpečný cíl focusu.
     box.querySelector('.lb__x').focus();
   };
 
   var close = function () {
-    box.hidden = true;
-    document.body.style.overflow = '';
-    stage.innerHTML = '';
-    if (lastFocus) { lastFocus.focus(); lastFocus = null; }
+    if (box.hidden || !box.classList.contains('is-open')) { return; }
+
+    box.classList.remove('is-open');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    closeTimer = window.setTimeout(function () {
+      closeTimer = null;
+      box.hidden = true;
+      document.body.style.overflow = '';
+      stage.innerHTML = '';
+      if (lastFocus) { lastFocus.focus(); lastFocus = null; }
+    }, reducedMotion ? 0 : 280);
   };
 
   /* --- Události ---------------------------------------------------------- */

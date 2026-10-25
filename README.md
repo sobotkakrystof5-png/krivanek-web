@@ -36,13 +36,9 @@ Pak otevři `http://localhost:8080`.
 /co-navrhuji/prumyslove-a-administrativni-stavby/
 /co-navrhuji/komercni-a-sportovni-stavby/
 /co-navrhuji/interiery/
-/co-navrhuji/projekty-a-studie/
 /proces/                                     proces, cena, zajištění kontaktů
-/galerie/                                    rozcestník šesti oblastí
-/galerie/<oblast>/                           fotky jedné oblasti + lightbox (6 stránek, slugy jako Co navrhuji)
-/sesterske-spolecnosti/                      rozcestník: KROOS, Projekt 360
-/sesterske-spolecnosti/kroos/
-/sesterske-spolecnosti/projekt-360/
+/galerie/                                    rozcestník pěti oblastí
+/galerie/<oblast>/                           fotky jedné oblasti + lightbox (5 stránek, slugy jako Co navrhuji)
 /kontakt/                                    adresa, telefony, mapa
 404.html, sitemap.xml, robots.txt
 ```
@@ -64,8 +60,9 @@ V komponentách se sahá jen přes `var(--…)`. Barva natvrdo je chyba.
 | Soubor | Co dělá | Kde se načítá |
 |---|---|---|
 | `assets/js/site.js` | Mobilní menu (focus trap, Esc) a animace při scrollu. | Všude |
-| `assets/js/lightbox.js` | Sdílený lightbox. Klávesnice, šipky, Esc, focus trap. | Podstránky galerie, oblasti, O ateliéru, KROOS, Projekt 360 |
+| `assets/js/lightbox.js` | Sdílený lightbox. Klávesnice, šipky, Esc, focus trap. | Podstránky galerie, oblasti a O ateliéru |
 | `assets/js/logos.js` | Zdvojí stopu pruhu log, aby posun navazoval. | Domů |
+| `assets/js/hero-slider.js` | Střídá pět fotografií v úvodním hero; ovládání výběru a pozastavení. | Domů |
 
 ---
 
@@ -77,7 +74,7 @@ pro vyhledávače i pro robustnost. Absolutní cesty (`/o-atelieru/` místo
 `../o-atelieru/`) znamenají, že blok hlavičky i patičky je ve všech souborech
 znak po znaku stejný.
 
-**Když měníš hlavičku nebo patičku, změň ji ve všech 21 stránkách plus `404.html`.**
+**Když měníš hlavičku nebo patičku, změň ji ve všech 16 stránkách plus `404.html`.**
 Kontrola, že se nerozešly:
 
 ```bash
@@ -88,18 +85,20 @@ grep -c 'class="mark"' */index.html */*/index.html index.html
 
 ## Placeholdery fotek
 
-Reálné fotky zatím nejsou. Každý slot je označený rámeček s pevným
-`aspect-ratio`, takže dosazení fotky nezmění layout.
+Pět oborů Galerie už obsahuje dodané fotografie. Ostatní volné sloty jsou
+označené rámečky s pevným `aspect-ratio`, takže jejich pozdější doplnění
+nezmění layout.
 
 Dosazení reálné fotky:
 
-1. Soubor do `assets/img/`.
-2. V HTML nahraď `<div class="ph__frame">…</div>` značkou
-   `<img src="/assets/img/…" alt="popis" loading="lazy" width="…" height="…">`.
-3. U rozklikávacích doplň spouštěči atribut `data-lb-src="/assets/img/…"`.
-   Lightbox si toho všimne sám a místo placeholderu ukáže fotku.
-4. Hero na domovské stránce: nastav `background-image` na `.herofull__bg`
-   a odstraň `.herofull__note`.
+1. Optimalizovaný soubor ulož do `assets/img/`.
+2. Placeholder nahraď `<img class="ph__img" src="/assets/img/…webp" alt="Popis fotky" loading="lazy" decoding="async">`.
+   `.ph__img` zachová poměr stran a ořízne náhled podle rámečku.
+3. U rozklikávacích fotek přidej spouštěči atribut `data-lb-src="/assets/img/…webp"`.
+   Lightbox pak otevře stejný soubor v plné velikosti.
+4. Pokud fotografie patří k jedné z oblastí, doplň stejné soubory do Galerie i na odpovídající podstránku `/co-navrhuji/`.
+5. Domovské hero používá pět fotografií z `assets/img/galerie/` a střídá je po
+   pěti sekundách. Při jejich výměně aktualizuj také tlačítka výběru v `index.html`.
 
 **Nepřidávej stock fotky jako výplň.**
 
@@ -111,8 +110,6 @@ Hledej v kódu `[DOPLNIT`. Aktuálně:
 
 - IČO a DIČ do patičky a na kontakt.
 - Logo (zatím textový wordmark, je připravený na výměnu bez zásahu do layoutu).
-- PDF osvědčení o autorizaci (`/o-atelieru/`) a PDF se studiemi
-  (`/co-navrhuji/projekty-a-studie/`). Po dodání do `assets/dokumenty/`.
 - `og:image` pro sdílení na sociálních sítích.
 - Reálné fotky do všech slotů.
 - Potvrzení domény `www.atelierkrivanek.cz` v `sitemap.xml`, `robots.txt`
@@ -127,7 +124,7 @@ Hledej v kódu `[DOPLNIT`. Aktuálně:
 - [ ] Konzole bez chyb.
 - [ ] Navigace, aktivní položka, mobilní menu.
 - [ ] Lightbox: klik, Enter, šipky, Esc, focus se vrací na spouštěč.
-- [ ] Galerie: rozcestník vede na šest podstránek oblastí, v menu je aktivní oblast zvýrazněná.
+- [ ] Galerie: rozcestník vede na pět podstránek oblastí, v menu je aktivní oblast zvýrazněná.
 - [ ] Responzivita na mobilu, tabletu a desktopu.
 - [ ] Kontrast WCAG AA.
 - [ ] `prefers-reduced-motion` vypíná animace i pruh log.

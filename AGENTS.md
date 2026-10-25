@@ -45,21 +45,17 @@ Otevři `http://localhost:8080`. Žádný `npm install`, žádný `npm run build
 /co-navrhuji/prumyslove-a-administrativni-stavby/
 /co-navrhuji/komercni-a-sportovni-stavby/
 /co-navrhuji/interiery/
-/co-navrhuji/projekty-a-studie/
 /proces/                                     proces + jak se počítá cena + zajištění kontaktů (dříve /spoluprace/)
-/galerie/                                    rozcestník šesti oblastí
-/galerie/rodinne-domy/ … /galerie/projekty-a-studie/   fotky jedné oblasti + lightbox (slugy jako Co navrhuji)
-/sesterske-spolecnosti/                      rozcestník sesterských společností
-/sesterske-spolecnosti/kroos/                KROOS s.r.o.
-/sesterske-spolecnosti/projekt-360/          Projekt 360 s.r.o.
+/galerie/                                    rozcestník pěti oblastí
+/galerie/rodinne-domy/ … /galerie/interiery/   fotky jedné oblasti + lightbox (slugy jako Co navrhuji)
 /kontakt/                                    adresa + mapa (bez formuláře)
 /assets/css/                                 tokens, base, components, pages, gallery
-/assets/js/                                  site, lightbox, logos
-/assets/img/                                 reálné fotky (zatím prázdné, placeholdery v HTML/CSS)
+/assets/js/                                  site, lightbox, logos, hero-slider (Domů)
+/assets/img/                                 optimalizované fotky ve WebP podle oboru; zbývající sloty jsou placeholdery
 404.html  sitemap.xml  robots.txt  README.md
 ```
 
-Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctivě synchronizované kopie v HTML**, ne JS include — navigace i kontakty tak zůstávají v HTML i bez JavaScriptu. Všechny cesty jsou absolutní (`/o-atelieru/`), takže blok hlavičky i patičky je ve všech souborech znak po znaku stejný. Když je měníš, měň je ve všech 21 stránkách plus `404.html`. Detail v `README.md`.
+Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctivě synchronizované kopie v HTML**, ne JS include — navigace i kontakty tak zůstávají v HTML i bez JavaScriptu. Všechny cesty jsou absolutní (`/o-atelieru/`), takže blok hlavičky i patičky je ve všech souborech znak po znaku stejný. Když je měníš, měň je ve všech 16 stránkách plus `404.html`. Detail v `README.md`.
 
 ## Styl kódu
 
@@ -71,8 +67,10 @@ Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctiv�
 
 ## Obsah a assety
 
-- Fotky zatím nejsou — každý slot je **zřetelně označený placeholder** (jemný okraj, papírové pozadí, ikona, popisek, správný `aspect-ratio`). **Žádné stock ani externí obrázky jako výplň.**
-- Fotky patří do každé sekce, ne jen do galerie. V galerii a na podstránkách oblastí jsou **rozklikávací** (sdílený lightbox).
+- Dodané fotky pro pět oblastí jsou ve `assets/img/galerie/` jako WebP. Karty na Domů, Galerie i odpovídající podstránky `/co-navrhuji/` používají stejné soubory; přesné kopie byly vynechány.
+- Obsahové obrázky mají `loading="lazy"`, pevný `aspect-ratio` přes `.ph__img` a popisný `alt`. Fotografie v hero jsou dekorativní pozadí s prázdným `alt`; první se načítá přednostně a ovládací tlačítka názvy snímků zpřístupňují asistivním technologiím. Rozklikávací galerie používá `data-lb-src` pro lightbox.
+- Volné sloty bez dodaného podkladu zůstávají **zřetelně označené placeholdery** (jemný okraj, papírové pozadí, ikona, popisek, správný `aspect-ratio`). **Žádné stock ani externí obrázky jako výplň.**
+- Fotografie používej tam, kde ukazují konkrétní práci nebo představují ateliér; každá sekce nemusí mít obrázek. Domovské hero používá pět fotografií z oborových galerií a střídá je po pěti sekundách; jediný portrétní slot Tomáše je vedle citátu na Domů. V galerii a na podstránkách oblastí jsou fotky **rozklikávací** (sdílený lightbox).
 - Placeholder nenahrazuj reálným obsahem bez podkladu od uživatele.
 
 ## Tvrdá omezení (NEDĚLEJ bez potvrzení uživatele)

@@ -21,6 +21,14 @@
   --c-paper:        #F4F5F3;  /* dominantní pozadí, studená bílá */
   --c-paper-deep:   #E9EBE8;  /* střídavé sekce, zapuštěné bloky */
   --c-paper-edge:   #E1E3E0;  /* výplň placeholderů */
+  --c-paper-soft:   rgba(244, 245, 243, 0.9);
+  --c-hero-overlay:      rgba(28, 28, 26, 0.9);
+  --c-hero-overlay-mid:  rgba(28, 28, 26, 0.8);
+  --c-hero-overlay-edge: rgba(28, 28, 26, 0.2);
+  --c-hero-overlay-base: rgba(28, 28, 26, 0.64);
+  --c-hero-control:       rgba(28, 28, 26, 0.44);
+  --c-hero-control-hover: rgba(28, 28, 26, 0.78);
+  --c-hero-control-border: rgba(244, 245, 243, 0.72);
   --c-graphite:     #1C1C1A;  /* text, inverzní pozadí */
   --c-graphite-sub: #2A2B29;  /* tlumenější grafit na inverzi */
   --c-muted:        #585B58;  /* sekundární text */
@@ -31,7 +39,7 @@
   --c-line:         #DDE0DC;  /* vlasová linka, hlavní vizuální motiv */
   --c-line-strong:  #BEC2BD;  /* linka, která má být vidět */
 
-  /* Technický rastr (milimetrový papír) pod hero a hlavičkami stránek.
+  /* Technický rastr (milimetrový papír) pod hlavičkami podstránek.
      Jen dekorace, text na něm musí být čitelný i bez něj. */
   --grid-size:      24px;
   --grid-major:     120px;
@@ -56,6 +64,7 @@
   --t-2xl:  clamp(1.875rem, 1.53rem + 1.7vw,  2.75rem);
   --t-3xl:  clamp(2.25rem,  1.68rem + 2.85vw, 3.75rem);
   --t-4xl:  clamp(2.75rem,  1.9rem + 4.25vw,  5rem);
+  --t-hero: clamp(3rem, 2rem + 6.2vw, 6.75rem);
 
   --lh-tight: 1.08;
   --lh-head:  1.18;
@@ -111,6 +120,7 @@
   --dur-fast:  140ms;
   --dur-base:  260ms;
   --dur-slow:  520ms;
+  --dur-hero:  850ms;
 
   --z-base: 1;
   --z-head: 100;

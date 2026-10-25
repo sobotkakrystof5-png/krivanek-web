@@ -141,7 +141,7 @@
       if (!entry.isIntersecting) { return; }
       var el = entry.target;
       var step = parseInt(el.getAttribute('data-rise-step') || '0', 10);
-      el.style.transitionDelay = Math.min(step, 5) * 70 + 'ms';
+      el.style.transitionDelay = Math.min(step, 6) * 70 + 'ms';
       el.classList.add('is-in');
       io.unobserve(el);
     });
