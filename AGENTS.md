@@ -70,7 +70,7 @@ Hlavička a patička jsou na každé stránce stejné. **Zvolená cesta: poctiv�
 - Dodané fotky pro pět oblastí jsou ve `assets/img/galerie/` jako WebP. Karty na Domů, Galerie i odpovídající podstránky `/co-navrhuji/` používají stejné soubory; přesné kopie byly vynechány.
 - Obsahové obrázky mají `loading="lazy"`, pevný `aspect-ratio` přes `.ph__img` a popisný `alt`. Fotografie v hero jsou dekorativní pozadí s prázdným `alt`; první se načítá přednostně a ovládací tlačítka názvy snímků zpřístupňují asistivním technologiím. Rozklikávací galerie používá `data-lb-src` pro lightbox.
 - Volné sloty bez dodaného podkladu zůstávají **zřetelně označené placeholdery** (jemný okraj, papírové pozadí, ikona, popisek, správný `aspect-ratio`). **Žádné stock ani externí obrázky jako výplň.**
-- Fotografie používej tam, kde ukazují konkrétní práci nebo představují ateliér; každá sekce nemusí mít obrázek. Domovské hero používá pět fotografií z oborových galerií a střídá je po pěti sekundách; jediný portrétní slot Tomáše je vedle citátu na Domů. V galerii a na podstránkách oblastí jsou fotky **rozklikávací** (sdílený lightbox).
+- Fotografie používej tam, kde ukazují konkrétní práci nebo představují ateliér; každá sekce nemusí mít obrázek. Domovské hero střídá po pěti sekundách sedm fotografií, které vybral klient (20. 11. 2026), uložených v `assets/img/hero/`; Tomáš je na portrétu vedle citátu na Domů a na fotce z hor na O ateliéru (`assets/img/portret/`). V galerii a na podstránkách oblastí jsou fotky **rozklikávací** (sdílený lightbox).
 - Placeholder nenahrazuj reálným obsahem bez podkladu od uživatele.
 
 ## Tvrdá omezení (NEDĚLEJ bez potvrzení uživatele)

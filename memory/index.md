@@ -4,7 +4,7 @@ Přečti jako první, každou session, před jakoukoli prací. Tenhle soubor sá
 
 ## 1. Stav projektu (jedna věta)
 
-**Fáze:** druhá verze webu je hotová. Aktuální strukturu tvoří 16 stránek v pěti oblastech; fotografie jsou doplněné a čeká se na portrét, logo a identifikační údaje. Detail v `memory/memory.md`.
+**Fáze:** korektury po konzultaci s klientem (2026-11-20) zapracované; čeká se na chybějící fotky, odkazy a finální hovor před spuštěním. Detail v `memory/memory.md`.
 
 Detail vždy v `memory/memory.md` → „Aktuální stav".
 

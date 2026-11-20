@@ -41,7 +41,7 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
 **Osoba:** Ing. Tomáš Křivánek, architekt
 **Adresa:** Zelená 133, Bradlec, 293 06 Kosmonosy, okres Mladá Boleslav
 **Mobil:** 603 465 564
-**Telefon:** 326 332 011
+**Telefon:** pevná linka 326 332 011 se na webu od 2026-11-20 neuvádí (pokyn uživatele), jen mobil.
 **E-mail:** tomas@atelierkrivanek.cz
 **IČO / identifikační údaje:** ZATÍM NEDODÁNO — nech placeholder do patičky a kontaktu, doplní klient. Nevymýšlej.
 
@@ -51,7 +51,7 @@ Když si Claude Code není jistý, jestli prvek vypadá šablonovitě, zeptá se
   „Při návrhu staveb věřím v individuální přístup, založený na dialogu a souznění s investorem, pečlivé analýze jeho potřeb, přání a očekávání, ale i poznání místa budoucí stavby, které je vždy zdrojem inspirace…“ — Tomáš Křivánek
 - Osobní motto (do sekce O ateliéru, k portrétu): „…pokora a nadhled, postoje důležité v osobním i profesním životě… Obojí čerpám na vrcholcích hor.“ a „Horolezci mají krásné úsloví: Kde je vůle, tam je cesta.“
 - Od konzultace po kolaudaci (do sekce Spolupráce, doslova jako základ textu): „V ateliéru provádím návrhy staveb od počátečních konzultací, studií až po realizační dokumentaci, v čase vyhovujícím oběma stranám. Samozřejmostí je vyřízení všech nezbytných formalit celého povolovacího procesu a spolupráce v průběhu výstavby až po kolaudaci.“
-- Nabídka činností: architektonické návrhy a studie; projekty ke stavebnímu povolení či ohlášení stavby; prováděcí dokumentace, zaměření stávajícího stavu, inženýrská činnost; průkazy energetické náročnosti budov (oprávnění MPO č. 799); návrhy interiérů
+- Nabídka činností: architektonické návrhy a studie; projekty k povolení záměru; prováděcí dokumentace; inženýrská činnost; návrhy interiérů. Zaměření stávajícího stavu a průkazy energetické náročnosti klient od 2026-11 nenabízí. Realizace staveb na klíč ve spolupráci s Projekt 360 s.r.o.
 - Historie a kvalifikace: 1989 ČVUT Praha, fakulta stavební; 1991 začátek podnikání; 1997 založení ateliéru a postgraduál na Ústavu soudního inženýrství Brno; oprávnění MPO č. 799; osvědčení o autorizaci a oprávnění (existuje PDF ke stažení — počítej se souborovým odkazem).
 - Zajištění kontaktů: pan Křivánek dokáže klientovi v případě potřeby zajistit kontakty (na řemeslníky, dodavatele, navazující profese). Zmiň to střízlivě v sekci Spolupráce jako součást služby, ne jako marketingový slib.
 
@@ -137,7 +137,7 @@ Wordmark „Ateliér Křivánek“ vlevo, nav uprostřed/vpravo, vpravo jedno de
 
 ### 1) Domů (`/`) — rozcestník, klidný a vzdušný
 Pořadí sekcí:
-1. **Hero** — celoplošná fotografie, přes kterou se každých pět sekund plynule vystřídá pět symbolických architektonických snímků z Galerie: rodinný dům, rekonstrukce, školicí středisko, sportovní stavba a interiér. Text zůstává pevný: eyebrow „Ateliér Křivánek · Mladá Boleslav“, H1 „Od nápadu ke kolaudaci.“, podpis „Ing. Tomáš Křivánek, architekt“, odstavec a CTA „Napište mi“ + „Prohlédnout tvorbu“. Střídání lze ručně ovládat a pozastavit; automatické přehrávání respektuje `prefers-reduced-motion`.
+1. **Hero** — celoplošná fotografie, přes kterou se každých pět sekund plynule vystřídá sedm fotografií staveb, které vybral klient (`assets/img/hero/`): řadové rodinné domy, bytový dům, Spinning centrum, administrativní budova, komerční stavba, firemní areál a interiér recepce. Text zůstává pevný: eyebrow „Ateliér Křivánek · Mladá Boleslav, Bradlec“, H1 „Architekt, projektant, stavitel“, podpis „Ing. Tomáš Křivánek“, krátký odstavec („Každá cesta začíná prvním krokem…“, nic dalšího se nepřidává) a CTA „Napište mi“ + „Prohlédnout tvorbu“. Střídání lze ručně ovládat a pozastavit; automatické přehrávání respektuje `prefers-reduced-motion`.
 2. **Citát** — samostatná tichá sekce s hlavním citátem Tomáše Křivánka, podpisem a velkým portrétem ve sloupci přibližně stejné šířky jako text. Celkem se jeho podoba ukáže nejvýše dvakrát, pouze na Domů.
 3. **Co navrhuji** — mřížka 5 karet s dodanými fotografiemi projektů, názvem oblasti a krátkým popiskem. Karty vedou na příslušné podstránky.
 4. **Spolupracuji s** — pomalu se posouvající pruh vektorových log Panattoni, Accolade, Volkswagen, GSP Benátky, JaP Jacina, AUFEER Design, LAWI, Spinning MB a UNO Bezděčín. Tasso je z pruhu vynecháno podle upřesnění uživatele.
@@ -148,7 +148,7 @@ Pořadí sekcí:
 1. Hlavička stránky: eyebrow „O ateliéru“ + H1 (např. „Architekt, který začíná u místa a u rozhovoru.“).
 2. Úvodní odstavec představí Tomáše a stručně zmíní spolupráci s dcerou, Ing. arch. Lucií Křivánkovou. Bez fotografií týmu.
 3. **Číslovaná časová osa** (motiv indexů): 1989 ČVUT Praha, fakulta stavební · 1991 začátek podnikání · 1997 založení ateliéru + postgraduál Ústav soudního inženýrství Brno. Každý milník = rok jako index + krátký text.
-4. **Osobní motto**: text o pokoře a horách s podpisem „Ing. Tomáš Křivánek, architekt“. Bez další fotografie, portrét je na Domů.
+4. **Osobní motto**: text o pokoře a horách s podpisem „Ing. Tomáš Křivánek, architekt“. Vlevo od citátu fotografie Tomáše z hor (`assets/img/portret/tomas-krivanek-hory.webp`).
 5. Patička. (Bez CTA pruhu, nebo velmi decentní.)
 
 ### 3) Co navrhuji (`/co-navrhuji`) — rozcestník oblastí
@@ -182,7 +182,7 @@ Pořadí sekcí:
 ### 6) Kontakt (`/kontakt`) — adresa + mapa, BEZ formuláře
 1. Hlavička stránky: eyebrow „Kontakt“ + H1.
 2. **Dvě zóny vedle sebe** (na mobilu pod sebou):
-   - **Kontaktní údaje** jako seznam řádků: Ateliér Křivánek (Ateliér v Zelené) · Zelená 133, Bradlec, 293 06 Kosmonosy, okres Mladá Boleslav · mobil 603 465 564 · tel. 326 332 011 · tomas@atelierkrivanek.cz. Telefon jako `tel:` odkaz, e-mail jako `mailto:`.
+   - **Kontaktní údaje** jako seznam řádků: Ateliér Křivánek (Ateliér v Zelené) · Zelená 133, Bradlec, 293 06 Kosmonosy, okres Mladá Boleslav · mobil 603 465 564 · tomas@atelierkrivanek.cz. Telefon jako `tel:` odkaz, e-mail jako `mailto:`.
    - **Mapa** — iframe embed adresy (Mapy.cz nebo Google Maps).
 3. **ŽÁDNÝ kontaktní formulář.** To je záměrné rozhodnutí klienta — nedoplňuj formulář, i kdyby to referenční layout nebo šablona nabízely. Konverze jde přes telefon a e-mail.
 4. Patička.
@@ -199,11 +199,11 @@ Web **nemá žádný formulář** (ani kontaktní, ani jiný). Je to výslovné 
 
 - Dne 25. 10. 2026 uživatel dodal 70 různých fotografií. Dvě přesné kopie nebyly použity. Fotky jsou převedené do WebP a vložené do Galerie i na odpovídající podstránky Co navrhuji.
 - Aktuální počty: rodinné domy 32, rekonstrukce a bytové domy 12, průmyslové a administrativní stavby 7, komerční a sportovní stavby 10, interiéry 9.
-- Bez vhodných podkladů zůstává portrét vedle citátu na Domů. Portréty nejsou rozeseté po dalších stránkách; hero používá dodané fotografie staveb z Galerie.
+- Portrét vedle citátu na Domů je `assets/img/portret/tomas-krivanek.webp` (dodán 20. 11. 2026). Druhá fotografie Tomáše je z hor na O ateliéru. Další portréty se nepřidávají.
 - **Žádné stock ani externí obrázky jako výplň.** Každý volný slot bez podkladu zůstává zřetelně označený rámečkem, ikonou a popiskem. Má pevný `aspect-ratio`.
-- Fotografie přidávej tam, kde pomáhají ukázat práci nebo představit ateliér. Každá sekce nemusí mít obrázek. Domovské hero střídá pět snímků z oborových galerií; jediný portrétní slot Tomáše je vedle citátu na Domů.
+- Fotografie přidávej tam, kde pomáhají ukázat práci nebo představit ateliér. Každá sekce nemusí mít obrázek. Domovské hero střídá po pěti sekundách sedm fotografií, které vybral klient (20. 11. 2026), uložených v `assets/img/hero/`; jediný portrétní slot Tomáše je vedle citátu na Domů.
 - Fotky v galerii a na podstránkách oblastí používají společný lightbox. Obrázky v `assets/img/galerie/` jsou ve WebP a jejich texty `alt` vycházejí z toho, co je na snímku zřetelně vidět.
-- Zbývající prezentační fotografie jsou omezené na jeden portrétní slot vedle citátu na Domů. Hero opakovaně používá pět existujících fotografií z oborových galerií. O ateliéru a Proces jsou bez dalších prezentačních fotografií.
+- Fotografie Tomáše jsou dvě: portrét vedle citátu na Domů a fotka z hor na O ateliéru. Domovské hero střídá po pěti sekundách sedm fotografií, které vybral klient (20. 11. 2026), uložených v `assets/img/hero/`.
 
 ---
 

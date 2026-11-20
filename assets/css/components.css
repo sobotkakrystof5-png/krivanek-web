@@ -201,6 +201,9 @@
   object-fit: cover;
 }
 
+/* Portrét: výřez drží obličej v horní třetině. */
+.ph__img--face { object-position: 50% 30%; }
+
 .ph--hero      { --ph-ar: var(--ar-hero); }
 .ph--wide      { --ph-ar: var(--ar-wide); }
 .ph--landscape { --ph-ar: var(--ar-landscape); }

@@ -41,6 +41,22 @@
 /* Stejně vysoké výřezy na podstránkách Galerie. */
 .shots--gallery .ph { --ph-ar: var(--ar-landscape); }
 
+/* Obálka projektu s více fotografiemi: štítek s počtem snímků. */
+.shots--gallery .ph__btn { position: relative; }
+.ph__count {
+  position: absolute;
+  left: var(--s-3);
+  bottom: var(--s-3);
+  padding: 0.3em 0.6em;
+  background: var(--c-graphite);
+  color: var(--c-paper);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
 @media (min-width: 62em) {
   .shots { grid-template-columns: repeat(4, 1fr); gap: var(--s-5); }
 }

@@ -62,7 +62,7 @@ V komponentách se sahá jen přes `var(--…)`. Barva natvrdo je chyba.
 | `assets/js/site.js` | Mobilní menu (focus trap, Esc) a animace při scrollu. | Všude |
 | `assets/js/lightbox.js` | Sdílený lightbox. Klávesnice, šipky, Esc, focus trap. | Podstránky galerie, oblasti a O ateliéru |
 | `assets/js/logos.js` | Zdvojí stopu pruhu log, aby posun navazoval. | Domů |
-| `assets/js/hero-slider.js` | Střídá pět fotografií v úvodním hero; ovládání výběru a pozastavení. | Domů |
+| `assets/js/hero-slider.js` | Střídá sedm fotografií v úvodním hero; ovládání výběru a pozastavení. | Domů |
 
 ---
 
@@ -97,7 +97,7 @@ Dosazení reálné fotky:
 3. U rozklikávacích fotek přidej spouštěči atribut `data-lb-src="/assets/img/…webp"`.
    Lightbox pak otevře stejný soubor v plné velikosti.
 4. Pokud fotografie patří k jedné z oblastí, doplň stejné soubory do Galerie i na odpovídající podstránku `/co-navrhuji/`.
-5. Domovské hero používá pět fotografií z `assets/img/galerie/` a střídá je po
+5. Domovské hero používá sedm fotografií z `assets/img/hero/` a střídá je po
    pěti sekundách. Při jejich výměně aktualizuj také tlačítka výběru v `index.html`.
 
 **Nepřidávej stock fotky jako výplň.**

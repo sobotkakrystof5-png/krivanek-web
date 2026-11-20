@@ -29,7 +29,7 @@ Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `prav
 ## Aktuální stav
 
 - **Projekt:** web Ateliér Křivánek (Ing. Tomáš Křivánek, architekt; Mladá Boleslav / Bradlec)
-- **Fáze:** druhá verze po připomínkách klienta (2026-10-14) s následným zjednodušením prezentačních sekcí. 16 stránek. 70 fotek je doplněno do pěti oblastí Galerie a odpovídajících podstránek Co navrhuji; stejné oborové obálky jsou na Domů. Hero nyní střídá pět snímků z Galerie po pěti sekundách. Další podklady (portrét vedle citátu, logo, IČO) stále chybí.
+- **Fáze:** korektury po konzultaci s klientem (2026-11-20) zapracované, fotky od klienta (smyčka, portrét, hory) jsou na webu, čeká se na odkaz na Instagram Projekt 360 (viz Otevřené otázky) a na finální společný hovor před spuštěním. 16 stránek, 70 fotek v pěti oblastech Galerie, fotky stejné stavby jsou v Galerii sloučené do projektových dlaždic.
 - **Stack:** čisté HTML5 + CSS + Vanilla JS, žádný framework, žádný build step, žádný backend, žádný formulář; vícestránkový web (vlastní URL per stránka)
 - **Co existuje:** dokumentace (`CLAUDE.md`, `AGENTS.md`, `README.md`), plný brief `atelier-krivanek-claude-code-prompt.md`, paměťový systém (`memory/`), lokální skills. Web: 16 stránek + `404.html`, 5 CSS souborů, 4 JS moduly, `sitemap.xml`, `robots.txt`. Galerie a oborové stránky obsahují 70 optimalizovaných WebP fotek v pěti oblastech; samostatný portrétní slot vedle citátu zůstává placeholderem.
 
@@ -58,15 +58,25 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 - **2026-10-25** — Tomáš Křivánek se na webu objeví nejvýše na dvou fotografiích: v hero a vedle citátu na Domů. Další portrétní sloty se nepřidávají; ostatní fotografie ukazují stavby a práci ateliéru.
 - **2026-10-25** — Na nový přímý pokyn uživatele je hero Domů celoplošné a střídá po pěti sekundách pět existujících fotografií z Galerie (rodinný dům, rekonstrukce, školicí středisko, sportovní stavba a interiér). Nadpis „Od nápadu ke kolaudaci.“ a podpis Ing. Tomáše Křivánka zůstávají pevné; jediný portrétní slot je vedle citátu. Tím se nahrazuje dřívější rozhodnutí mít portrét v hero.
 
+- **2026-11-20** — Na pokyn klienta se na O ateliéru znovu uvádí spolupráce s Projekt 360 s.r.o. (realizace staveb na klíč) s odkazem na jejich Instagram. Ruší rozhodnutí z 2026-10-25 o neuvádění Projektu 360; KROOS se dál neuvádí a stránky `/sesterske-spolecnosti/` zůstávají přesměrované.
+- **2026-11-20** — H1 hero na Domů je „Architekt, projektant, stavitel“; „Od nápadu ke kolaudaci“ se v hero nepoužívá (opakovalo by nadpis stránky Proces).
+- **2026-11-20** — Klient nenabízí zaměření stávajícího stavu ani průkazy energetické náročnosti. Na webu je neuvádět (`CLAUDE.md` §4 je v tomhle bodě zastaralý).
+- **2026-11-20** — Tomáš se na webu objeví na dvou fotografiích: portrét vedle citátu na Domů a fotka z hor (lyže na batohu, mačky) vlevo od horolezeckého citátu na O ateliéru.
+- **2026-11-20** — Na webu je jediné telefonní číslo, mobil 603 465 564. Pevná linka 326 332 011 se neuvádí.
+- **2026-11-20** — Hero smyčka používá jen fotky, které vybral klient (`assets/img/hero/`), ne výběr z Galerie. Ruší výběr pěti snímků z 2026-10-25.
+- **2026-11-20** — Identifikace: Ing. Tomáš Křivánek, IČO 16542886, neplátce DPH (DIČ se na webu neuvádí).
+- **2026-11-20** — Galerie: fotky jedné stavby tvoří jednu dlaždici (obálka + skryté členy, `data-lb-group`, `data-lb-member`). Do skupin se dávají jen snímky, u kterých je shoda jistá; nejisté páry čekají na klienta.
+
 ## Otevřené otázky
 
 Čeká na uživatele/klienta. Po zodpovězení se maže, odpověď jde do Klíčových rozhodnutí nebo changelogu.
 
-- Portrétní fotografie Tomáše vedle citátu na Domů — podklad zatím nedodán.
-- Lucie Křivánková — jen „ČVUT fakulta architektura“, nevíme, zda studuje nebo dostudovala; web uvádí jen fakultu.
+- URL Instagramu Projekt 360 s.r.o. — ikona a odkaz jsou v HTML O ateliéru zakomentované, CSS `.partner` je hotové.
+- Nejisté skupiny v Galerii: rodinné domy img-1028 + img-1031, img-5924 (k img-5919/5921/5935?), rd + rd1; rekonstrukce img-3207 (k img-3209/3213?), img-4632 + img-4654; komerční img-0422 + img-0428; interiéry img-0050 + img-0052.
+- Krok 02 v Procesu slibuje cenový návrh se studií, blok „Cena“ na stejné stránce říká, že přesnou cenu klient dostane po první konzultaci. Sjednotit na finálním hovoru.
+- Finální společný hovor s klientem (neděle od 10:00) a jméno druhého schvalovatele („pan Drakon“, ověřit).
 
 - Cílová klíčová slova pro SEO — nedodán měřený seznam (Collabim apod.); keywords se nevymýšlí.
-- Kontaktní údaje — telefon, e-mail, přesná adresa ateliéru, IČO/DIČ. Nedodáno, v kódu jsou označené placeholdery `[DOPLNIT: …]`. Mapa na `/kontakt/` zůstává zakomentovaná, dokud nebude adresa.
 - Milníky do časové osy na `/o-atelieru/` kromě 1991, 1997 a přejmenování — nedodány, nedomýšlí se.
 
 ## Záměrně nedokončeno
@@ -81,6 +91,48 @@ Ať to příští session neopraví jako chybu.
 ## Changelog
 
 Nejnovější nahoře.
+
+### 2026-11-20 — Odkaz na web dcery
+- **Co:** Jméno Ing. arch. Lucie Křivánkové v úvodu O ateliéru odkazuje na https://archilarkie.cz (nové okno, `rel="noopener"`, skrytý text pro čtečky).
+- **Proč:** na pokyn uživatele, URL dodal klient.
+- **Dopad:** Izolované na `/o-atelieru/`.
+- **Soubory:** `o-atelieru/index.html`, `memory/memory.md`
+
+### 2026-11-20 — Fotky od klienta: smyčka, portrét, hory
+- **Co:** Hero na Domů střídá místo pěti snímků z Galerie sedm fotografií ze složky klienta „UVODNÍ SMYČKA“ (`assets/img/hero/`, WebP 2400 px): řadové domy, bytový dům, Spinning centrum, administrativní budova, komerční stavba, firemní areál, interiér recepce. Přibyla tlačítka 06 a 07. Ze složky „foto profil web“ jde IMG_3753 (úsměv, dobře vidět obličej) jako portrét vedle citátu na Domů a IMG_0962 (výstup s lyžemi na batohu) místo placeholderu z hor na O ateliéru (`assets/img/portret/`).
+- **Proč:** na pokyn uživatele, klient fotky dodal.
+- **Dopad:** IMG_3927 (selfie zespodu) a malá fotka e351d902… (247 px) použité nejsou. Portrét má výřez `object-position: 50% 30%` (`.ph__img--face`). Fotky v Galerii se nemění. Briefy, AGENTS.md a README jsou upravené.
+- **Soubory:** `index.html`, `o-atelieru/index.html`, `assets/img/hero/`, `assets/img/portret/`, `assets/css/components.css`, `AGENTS.md`, `README.md`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-11-20 — Bez sekce „Co bude dál“ na Kontaktu
+- **Co:** Ze stránky `/kontakt/` zmizela sekce „Co bude dál / Po prvním ozvání“ se třemi kroky (telefonát, schůzka, nabídka podle rozsahu). Odstraněny i už nepoužité styly `.steps`.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Kontakt končí kontaktními údaji a mapou, pod nimi je hned patička. Postup spolupráce dál popisuje stránka `/proces/`.
+- **Soubory:** `kontakt/index.html`, `assets/css/pages.css`, `memory/memory.md`
+
+### 2026-11-20 — Pryč s pevnou linkou
+- **Co:** Číslo pevné linky 326 332 011 zmizelo z patičky všech 16 stránek, z kontaktního bloku na `/kontakt/` a z meta popisu Kontaktu. Na webu zůstává jen mobil 603 465 564.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** JSON-LD už předtím uváděl jen mobil. Briefy jsou upravené.
+- **Soubory:** všech 16 stránek `*/index.html`, `prompt.md`, `atelier-krivanek-claude-code-prompt.md`, `memory/memory.md`
+
+### 2026-11-20 — IČO a neplátce DPH
+- **Co:** Placeholdery `IČO [DOPLNIT]` v patičce všech 16 stránek nahradil text „Ing. Tomáš Křivánek, IČO 16542886, neplátce DPH“. Na `/kontakt/` jsou v identifikačních údajích „IČO 16542886 · neplátce DPH“ místo IČO a DIČ.
+- **Proč:** na pokyn uživatele, údaje dodal klient.
+- **Dopad:** DIČ se neuvádí, protože klient není plátce DPH. Na `404.html` IČO nebylo a není.
+- **Soubory:** všech 16 stránek `*/index.html`, `memory/memory.md`
+
+### 2026-11-20 — Fotka z hor vedle citátu
+- **Co:** Placeholder fotky z hor se přesunul z pravé strany časové osy do sekce s citátem „Pokora a nadhled…“ na O ateliéru, vlevo od citátu. Časová osa je zase jednosloupcová a nepoužité CSS `.dual--story` bylo odstraněno.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Na mobilu je fotka nad citátem. Izolované na `/o-atelieru/`.
+- **Soubory:** `o-atelieru/index.html`, `assets/css/pages.css`, `memory/memory.md`
+
+### 2026-11-20 — Korektury podle konzultace s klientem
+- **Co:** Hero Domů má eyebrow „Mladá Boleslav, Bradlec“, H1 „Architekt, projektant, stavitel“, podpis „Ing. Tomáš Křivánek“ a nový krátký odstavec. O ateliéru: představení v první osobě s dcerou „na některých návrzích“, nový blok „Realizace na klíč“ s Projekt 360 s.r.o., zkrácené texty 1989 a 1991 a placeholder pro fotku z hor vpravo od časové osy. Co navrhuji: nový úvod (těžiště tvoření, slogan s tečkou), bez věty o pozemku u rodinných domů, „revitalizace panelových domů“ místo „panelový dům v Jičíně“, „byty“ místo „byt“. Proces: přepsané texty kroků 01 až 05, z kroku 05 zmizelo zaměření a průkaz energetické náročnosti. Galerie: zrušen záměrný posun prostředního sloupce karet; fotky stejné stavby jsou na podstránkách Galerie sloučené do jedné dlaždice se štítkem počtu a lightbox prochází jen fotky daného projektu (`data-lb-group`).
+- **Proč:** zápis požadovaných úprav z konzultace s klientem, předaný uživatelem.
+- **Dopad:** Posun sloupce zmizel i z karet na Domů (stejná komponenta `.cards`). Seskupení se týká jen podstránek Galerie, ne podstránek Co navrhuji. Fotky do hero smyčky, portrét, fotka z hor, odkaz na web dcery a Instagram Projekt 360 nebyly dodány, viz Otevřené otázky. Meta popis O ateliéru dál uvádí „Oprávnění MPO č. 799“.
+- **Soubory:** `index.html`, `o-atelieru/index.html`, `co-navrhuji/index.html`, `co-navrhuji/rekonstrukce/index.html`, `proces/index.html`, `galerie/*/index.html`, `assets/css/pages.css`, `assets/css/gallery.css`, `assets/js/lightbox.js`, `atelier-krivanek-claude-code-prompt.md`, `prompt.md`, `memory/memory.md`
 
 ### 2026-10-25 — Zdůraznění ceny podle rozsahu projektu
 

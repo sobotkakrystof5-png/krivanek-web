@@ -15,6 +15,11 @@
   var lastFocus = null;
   var closeTimer = null;
   var visible = triggers.slice();
+  // Dlaždice v mřížce. Skryté členy skupiny (data-lb-member) se otevírají
+  // jen přes obálku svého projektu.
+  var singles = triggers.filter(function (t) {
+    return !t.hasAttribute('data-lb-group');
+  });
 
   /* --- Sestavení dialogu (jen jednou, na konci body) --------------------- */
 
@@ -94,7 +99,12 @@
   /* --- Otevření a zavření ------------------------------------------------ */
 
   var open = function (trg) {
-    // Každá stránka má jednu sadu fotek, šipky jedou po celé sadě.
+    // Fotky jednoho projektu (data-lb-group) se procházejí spolu. Samostatné
+    // fotky tvoří jednu společnou sadu stránky.
+    var group = trg.getAttribute('data-lb-group');
+    visible = group
+      ? triggers.filter(function (t) { return t.getAttribute('data-lb-group') === group; })
+      : singles;
     var i = visible.indexOf(trg);
     if (i < 0) { return; }
 
@@ -133,6 +143,7 @@
   /* --- Události ---------------------------------------------------------- */
 
   triggers.forEach(function (trg) {
+    if (trg.hasAttribute('data-lb-member')) { return; }
     trg.addEventListener('click', function (e) {
       e.preventDefault();
       open(trg);

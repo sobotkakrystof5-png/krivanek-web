@@ -322,6 +322,23 @@
   .dual { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--s-9); }
   .dual--flip > *:first-child { order: 2; }
 }
+.dual--top { align-items: start; }
+
+/* Odkaz na partnera (Instagram Projekt 360). */
+.partner { margin: var(--s-5) 0 0; }
+.partner__ig {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 44px;
+  color: var(--c-graphite);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.partner__ig svg { width: 24px; height: 24px; color: var(--c-accent); }
+.partner__ig:hover span { text-decoration: underline; text-underline-offset: 3px; }
 
 /* --------------------------------------------------------------------------
    CO NAVRHUJI — střídavé bloky oblastí
@@ -440,27 +457,6 @@
 }
 .near__h { font-family: var(--f-display); font-stretch: var(--fs-display); font-size: var(--t-md); }
 @media (min-width: 48em) { .near { grid-template-columns: repeat(3, 1fr); gap: var(--s-5); } }
-
-/* Číslovaný seznam kroků uvnitř textu */
-.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
-.steps > li {
-  position: relative;
-  margin: 0 0 var(--s-5);
-  padding-left: var(--s-7);
-  counter-increment: step;
-}
-.steps > li::before {
-  content: counter(step, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 0.15em;
-  font-family: var(--f-mono);
-  font-size: var(--t-xs);
-  letter-spacing: var(--ls-index);
-  color: var(--c-accent-2);
-}
-.steps__h { display: block; margin-bottom: var(--s-1); font-weight: 600; }
-.steps__p { margin: 0; color: var(--c-muted); font-size: var(--t-sm); }
 
 /* --------------------------------------------------------------------------
    KONTAKT
@@ -807,10 +803,6 @@
 
 @media (min-width: 40em)  { .cards { grid-template-columns: repeat(2, 1fr); gap: var(--s-6) var(--s-5); } }
 @media (min-width: 68em)  { .cards { grid-template-columns: repeat(3, 1fr); gap: var(--s-7) var(--s-5); } }
-/* Prostřední sloupec je posunutý dolů. Skutečná asymetrie, ne jen větší mezera. */
-@media (min-width: 68em) {
-  .cards > li:nth-child(3n+2) { margin-top: var(--s-7); }
-}
 
 /* --------------------------------------------------------------------------
    PRUH LOG — pomalý, nenápadný posun
