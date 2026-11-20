@@ -92,6 +92,13 @@ Ať to příští session neopraví jako chybu.
 
 Nejnovější nahoře.
 
+### 2026-11-20 — Push a nasazení na Vercel
+- **Co:** Commit `cbda139` (korektury po konzultaci, fotky od klienta, IČO, bez pevné linky) pushnut do `main` na GitHub. Vercel projekt `krivanek-web` ho automaticky nasadil do produkce na https://krivanek-web.vercel.app. Pracovní větev `claude/krivanek-atelier-web-updates-c2fd67` je na GitHubu taky.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Doména atelierkrivanek.cz stále není napojená. Repo je veřejné, takže jsou vidět i fotky od klienta, brief a memory.
+- **Ověřeno:** `/`, `/o-atelieru/`, `/kontakt/`, `/galerie/rodinne-domy/` a nové fotky vrací 200; na živém webu je nový hero, IČO, odkaz na archilarkie.cz a pevná linka chybí.
+- **Soubory:** žádné změny kódu
+
 ### 2026-11-20 — Odkaz na web dcery
 - **Co:** Jméno Ing. arch. Lucie Křivánkové v úvodu O ateliéru odkazuje na https://archilarkie.cz (nové okno, `rel="noopener"`, skrytý text pro čtečky).
 - **Proč:** na pokyn uživatele, URL dodal klient.
