@@ -2,6 +2,13 @@
 
 Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `pravidla.md`.
 
+### 2026-11-25 — Push a nasazení korektur na Vercel
+- **Co:** Commit `ace22c9` (vedoucí ateliéru, otočená img-4632, sloučené skupiny v Galerii rodinných domů) pushnut do `main`; Vercel ho automaticky nasadil na https://krivanek-web.vercel.app.
+- **Proč:** na pokyn uživatele.
+- **Dopad:** Doména atelierkrivanek.cz stále není napojená.
+- **Ověřeno:** na živém webu je „Vedoucím ateliéru je…“, Galerie rodinných domů má 18 dlaždic, img-4632 se servíruje v nové otočené verzi (131 050 B) s rámečkem na výšku.
+- **Soubory:** žádné změny kódu
+
 ### 2026-11-25 — Korektury klienta: vedoucí ateliéru, otočená fotka, sloučené skupiny v Galerii
 - **Co:** Na O ateliéru úvodní věta „Ateliér vedu já, Ing. Tomáš Křivánek.“ změněna na „Vedoucím ateliéru je Ing. Tomáš Křivánek.“, navazující „se mnou spolupracuje“ na „s ním spolupracuje“. Fotka `rekonstrukce/img-4632.webp` (bytový dům) otočena o 90° doprava, teď na výšku 1440×1920; na Co navrhuji i v Galerii má rámeček `ph--portrait` a lightbox poměr 4 / 5. V Galerii rodinných domů přidány `img-1028` a `img-1031` do skupiny `rodinne-domy-4` (cover `img-3219`, 4 foto) a `img-5924` do skupiny `rodinne-domy-6` (cover `img-5919`, 4 foto); jejich samostatné dlaždice zrušeny, dlaždic je 18, fotek dál 32.
 - **Proč:** na pokyn klienta (zakroužkované/šipkami označené screenshoty). Shoda staveb ověřena vizuálně: `img-1031` je stejný šedý dům s vyloženým patrem jako `img-3219/3220`, `img-1028` ho ukazuje ze svahu; `img-5924` je uliční pohled na dům s pergolou z `img-5919/5921/5935`. Šipka klienta přes `img-3214` (přízemní dům s garáží) a `img-7754` (bílý dvojdům) jen vedla přes ně, k nim nic nepřidáno.
