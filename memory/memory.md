@@ -2,6 +2,13 @@
 
 Co se skutečně stalo, aktuální stav a proč. Formátová pravidla: viz `pravidla.md`.
 
+### 2026-11-25 — Korektury klienta: vedoucí ateliéru, otočená fotka, sloučené skupiny v Galerii
+- **Co:** Na O ateliéru úvodní věta „Ateliér vedu já, Ing. Tomáš Křivánek.“ změněna na „Vedoucím ateliéru je Ing. Tomáš Křivánek.“, navazující „se mnou spolupracuje“ na „s ním spolupracuje“. Fotka `rekonstrukce/img-4632.webp` (bytový dům) otočena o 90° doprava, teď na výšku 1440×1920; na Co navrhuji i v Galerii má rámeček `ph--portrait` a lightbox poměr 4 / 5. V Galerii rodinných domů přidány `img-1028` a `img-1031` do skupiny `rodinne-domy-4` (cover `img-3219`, 4 foto) a `img-5924` do skupiny `rodinne-domy-6` (cover `img-5919`, 4 foto); jejich samostatné dlaždice zrušeny, dlaždic je 18, fotek dál 32.
+- **Proč:** na pokyn klienta (zakroužkované/šipkami označené screenshoty). Shoda staveb ověřena vizuálně: `img-1031` je stejný šedý dům s vyloženým patrem jako `img-3219/3220`, `img-1028` ho ukazuje ze svahu; `img-5924` je uliční pohled na dům s pergolou z `img-5919/5921/5935`. Šipka klienta přes `img-3214` (přízemní dům s garáží) a `img-7754` (bílý dvojdům) jen vedla přes ně, k nim nic nepřidáno.
+- **Dopad:** Úvodní odstavec O ateliéru je teď ve třetí osobě, zbytek webu zůstává v první osobě. Co navrhuji / Rodinné domy ukazuje fotky dál jednotlivě, pořadí beze změny. Zavírá dvě nejisté skupiny z Otevřených otázek.
+- **Ověřeno:** lokální server, lightbox skupiny 6 projde 1/4 až 4/4, otočená fotka se načítá na výšku, žádné console errory.
+- **Soubory:** `o-atelieru/index.html`, `assets/img/galerie/rekonstrukce/img-4632.webp`, `co-navrhuji/rekonstrukce/index.html`, `galerie/rekonstrukce/index.html`, `galerie/rodinne-domy/index.html`, `memory/memory.md`
+
 ### 2026-10-25 — Vektorová loga v pohyblivém pruhu
 - **Co:** Textové zástupce v pruhu „Spolupracuji s“ na Domů nahradilo devět místních SVG log Panattoni, Accolade, Volkswagen, GSP, JaP Jacina, AUFEER, LAWI, Spinning MB a UNO. Loga LAWI, Spinning MB a UNO byla převedena z oficiálních PNG na vektorové cesty, značka GSP z oficiální favicony. Tasso bylo z pruhu odstraněno podle upřesnění uživatele.
 - **Proč:** na pokyn uživatele doplnit do posuvné řady vektorová loga.
@@ -72,7 +79,7 @@ Rozhodnutí, ke kterým se nebudeme bez výslovného pokynu uživatele vracet.
 Čeká na uživatele/klienta. Po zodpovězení se maže, odpověď jde do Klíčových rozhodnutí nebo changelogu.
 
 - URL Instagramu Projekt 360 s.r.o. — ikona a odkaz jsou v HTML O ateliéru zakomentované, CSS `.partner` je hotové.
-- Nejisté skupiny v Galerii: rodinné domy img-1028 + img-1031, img-5924 (k img-5919/5921/5935?), rd + rd1; rekonstrukce img-3207 (k img-3209/3213?), img-4632 + img-4654; komerční img-0422 + img-0428; interiéry img-0050 + img-0052.
+- Nejisté skupiny v Galerii: rodinné domy rd + rd1; rekonstrukce img-3207 (k img-3209/3213?), img-4632 + img-4654; komerční img-0422 + img-0428; interiéry img-0050 + img-0052.
 - Krok 02 v Procesu slibuje cenový návrh se studií, blok „Cena“ na stejné stránce říká, že přesnou cenu klient dostane po první konzultaci. Sjednotit na finálním hovoru.
 - Finální společný hovor s klientem (neděle od 10:00) a jméno druhého schvalovatele („pan Drakon“, ověřit).
 
